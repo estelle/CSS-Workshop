@@ -337,7 +337,7 @@ a {
   display: inline-block;
   text-decoration: none;
   line-height: 110%;
-  text-decoration:underline;
+  border-bottom: 2px dotted #BDD9D5;
 }
 
 pre, .ex, .pre {

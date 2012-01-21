@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+html, body {margin: 0;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 5px 20px; font-size: 1.25em; white-space: pre; font-family: monospace; background-color: #eee;}
+
+p{width: 400px;
+ font-size: 36px;
+ font-family:Georgia, "Times New Roman", Times, serif;
+ margin: 0 20px 20px;
+}</style>
+
+<style contenteditable>
+p:first-of-type::first-letter {
+	float: left;
+	font-size: 80px;
+	line-height: 60px;
+	color: #C7573A;
+	padding:12px 4px 2px 0;
+	font-weight:bold;	
+}
+</style>
+<title>CSS Drop Caps</title>
+</head>
+
+<body>
+<p>You can even pretty drop-caps with :first-letter, but make sure to apply it to p:first-of-type so your site not too ugly. </p> 
+<p>This is a second paragraph. If it had a drop-cap this site would be ugly!.</p>
+</body>
+
+</html>
+

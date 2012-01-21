@@ -1,0 +1,167 @@
+<!doctype html>
+<html> 
+  <head> 
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]--> 
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]--> 
+    <meta charset="utf-8" />
+    <title>CSS3: From Knowledgable to Ninja</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Tangerine" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+   <link rel="stylesheet" href="css/print.css" media="print"/>
+   <style>
+
+body, #presentation, #slides {
+	-webkit-transition: all 1.5s linear;
+	-moz-transition: all 1.5s linear;
+	-ms-transition: all 1.5s linear;
+	-o-transition: all 1.5s linear;
+	transition: all 1.5s linear;	
+}
+
+  /* CSS for Structural Selector Slide */
+.structural tr:first-child,
+.structural tr:last-child {
+  font-weight: bold;
+}
+.structural tr:nth-child(even) {
+  background-color: #CCC;
+}
+.structural tr:nth-child(3) {
+  color: #CCC;
+}
+.structural tr:first-of-type,
+.structural tr:last-of-type{
+  text-decoration:line-through;
+}
+.structural tr:nth-of-type(odd) {
+  background-color: #FFF;
+}
+.structural tr:nth-of-type(4n) {
+  color: #C61800;
+}
+.structural tr:nth-of-type(3n-1) {
+  font-style: italic;
+}
+/* SELECTION SLIDE */
+ .thisSlide *::selection {
+    	background-color: #C61800;
+        color: #ffffff;
+    }
+	
+
+
+/* brown: C7573A;*/
+   </style>  
+    
+  </head> 
+  <body> 
+  
+  <div id="topinfo">
+
+  </div>
+  
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">2</span> for comments.
+    </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    
+<div class="slide normal">
+    <header> 
+    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
+    </header>
+     <section class="content"> 
+     <p> ◈ Estelle Weyl</p>
+  <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
+     </section>
+    </div>
+  
+<!-- OUTLINE -->
+<div class="slide normal"> 
+ <header><h1>Course Outline</h1></header> 
+ <section class="content"> 
+  <ol>
+  	<li>Selectors</li>
+    <li>Specificity</li>
+    <li>Generated Content</li>
+    <li>Media Queries</li>
+    <li>Debugging</li>
+    <li>Colors &amp; Transparency </li>
+    <li>Fonts / Typography </li>
+  </ol>
+ </section>
+</div>
+
+    
+
+<div class="slide intro"> 
+     <header><h1>Part 2: Specificity</h1></header> 
+</div>
+  
+<!-- Specificity -->
+<div class="slide normal"> 
+     <header><h1>Understanding Specificity</h1></header> 
+     <section class="content"> 
+     <ul class="specificity">
+     	<li class="id">ID</li>
+        <li class="class">Class</li>
+        <li class="element">Element</li>
+     </ul>
+     <ul class="specificity nonspec">
+     	<li>1-0-0</li>
+        <li>0-1-0</li>
+        <li>0-0-1</li>
+     </ul>
+     <p><a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="_blank">PDF</a><br>
+     <a href="files/11_specificity.html" target="play">Examples</a></p>
+     </section>
+ </div> 
+
+<!-- Specificity PDF --> 
+<div class="slide" style="padding: 0;"> 
+     <object data="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" style="width:100%; height:100%; overflow:scroll"></object>
+</div>
+
+<!-- Specificity Notes -->
+<div class="slide normal"> 
+     <header><h1>Specificity: The less than obvious</h1></header> 
+     <section class="content">
+ <p>The * selector, or global selector, has no value.</p>
+ <pre>* {} 0-0-0 </pre>
+
+<p>Combinators, like ~, >, and + have no value</p>
+<pre>ul li {} 0-0-2
+ul > li {} 0-0-2</pre>
+
+<p>:not has no value, but parameter does</p>
+<pre>.myClass:not(p) {} 0-1-1</pre>
+
+<p>Specificity is not inheritance</p>
+     </section>
+</div>
+   
+<div class="slide intro"> 
+     <header><h1>Part 3: Generated Content</h1></header>
+    <h1><a href="part_03_generated.html">Next ➹</a></h1>
+</div>
+
+    
+    
+  
+   
+  </div>
+  <script src="css/slide.js"></script>
+  </body> 
+</html>

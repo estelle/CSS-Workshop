@@ -1,0 +1,43 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace;}
+ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+li {color: black;}
+li li {color: green;}
+</style>
+
+<style contenteditable>
+ol li {text-decoration: underline;}
+ol > li {text-decoration: overline;}
+
+li.myclass {color: red;}
+li.myclass ~ li {color: blue;} 
+li.myclass + li {color:orange;}
+</style>
+<title>CSS Selector Test</title>
+</head>
+
+<body>
+	<ol>
+     	<li>item 1</li>
+     	<li>item 2</li>
+     	<li>item 3
+        	<ul>
+     		<li>item a</li>
+     		<li>item b</li>
+     		<li>item c</li>
+            </ul>
+        </li>
+     	<li class="myclass">item 4 (myclass)</li>
+     	<li>item 5</li>
+     	<li>item 6</li>
+     	<li>item 7</li>
+        </ol>
+</body>
+</html>
+

@@ -1,0 +1,466 @@
+<!doctype html>
+<html> 
+  <head> 
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]--> 
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]--> 
+    <meta charset="utf-8" />
+    <title>CSS3: From Knowledgable to Ninja</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Tangerine" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+   <link rel="stylesheet" href="css/print.css" media="print"/>
+   <style>
+
+body, #presentation, #slides {
+	-webkit-transition: all 1.5s linear;
+	-moz-transition: all 1.5s linear;
+	-ms-transition: all 1.5s linear;
+	-o-transition: all 1.5s linear;
+	transition: all 1.5s linear;	
+}
+
+
+/* brown: C7573A;*/
+   </style>  
+    
+  </head> 
+  <body> 
+  
+  <div id="topinfo">
+
+  </div>
+  
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">2</span> for comments.
+    </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    
+<div class="slide intro">
+    <header> 
+    	<h1>CSS: from Knowledgable to Ninja</h1> 
+    </header>
+</div> 
+    
+<!-- Me -->
+<div class="slide normal"> 
+   <header><h1>Estelle Weyl</h1></header> 
+     <section class="content"> 
+  <p><a href="http://www.twitter.com/estellevw">@estellevw</a></p>
+  <p><a href="http://www.standardista.com">www.standardista.com</a></p>
+     </section>
+    </div>
+  
+<!-- OUTLINE -->
+<div class="slide normal"> 
+ <header><h1>Course Outline</h1></header> 
+ <section class="content"> 
+  <ol>
+  	<li>Selectors</li>
+    <li>Specificity</li>
+    <li>Generated Content</li>
+    <li>Media Queries</li>
+    <li>Debugging</li>
+    <li>Colors &amp; Transparency </li>
+    <li>Fonts / Typography </li>
+  </ol>
+ </section>
+</div>
+
+  
+<!-- Intro to exercises -->
+<div class="slide normal"> 
+     <header><h1>Exercise Files</h1></header> 
+     <section class="content"> 
+  		<p>Exercise files all open in the same seperate window</p>
+        <p> 
+     </section>
+    </div>
+    
+  
+<div class="slide"> 
+ <header><h1><a href="part_01_selectors.html" target="deck">Part 1: Selectors</a></h1></header> 
+<section class="content">
+        <ul style="-webkit-column-count:2;">
+            <li>Basic Selectors</li>
+            <li>Relational selectors </li>
+            <li>Selector list </li>
+            <li>selector support grid </li>
+            <li>Intro to Attribute selectors</li>
+            <li> Older attribute selectors </li>
+            <li>CSS3 Attribute Selectors  </li>
+            <li>Attribute Selectors Examples</li>
+            <li>Using attribute selectors </li>
+            <li>UI pseudo-classes </li>
+            <li>Form related UI pseudo-classes</li>
+            <li>UI selectors </li>
+            <li>List of Structural selectors</li>
+            <li>:root</li>
+            <li>First, last, &amp; only </li>
+            <li>nth pseudo-classes</li>
+            <li>Structural Selectors </li>
+            <li>:empty pseudo-class </li>
+            <li><strong>:not</strong> -  Negation pseudo-class</li>
+            <li>lang, target, anchor links</li>
+            <li>Pseudo elements </li>
+            <li>selectors tips </li>
+         </ul>
+     </section>
+ </div>
+    
+<div class="slide"> 
+    <header><h1>Part 2: Specificity</h1></header> 
+    <section class="content">
+        <ul>
+            <li>Understanding Specificity</li>
+            <li>Specificity PDF </li>
+            <li>Specificity Notes</li> 
+        </ul>
+    </section>
+</div>
+   
+<div class="slide"> 
+     <header><h1>Part 3: Generated Content</h1></header>
+    <section class="content">
+        <ul>
+            <li>before and ::after</li>
+            <li>Understanding Generated Content</li>
+            <li>Faux Elements</li>
+            <li>Syntax</li>
+            <li>Special Character</li>
+            <li>Simple Use Cases</li>
+            <li>Informative Links</li>
+            <li>Quote &amp; Thought bubbles</li>
+            <li>shapes</li>
+            <li>Other ideas</li>
+            <li>Exercise</li>
+        </ul>
+    </section>
+</div>
+
+<div class="slide"> 
+    <header><h1>Part 4:<br>Media Queries</h1></header> 
+    <section class="content">
+        <ul>
+            <li>Syntax</li>
+            <li>Old Media Queries</li>
+            <li>New Media Queries</li>
+            <li>More Media Query Tidbits</li>
+            <li>In action</li>
+            <li> mediaqueri.es</li>
+        </ul>
+    </section>
+</div> 
+ 
+
+<div class="slide"> 
+    <header><h1>Part 5: Debugging</h1></header> 
+    <section class="content">
+        <ul>
+            <li>Debuggers</li>
+            <li>Pseudo Elements / Shadow DOM</li>
+        </ul>
+    </section>
+</div>
+
+
+<div class="slide"> 
+    <header><h1>Part 6: Colors</h1></header> 
+    <section class="content">
+        <ul>
+            <li>Color formats</li>
+            <li>Color Keywords</li>
+            <li>RGB / RGBA</li>
+            <li>HSL / HSLA</li>
+            <li>HSLA / RGBA  / HEX conversion</li>
+            <li>Opacity</li>
+            <li>AlphaTransparency</li>
+            <li>AlphaTransparency Tips</li>
+            <li>Color Tips</li>
+        </ul>
+    </section>
+</div>
+  
+  
+
+<div class="slide normal"> 
+    <header><h1>Part 7: Fonts</h1></header> 
+    <section class="content"> 
+        <ul>
+            <li>@font-face </li>
+            <li>Font Services</li>
+            <li>Text Shadow</li>
+            <li>box-shadow</li>
+        </ul>
+    </section>
+</div>
+  
+<!-- -->
+
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> multi-column text</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+
+    
+
+      <!-- -->
+<div class="slide normal"> 
+     <header><h1>CSS3 gradients</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> linear gradients</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> radial gradients</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+
+   
+    
+    
+    
+  
+  
+
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> CSS3 Box Model</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> border-radius</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> border images</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> box shadows</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1>CSS3 backgrounds</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> background size</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> multiple background images</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> background-origin</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1>Clipping  </h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1>Transforms</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> transform origins</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1>CSS3 transitions</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1>Animating </h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+   
+    
+    
+   
+    
+    
+    
+  
+   
+  </div>
+  <script src="css/slide.js"></script>
+  </body> 
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+html, body, head, style {margin: 0; padding: 0;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 0 20px 20px; font-size: 1.5em; white-space: pre; font-family: monospace;}
+ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+li {color: black;}
+li li {color: green;}
+p, pre {font-size: 2em;padding: 0 20px 20px; background-color: #ccc; border-radius: 15px;}
+p {}
+</style>
+
+<style contenteditable>.thought {
+	border-radius: 50%;
+	border: 5px solid blue;
+	background-color: white;
+	position:relative;
+	padding: 40px;
+	background-color: #fff;
+	float: left;
+}
+.thought:before,
+.thought:after {
+	content: '';
+	border: 5px solid blue;
+	border-radius: 50%;
+	position:absolute;
+	left: 20%;
+	bottom: -30px;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+}
+.thought:after {
+	height: 20px;
+	width: 20px;
+	bottom: -50px;
+	left: 12%;	
+}
+</style>
+<title>Thought bubble</title>
+</head>
+
+<body>
+<p class="thought">This is a thought bubble</p>
+</body>
+</html>
+

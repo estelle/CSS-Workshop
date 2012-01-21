@@ -1,0 +1,676 @@
+<!doctype html>
+<html> 
+  <head> 
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]--> 
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]--> 
+    <meta charset="utf-8" />
+    <title>CSS3: From Knowledgable to Ninja</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Tangerine" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+   <link rel="stylesheet" href="css/print.css" media="print"/>
+   <style>
+
+body, #presentation, #slides {
+	-webkit-transition: all 1.5s linear;
+	-moz-transition: all 1.5s linear;
+	-ms-transition: all 1.5s linear;
+	-o-transition: all 1.5s linear;
+	transition: all 1.5s linear;	
+}
+
+  /* CSS for Structural Selector Slide */
+.structural tr:first-child,
+.structural tr:last-child {
+  font-weight: bold;
+}
+.structural tr:nth-child(even) {
+  background-color: #CCC;
+}
+.structural tr:nth-child(3) {
+  color: #CCC;
+}
+.structural tr:first-of-type,
+.structural tr:last-of-type{
+  text-decoration:line-through;
+}
+.structural tr:nth-of-type(odd) {
+  background-color: #FFF;
+}
+.structural tr:nth-of-type(4n) {
+  color: #C61800;
+}
+.structural tr:nth-of-type(3n-1) {
+  font-style: italic;
+}
+/* SELECTION SLIDE */
+ .thisSlide *::selection {
+    	background-color: #C61800;
+        color: #ffffff;
+    }
+	
+/* INTRO TO GENERATED CONTENT */
+.beforeafter::before {
+  	content: "before content - ";
+  }	
+.beforeafter::after{
+	content: " - after content";
+  }
+.beforeafter:before,
+.beforeafter:after {font-weight: bold;}
+
+/* GENERATED CONTENT: 2 FREE FAUX ELEMENTS */
+.beforeafterdivcont {position:relative;}
+.beforeafterdiv,
+.beforeafterdiv:before,
+.beforeafterdiv:after {
+	height: 100px;
+	content: "";
+	border: 1px solid blue;
+	position:relative;
+	background-color: red;
+	-webkit-transform: none;
+	display:inline-block;
+}
+
+.beforeafterdiv:before {
+	content: "before";	
+	background-color: rgba(0,0,0,0.5); 
+	margin-right: -50px;
+	color: #fff;
+}
+.beforeafterdiv:after {
+	content: "after";
+	background-color: rgba(0,0,0,0.5);
+	margin-left: -50px; 
+	color: #fff;
+	}
+
+/* GENERATED CONTENT : LINKS */
+.ba li {list-style-type: none; margin-bottom: 20px;}
+.ba a:before {
+  color: #ffffff;
+  background: #000000;
+  font-size: 120%;
+  padding: 2px 5px;
+  display: inline-block;
+  width: 1.2em;
+  margin-right: 10px;
+  text-align: center;
+}
+.ba a[href^="mailto:"]:before {
+  content: "\2709 ";
+}
+.ba a[href^="tel:"]:before {
+  content: "\2706";
+}
+.ba a[href$="vcs"]:before {
+  content: "\231A";
+}
+
+/* GENERATED CONTENT -- QUOTES */
+blockquote.gc p:before, blockquote.gc p:after {
+  font-size: 2em;
+  color: #C7573A;
+  line-height: 0;
+  vertical-align: middle; 
+}
+blockquote.gc p:first-child:before {
+  content: "\275D"; 
+  margin: 0 5px 0 -48px;
+}
+blockquote.gc p:last-child:after {
+  content: "\275E";
+  margin: 0 -40px 0 5px;
+}
+
+/* THOUGHT BUBBLE & QUOTE */
+.quote {
+	border-radius: 10px;
+	position:relative;
+	padding: 20px;
+	background-color: red;
+	color: white; 
+	float:left;	
+}
+.quote:after {
+	position:absolute;
+	content: '';
+	width: 0;
+	height:0;
+	border: 20px solid blue;
+	border-color: red transparent transparent transparent;
+	bottom: -39px;
+	left: 20px;	
+}
+
+.thought {
+	border-radius: 50%;
+	border: 5px solid blue;
+	background-color: white;
+	float: right;
+	position:relative;
+	padding: 40px;
+	background-color: #fff;
+	overflow:visible;
+	margin-bottom: 80px;
+}
+.thought:before,
+.thought:after {
+	content: '';
+	border: 5px solid blue;
+	border-radius: 50%;
+	position:absolute;
+	left: 20%;
+	bottom: -30px;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+}
+.thought:after {
+	height: 20px;
+	width: 20px;
+	bottom: -50px;
+	left: 12%;	
+}
+
+/* TOOL TIP */
+p [data-tooltip="true"] {
+	border-bottom: 1px solid;
+	text-decoration:none;
+	line-height:1;
+	display:inline;
+	z-index: 0;
+}
+p [data-tooltip="true"]:hover {	
+	position: relative;
+	}
+p [data-tooltip="true"]:hover:before {
+	content: attr(title);
+	position: absolute; 
+	top: 45px;
+	left: 0;
+	background-color: #C7573A;
+	color: white;
+	max-width: 10em;
+	min-width: 5em;
+	font-style: normal;
+	padding: 5px;
+	border-radius: 10px;
+	text-align:center;
+	z-index: 100;
+}
+p [data-tooltip="true"]:hover:after {
+	content: "";
+	position:absolute;
+	bottom: -10px;
+	border: 15px solid;
+	position: absolute; left: 20px;
+	border-color:  transparent transparent #C7573A ; 	
+}
+/* MEDIA QUERIES */
+
+@media only screen and (orientation: portrait) {
+	
+	body, #presentation, #slides{
+	background: indianred;
+	}
+}
+@media only screen and (max-width: 480px) {
+	
+	body, #presentation, #slides{
+	background: palegoldenrod;
+	}
+}
+
+/* COLORS */
+.namedcolors span {padding:1px 3px; display:block; color:rgba(0,0,0,0.5); font-size:25px;}
+.givemespace span {font-size: 18px;}
+.namedcolors li {list-style-type: none; font-size:12px; margin:2px; padding:0; float:left;  color: #999; text-shadow: none; text-align:center;}
+.namedcolors {clear:both; margin-bottom: 10px; background-color: #fff; height: 1.8em; }
+.givemespace {margin: -3px 0 0 -40px;  height: auto;}
+
+/* HSL COLOR PICKER */
+#hslas, #hslal, #hslaa, #hslah {
+width: 361px;
+height: 20px;
+display: inline-block;
+}#hslah {
+width: auto;
+}#hslah i {
+display: inline-block;
+width: 1px;
+height: 20px;
+}
+.hsl-value {display: inline-block; width: 3em;}
+#hsl-example {font-size: 100px; font-weight: bold; text-align:center;}
+
+.opacity, .rgba {
+			background-image: /* Safari 5 and earlier */
+				-webkit-gradient(linear, 100% 100%, 0 0,
+					color-stop(.25, rgba(255, 255, 255, 0.2)), 
+					color-stop(.25, rgba(255, 255, 255, 0)),
+					color-stop(.5, rgba(255, 255, 255, 0)), 
+					color-stop(.5, rgba(255, 255, 255, 0.2)),
+					color-stop(.75, rgba(255, 255, 255, 0.2)), 
+					color-stop(.75, rgba(255, 255, 255, 0)), 
+					color-stop(1, rgba(255, 255, 255, 0)));
+		background-image:	/* Chrome and Webkit Nightly build */
+			-webkit-linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+		background-image:	/* Firefox */
+			-moz-linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+			background-image:	/* IE10 */
+			-ms-linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+			background-image:	/* opera 11+ */
+			-o-linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+			background-image:	
+			linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+			background-color: #BDD9D5;
+			background-size: 40px 40px;
+			background-repeat:repeat;
+}
+.opacity, .opacity div {
+	border-radius: 10px;
+}
+.opacity pre {
+	background-color: #fff;
+		
+}
+
+/* shadow dom */
+.scrollbar ::-webkit-scrollbar {
+    margin-right: 5px;
+    background-color: #bdd9d5;
+	border-radius: 6px;
+    width: 12px;
+}
+.scrollbar ::-webkit-scrollbar-track {
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+.scrollbar ::-webkit-scrollbar-thumb {
+    border: 1px #eee solid;
+    border-radius: 12px;
+    background: #C7573A;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+    -webit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+.scrollbar ::-webkit-scrollbar-thumb:window-inactive {
+    background: #bbb;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+}
+.scrollbar ::-webkit-scrollbar-thumb:hover { background: #b7472A }	
+.scrollbar pre {
+	width: 700px;
+	height: 200px;
+	overflow:auto;
+}	
+
+/* text -shadow */
+.textshadow {
+    text-shadow: 
+    0 1px #cccccc, 	
+    0 2px #c9c9c9, 
+    0 3px #bbbbbb, 
+    0 4px #b9b9b9, 
+    0 5px #aaaaaa, 
+    0 6px  1px  rgba(0, 0, 0, 0.1), 
+    0 0    5px  rgba(0, 0, 0, 0.1), 
+    0 1px  3px  rgba(0, 0, 0, 0.3), 
+    0 3px  5px  rgba(0, 0, 0, 0.2), 
+    0 5px  10px rgba(0, 0, 0, 0.25), 
+    0 10px 10px rgba(0, 0, 0, 0.2), 
+    0 20px 20px rgba(0, 0, 0, 0.15);
+	font-size: 60px;
+	font-weight: bold;
+}
+
+/* brown: C7573A;*/
+   </style>  
+    
+  </head> 
+  <body> 
+  
+  <div id="topinfo">
+
+  </div>
+  
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">2</span> for comments.
+    </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    
+<div class="slide intro">
+    <header> 
+    	<h1>CSS: from Knowledgable to Ninja</h1> 
+    </header>
+</div> 
+    
+       
+<div class="slide normal">
+    <header> 
+    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
+    </header>
+     <section class="content"> 
+     <p> ◈ Estelle Weyl</p>
+  <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
+     </section>
+    </div>
+  
+<!-- OUTLINE -->
+<div class="slide normal"> 
+ <header><h1>Course Outline</h1></header> 
+ <section class="content"> 
+  <ol>
+  	<li>Selectors</li>
+    <li>Specificity</li>
+    <li>Generated Content</li>
+    <li>Media Queries</li>
+    <li>Debugging</li>
+    <li>Colors &amp; Transparency </li>
+    <li>Fonts / Typography </li>
+  </ol>
+ </section>
+</div>
+  
+
+
+
+
+
+  
+
+<div class="slide intro"> 
+     <header><h1>Part 7: Fonts</h1></header> 
+    </div>
+    
+   
+<!-- @font-face -->    
+<div class="slide"> 
+<header><h1>@font-face</h1></header> 
+<section class="content"> 
+<pre contenteditable style="font-size: 100%">
+@font-face {
+  font-family: 'blah';
+  src: url('blah.eot');
+  src: url('blah.eot?#iefix') 
+         format('embedded-opentype'),
+     url('blah.woff') format('woff'),
+     url('blah.ttf') format('truetype'),
+     url('blah.svg#blahRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+</pre>
+<pre contenteditable style="font-size: 100%">body {
+  font-family: 'blah', arial, san-serif;
+}</pre>
+
+</section>
+</div>
+     
+<!-- @font-face support-->
+<div class="slide"> 
+<header><h1>@font-face</h1></header> 
+<section class="content">
+<pre contenteditable>@font-face {
+  font-family: yourFontName;
+  src: url(fontfile) [, url(fontfile)]*;
+  [font-weight: bold|normal];
+  [font-style: italic|normal];
+  [charset: characterSet;]
+}</pre>
+
+<table class="fontfamily" cellspacing="0"><thead class="icons">
+	<tr>
+    <th>File</th>
+    <th><span class="chrome browser">Chrome</span></th>
+    <th><span  class="firefox browser">Firefox</span></th>
+    <th><span  class="opera browser">Opera</span></th>
+    <th><span  class="safari browser">Safari</span></th>
+    <th><span  class="ie browser">Internet Explorer</span></th>
+    <th><span  class="safari browser">iOS mobile</span></th>
+    <th><span  class="chrome browser">Android</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    	<th>EOT</th>
+        <td>&Chi;</td>
+        <td>&Chi;</td>
+        <td>&Chi;</td>
+        <td>&Chi;</td>
+        <td>✓</td>
+        <td>&Chi;</td>
+        <td>&Chi;</td>
+    </tr>
+    <tr>
+    	<th>TTF/OTF</th>
+        <td>✓</td>
+        <td>✓ (3.5+)</td>
+        <td>✓ (10+)</td>
+        <td>✓ (iOS 4.2)</td>
+        <td>(9)</td>
+        <td>✓ 4.2</td>
+        <td>✓ 2.2</td>
+    </tr>
+    <tr>
+    	<th>SVG</th>
+        <td>✓</td>
+        <td>&Chi;</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>&Chi;</td>
+        <td>✓</td>
+        <td>✓ (3)</td>
+    </tr>
+    <tr>
+    	<th>WOFF</th>
+        <td>✓ (5+)</td>
+        <td>✓ (3.6+)</td>
+        <td>✓ (11.1+)</td>
+        <td>✓ (5.1)</td>
+        <td>✓ (9)</td>
+        <td>✓ (5)</td>
+        <td>&Chi;</td>
+    </tr>
+    
+    </tbody>
+    </table>
+  </section>
+  </div>
+ 
+ 
+<!--Font resources -->
+<div class="slide normal"> 
+     <header><h1>Font Services</h1></header> 
+     <section class="content">  
+   <ul>
+    	<li><a href="http://www.fontsquirrel.com/fontface/generator">FontSquirrel @font-face generator</a></li>
+		<li><a href="http://www.google.com/webfonts">Google fonts</a></li>
+    </ul>
+</section>
+</div>    
+ 
+   
+    
+  
+    
+<div class="slide normal"> 
+<header><h1>Text Shadows</h1></header> 
+<section class="content">
+<ul class="opacity" style="padding: 10px 0 30px;">
+<li>
+<pre contenteditable>
+text-shadow: left top blur color;
+</pre>
+</li>
+<li class="angled" style="padding-right: 10px;"><span style="text-shadow: 0 5px 1px  rgba(0,0,0,0.2);">Transparent Shadows</span>
+<pre contenteditable style="text-shadow: 0 5px 1px  rgba(0,0,0,0.2); margin-left: 20px;">
+.trans { text-shadow: 0 5px 1px rgba(0,0,0,0.2);}</pre></li>
+<li class="angled" style="padding-right: 10px;"><span style="text-shadow: 0 5px 1px  #666">Solid Shadows</span>
+
+<pre contenteditable style="margin-left: 20px;text-shadow: 0 5px 1px  #666">
+.solid { text-shadow: 0 5px 1px #999;}</pre></li>
+</ul>
+</section>
+</div>
+     
+<!-- Text Shadow -->
+<div class="slide"> 
+<section class="content"> 
+<h1 class="textshadow" contenteditable>Text Shadow</h1>
+<pre contenteditable>.textshadow {
+    text-shadow: 
+    0 1px #cccccc, 	
+    0 2px #c9c9c9, 
+    0 3px #bbbbbb, 
+    0 4px #b9b9b9, 
+    0 5px #aaaaaa, 
+    0 6px  1px  rgba(0, 0, 0, 0.1), 
+    0 0    5px  rgba(0, 0, 0, 0.1), 
+    0 1px  3px  rgba(0, 0, 0, 0.3), 
+    0 3px  5px  rgba(0, 0, 0, 0.2), 
+    0 5px  10px rgba(0, 0, 0, 0.25), 
+    0 10px 10px rgba(0, 0, 0, 0.2), 
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}</pre>
+ <ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox 3.5</li>
+         <li class="opera">Opera 9.5</li>
+         <li class="ie new">IE 10?</li>
+     </ul>
+</section>
+</div>
+ 
+<!-- text-shadow -->    
+<div class="slide"> 
+<header><h1>text-shadow</h1></header> 
+<section class="content">
+<p>Syntax</p>
+<pre contenteditable style="text-shadow:  0 2px 5px hsla(0, 0%, 0%, 0.2)">text-shadow:  0 2px 5px hsla(0, 0%, 0%, 0.2);
+text-shadow: [horiz] [vert] [blur] [color];</pre> 
+<ul>
+	<li>Example from Paul Irish's <a href="http://mothereffingtextshadow.com/">MotherEffingTextShadow</a></li>
+	<li>John Allsop's <a href="http://westciv.com/tools/shadows/">text-shadow tool</a></li>
+</ul>
+</section>
+</div>    
+ 
+<div class="slide normal">
+	<object data="http://westciv.com/tools/shadows/" style="width: 100%; height:100%;"></object>
+</div>
+<div class="slide normal">
+	<object data="http://mothereffingtextshadow.com/" style="width: 100%; height:100%;"></object>
+</div>     
+<!-- box-shadow< --> 
+<div class="slide"> 
+<header><h1>box-shadow</h1></header> 
+<section class="content boxshadow"> 
+<b style="float:right; position:relative; top: 20px; right: 20px;"></b><pre contenteditable>
+box-shadow:  
+    inset 3px -3px 0 3px green, 
+    inset -3px 3px 0 3px yellow,
+    3px 3px 0 3px blue, 
+    -3px -3px 0 3px magenta; 
+box-shadow: 
+    inset? [horiz] [vert] [blur] [spread] [color];
+</pre>
+<ul class="notes">
+<li>Last shadow drawn 'first', under previous shadow</li>
+<li>Should still be prefixed for best support</li>
+</ul>
+<ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome / Chrome 10</li>
+         <li class="safari">Safari 3 / Safari 5.1</li>
+         <li class="firefox">Firefox 3.5 / Firefox 4.0</li>
+         <li class="opera">Opera 9 / Opera 10.5</li>
+         <li class="ie new"> <br/>IE 9</li>
+     </ul>
+</section>
+</div>   
+      
+  
+<!-- -->
+
+   
+    
+    
+    
+  
+  
+  <!-- -->
+<div class="slide normal"> 
+     <header><h1> multi-column text</h1></header> 
+     <section class="content"> 
+  
+     </section>
+    </div>
+    
+
+  
+    
+   
+    
+    
+    
+  
+   
+  </div>
+  <script src="css/slide.js"></script>
+  </body> 
+</html>

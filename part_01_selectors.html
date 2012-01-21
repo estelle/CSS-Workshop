@@ -1,0 +1,1033 @@
+<!doctype html>
+<html> 
+  <head> 
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]--> 
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]--> 
+    <meta charset="utf-8" />
+    <title>CSS3: From Knowledgable to Ninja</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Tangerine" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+   <link rel="stylesheet" href="css/print.css" media="print"/>
+   <style>
+
+body, #presentation, #slides {
+	-webkit-transition: all 1.5s linear;
+	-moz-transition: all 1.5s linear;
+	-ms-transition: all 1.5s linear;
+	-o-transition: all 1.5s linear;
+	transition: all 1.5s linear;	
+}
+
+  /* CSS for Structural Selector Slide */
+.structural tr:first-child,
+.structural tr:last-child {
+  font-weight: bold;
+}
+.structural tr:nth-child(even) {
+  background-color: #CCC;
+}
+.structural tr:nth-child(3) {
+  color: #CCC;
+}
+.structural tr:first-of-type,
+.structural tr:last-of-type{
+  text-decoration:line-through;
+}
+.structural tr:nth-of-type(odd) {
+  background-color: #FFF;
+}
+.structural tr:nth-of-type(4n) {
+  color: #C61800;
+}
+.structural tr:nth-of-type(3n-1) {
+  font-style: italic;
+}
+/* SELECTION SLIDE */
+ .thisSlide *::selection {
+    	background-color: #C61800;
+        color: #ffffff;
+    }
+	
+/* INTRO TO GENERATED CONTENT */
+.beforeafter::before {
+  	content: "before content - ";
+  }	
+.beforeafter::after{
+	content: " - after content";
+  }
+.beforeafter:before,
+.beforeafter:after {font-weight: bold;}
+
+/* GENERATED CONTENT: 2 FREE FAUX ELEMENTS */
+.beforeafterdivcont {position:relative;}
+.beforeafterdiv,
+.beforeafterdiv:before,
+.beforeafterdiv:after {
+	height: 100px;
+	content: "";
+	border: 1px solid blue;
+	position:relative;
+	background-color: red;
+	-webkit-transform: none;
+	display:inline-block;
+}
+
+.beforeafterdiv:before {
+	content: "before";	
+	background-color: rgba(0,0,0,0.5); 
+	margin-right: -50px;
+	color: #fff;
+}
+.beforeafterdiv:after {
+	content: "after";
+	background-color: rgba(0,0,0,0.5);
+	margin-left: -50px; 
+	color: #fff;
+	}
+
+/* GENERATED CONTENT : LINKS */
+.ba li {list-style-type: none; margin-bottom: 20px;}
+.ba a:before {
+  color: #ffffff;
+  background: #000000;
+  font-size: 120%;
+  padding: 2px 5px;
+  display: inline-block;
+  width: 1.2em;
+  margin-right: 10px;
+  text-align: center;
+}
+.ba a[href^="mailto:"]:before {
+  content: "\2709 ";
+}
+.ba a[href^="tel:"]:before {
+  content: "\2706";
+}
+.ba a[href$="vcs"]:before {
+  content: "\231A";
+}
+
+/* GENERATED CONTENT -- QUOTES */
+blockquote.gc p:before, blockquote.gc p:after {
+  font-size: 2em;
+  color: #C7573A;
+  line-height: 0;
+  vertical-align: middle; 
+}
+blockquote.gc p:first-child:before {
+  content: "\275D"; 
+  margin: 0 5px 0 -48px;
+}
+blockquote.gc p:last-child:after {
+  content: "\275E";
+  margin: 0 -40px 0 5px;
+}
+
+/* THOUGHT BUBBLE & QUOTE */
+.quote {
+	border-radius: 10px;
+	position:relative;
+	padding: 20px;
+	background-color: red;
+	color: white; 
+	float:left;	
+}
+.quote:after {
+	position:absolute;
+	content: '';
+	width: 0;
+	height:0;
+	border: 20px solid blue;
+	border-color: red transparent transparent transparent;
+	bottom: -39px;
+	left: 20px;	
+}
+
+.thought {
+	border-radius: 50%;
+	border: 5px solid blue;
+	background-color: white;
+	float: right;
+	position:relative;
+	padding: 40px;
+	background-color: #fff;
+	overflow:visible;
+	margin-bottom: 80px;
+}
+.thought:before,
+.thought:after {
+	content: '';
+	border: 5px solid blue;
+	border-radius: 50%;
+	position:absolute;
+	left: 20%;
+	bottom: -30px;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+}
+.thought:after {
+	height: 20px;
+	width: 20px;
+	bottom: -50px;
+	left: 12%;	
+}
+
+/* TOOL TIP */
+p [data-tooltip="true"] {
+	border-bottom: 1px solid;
+	text-decoration:none;
+	line-height:1;
+	display:inline;
+	z-index: 0;
+}
+p [data-tooltip="true"]:hover {	
+	position: relative;
+	}
+p [data-tooltip="true"]:hover:before {
+	content: attr(title);
+	position: absolute; 
+	top: 45px;
+	left: 0;
+	background-color: #C7573A;
+	color: white;
+	max-width: 10em;
+	min-width: 5em;
+	font-style: normal;
+	padding: 5px;
+	border-radius: 10px;
+	text-align:center;
+	z-index: 100;
+}
+p [data-tooltip="true"]:hover:after {
+	content: "";
+	position:absolute;
+	bottom: -10px;
+	border: 15px solid;
+	position: absolute; left: 20px;
+	border-color:  transparent transparent #C7573A ; 	
+}
+/* MEDIA QUERIES */
+
+@media only screen and (orientation: portrait) {
+	
+	body, #presentation, #slides{
+	background: indianred;
+	}
+}
+@media only screen and (max-width: 480px) {
+	
+	body, #presentation, #slides{
+	background: palegoldenrod;
+	}
+}
+
+/* COLORS */
+.namedcolors span {padding:1px 3px; display:block; color:rgba(0,0,0,0.5); font-size:25px;}
+.givemespace span {font-size: 18px;}
+.namedcolors li {list-style-type: none; font-size:12px; margin:2px; padding:0; float:left;  color: #999; text-shadow: none; text-align:center;}
+.namedcolors {clear:both; margin-bottom: 10px; background-color: #fff; height: 1.8em; }
+.givemespace {margin: -3px 0 0 -40px;  height: auto;}
+
+/* HSL COLOR PICKER */
+#hslas, #hslal, #hslaa, #hslah {
+width: 361px;
+height: 20px;
+display: inline-block;
+}#hslah {
+width: auto;
+}#hslah i {
+display: inline-block;
+width: 1px;
+height: 20px;
+}
+.hsl-value {display: inline-block; width: 3em;}
+#hsl-example {font-size: 100px; font-weight: bold; text-align:center;}
+
+.opacity, .rgba {
+			background-image: /* Safari 5 and earlier */
+				-webkit-gradient(linear, 100% 100%, 0 0,
+					color-stop(.25, rgba(255, 255, 255, 0.2)), 
+					color-stop(.25, rgba(255, 255, 255, 0)),
+					color-stop(.5, rgba(255, 255, 255, 0)), 
+					color-stop(.5, rgba(255, 255, 255, 0.2)),
+					color-stop(.75, rgba(255, 255, 255, 0.2)), 
+					color-stop(.75, rgba(255, 255, 255, 0)), 
+					color-stop(1, rgba(255, 255, 255, 0)));
+		background-image:	/* Chrome and Webkit Nightly build */
+			-webkit-linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+		background-image:	/* Firefox */
+			-moz-linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+			background-image:	/* IE10 */
+			-ms-linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+			background-image:	/* opera 11+ */
+			-o-linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+			background-image:	
+			linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+			background-color: #BDD9D5;
+			background-size: 40px 40px;
+			background-repeat:repeat;
+}
+.opacity, .opacity div {
+	border-radius: 10px;
+}
+.opacity pre {
+	background-color: #fff;
+		
+}
+
+/* shadow dom */
+.scrollbar ::-webkit-scrollbar {
+    margin-right: 5px;
+    background-color: #bdd9d5;
+	border-radius: 6px;
+    width: 12px;
+}
+.scrollbar ::-webkit-scrollbar-track {
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+.scrollbar ::-webkit-scrollbar-thumb {
+    border: 1px #eee solid;
+    border-radius: 12px;
+    background: #C7573A;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+    -webit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+.scrollbar ::-webkit-scrollbar-thumb:window-inactive {
+    background: #bbb;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+}
+.scrollbar ::-webkit-scrollbar-thumb:hover { background: #b7472A }	
+.scrollbar pre {
+	width: 700px;
+	height: 200px;
+	overflow:auto;
+}	
+
+/* text -shadow */
+.textshadow {
+    text-shadow: 
+    0 1px #cccccc, 	
+    0 2px #c9c9c9, 
+    0 3px #bbbbbb, 
+    0 4px #b9b9b9, 
+    0 5px #aaaaaa, 
+    0 6px  1px  rgba(0, 0, 0, 0.1), 
+    0 0    5px  rgba(0, 0, 0, 0.1), 
+    0 1px  3px  rgba(0, 0, 0, 0.3), 
+    0 3px  5px  rgba(0, 0, 0, 0.2), 
+    0 5px  10px rgba(0, 0, 0, 0.25), 
+    0 10px 10px rgba(0, 0, 0, 0.2), 
+    0 20px 20px rgba(0, 0, 0, 0.15);
+	font-size: 60px;
+	font-weight: bold;
+}
+
+/* brown: C7573A;*/
+   </style>  
+    
+  </head> 
+  <body> 
+  
+  <div id="topinfo">
+
+  </div>
+  
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">2</span> for comments.
+    </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    
+<div class="slide intro">
+    <header> 
+    	<h1>CSS: from Knowledgable to Ninja</h1> 
+    </header>
+</div> 
+    
+<!-- Me -->
+<div class="slide normal"> 
+   <header><h1>Estelle Weyl</h1></header> 
+     <section class="content"> 
+  <p><a href="http://www.twitter.com/estellevw">@estellevw</a></p>
+  <p><a href="http://www.standardista.com">www.standardista.com</a></p>
+     </section>
+    </div>
+  
+<!-- OUTLINE -->
+<div class="slide normal"> 
+ <header><h1>Course Outline</h1></header> 
+ <section class="content"> 
+  <ol>
+  	<li>Selectors</li>
+    <li>Specificity</li>
+    <li>Generated Content</li>
+    <li>Media Queries</li>
+    <li>Debugging</li>
+    <li>Colors &amp; Transparency </li>
+    <li>Fonts / Typography </li>
+  </ol>
+ </section>
+</div>
+
+  
+<!-- Intro to exercises -->
+<div class="slide normal"> 
+     <header><h1>Exercise Files</h1></header> 
+     <section class="content"> 
+  		<p>Exercise files all open in the same seperate window</p>
+        <p> 
+     </section>
+    </div>
+    
+  
+<div class="slide intro"> 
+ <header><h1>Part 1: Selectors</h1></header> 
+</div>
+    
+   
+<!-- Basic Selectors-->
+<div class="slide normal light" id="slcElement"> 
+     <header><h1>Basic Selectors</h1></header> 
+     <section class="content"> 
+     <pre style="font-size:100%; line-height:1.5">&lt;ul&gt; 
+ &lt;li id=&quot;myID&quot; class=&quot;myClass&quot;&gt;item 1&lt;/li&gt;
+ &lt;li class=&quot;myClass&quot;&gt;item 2&lt;/li&gt;    
+ &lt;li&gt;item 3&lt;/li&gt;
+&lt;/ul&gt; </pre>
+<dl class="inline">
+<dt><b class="imp">#</b>myID</dt>
+<dd>ID</dd>
+<dt><b class="imp">.</b>myClass</dt>
+<dd>class</dd>
+<dt class="imp">li</dt>
+<dd>tag name</dd>
+</dl>
+     </section>
+ </div>
+    
+<!-- Relational selectors -->
+<div class="slide normal" id="slcRelational"> 
+     <header><h1>Relational selectors</h1></header> 
+     <section class="content"> 
+     <div class="ex right">
+     	<ol>
+     	<li>item 1</li>
+     	<li>item 2</li>
+     	<li>item 3
+        	<ul>
+     		<li>item a</li>
+     		<li>item b</li>
+     		<li>item c</li>
+            </ul>
+        </li>
+     	<li>item 4</li>
+     	<li>item 5</li>
+     	<li>item 6</li>
+     	<li>item 7</li>
+        </ol>
+        </div>
+<dl>
+  <dt>ul li</dt>
+  <dd>descendant selector<br />
+    matches nested &lt;li&gt;s</dd>
+  <dt>ol &gt; li</dt>
+  <dd><em>child selector</em> <br />
+    matches &lt;li&gt;s in &lt;ol&gt; but not nested &lt;ul&gt;</dd>
+  <dt>li.myClass + li</dt>
+  <dd><em>adjacent sibling</em> </dd>
+  <dt><strong class="new">NEW  </strong><span style="background-color:#eee; padding:3px 8px; position:relative; left: 20px; margin-left: -20px;">(IE7+)</span><br />
+    li.myClass ~ li</dt>
+  <dd>
+    <em>general sibling	selector</em><br />
+    matches later siblings, but not nested.</dd>
+</dl>
+<p><a href="files/00_basic.html" target="play">Try it out</a></p>
+     </section>
+    </div> 
+    
+  
+  
+<!-- Selector list -->
+<div class="slide normal"> 
+     <header><h1>Lots 'o Selectors</h1></header> 
+     <section class="content"> 
+  
+<ul class="columns">
+  <li>*</li>
+  <li>E</li>
+  <li>.class</li>
+  <li>#id</li>
+  <li>E F</li>
+  <li>E &gt; F</li>
+  <li>E + F</li>
+  <li>E[attribute]</li>
+  <li>E[attribute=value]</li>
+  <li>E[attribute~=value]</li>
+  <li>E[attribute|=value]</li>
+  <li>:first-child</li>
+  <li>:lang()</li>
+  <li>:before</li>
+  <li>::before</li>
+  <li>::selection</li>
+  <li>:after</li>
+  <li>::after</li>
+  <li>:first-letter</li>
+  <li>::first-letter</li>
+  <li>:first-line</li>
+  <li>::first-line</li>
+  <li>E[attribute^=value]</li>
+  <li>E[attribute$=value]</li>
+  <li>E[attribute*=value]</li>
+  <li>E ~ F</li>
+  <li>:root</li>
+  <li>:last-child</li>
+  <li>:only-child</li>
+  <li>:nth-child()</li>
+  <li>:nth-last-child()</li>
+  <li>:first-of-type</li>
+  <li>:last-of-type</li>
+  <li>:only-of-type</li>
+  <li>:nth-of-type()</li>
+  <li>:nth-last-of-type()</li>
+  <li>:empty</li>
+  <li>:not()</li>
+  <li>:target</li>
+  <li>:enabled</li>
+  <li>:disabled</li>
+  <li>:checked</li>
+  <li>:indeterminate</li>
+  <li>:default</li>
+  <li>:valid</li>
+  <li>:invalid</li>
+  <li>:in-range</li>
+  <li>:out-of-range</li>
+  <li>:required</li>
+  <li>:optional</li>
+  <li>:read-only</li>
+  <li>:read-write</li>
+</ul>
+     </section>
+    </div>
+    
+<!-- Standardista: selector support grid -->   
+<div class="slide" style="padding: 0;"> 
+     <object data="http://www.standardista.com/css3/css3-selector-browser-support/" style="width:100%; height:100%;"></object> </div>
+    
+    
+  
+<!-- Attribute selectors-->
+<div class="slide normal"> 
+     <header><h1>Attribute selectors</h1></header> 
+     <section class="content"> 
+  <dl>
+  <dt>element[attribute]</dt>
+  <dd>Select elements containing the named attribute</dd>
+</dl>
+<pre><strong>img[alt] {}</strong>
+  <u>selects:</u>     
+     &lt;img src=&quot;image.jpg&quot; <strong>alt</strong>=&quot;accessible&quot;&gt;     
+  <u>does not select: </u>
+     &lt;img src=&quot;image.jpg&quot; title=&quot;inaccessible&quot;&gt;  
+<strong>form [type] {}</strong> 
+  <u>selects:</u>
+     &lt;input <strong>type</strong>=date&gt;  
+  <u>does not select:</u>
+     &lt;select&gt;</pre>
+<p>IE6 sucks <br />
+  IE7 support basic non-empty attribute</p>
+     </section>
+    </div>
+      
+<!-- Older attribute selectors -->
+<div class="slide normal"> 
+     <header><h1>Older attribute selectors</h1></header> 
+     <section class="content"> 
+  <dl>
+  <dt>E[attr]</dt>
+  <dd>Element E that has the attribute attr with any value.</dd>
+  <dt>E[attr=&quot;val&quot;]</dt>
+  <dd>Element E that has the attribute attr with the exact, case-insensitive, value <em>val</em>.</dd>
+  <dt>E[attr|=val]</dt>
+  <dd>Element E whose attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
+    <pre>p[lang|=&quot;en&quot;]{/*    &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
+  </dd>
+  <dt>E[attr~=val]</dt>
+  <dd>Element E whose attribrute attr has within its value the space-separated full word val.<br />
+    <pre>a[title~=more] {/* &lt;a title=&quot;want more info about this?&quot;&gt;}</pre>
+  </dd>
+  <dt>&nbsp;</dt></dl>
+     </section>
+    </div>
+       
+<!-- CSS3 Attribute Selectors -->
+<div class="slide normal"> 
+     <header><h1>CSS3 Attribute Selectors</h1></header> 
+     <section class="content">
+     <dl>
+  <dt>E[attr^=val]</dt>
+  <dd>Element E whose attribute <em>attr</em> starts with the value <em>val</em>.<br />
+    <pre>a[href^=mailto] {background-image: url(emailicon.gif);}  
+a[href^=http]:after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
+  </dd>
+  <dt>E[attr$=val]</dt>
+  <dd>Element E whose attribute <em>attr</em> ends in <em>val</em> . <br />
+    <pre>a[href$=pdf] {background-image: url(pdficon.gif);}
+a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
+  </dd>
+  <dt>E[attr*=val]</dt>
+  <dd>Element E whose attribute <em>attr </em>matches <em>val</em> anywhere within the attribute. Similar to E[attr~=val] above, except the <em>val</em> can be part of a word.</dd>
+</dl>
+<p>Note: Multiple attributes work! a[title][href]</p> 
+     </section>
+ </div>    
+  
+<!-- Attribute Selectors Recap -->
+<div class="slide normal"> 
+     <header><h1>Attribute Selectors Recap</h1></header> 
+     <section class="content"> 
+     <pre contenteditable style="float:left; width: 45%; margin: 0 20px 0 0;">
+input[placeholder] { 
+<b class="notes">/* matches any input with a placeholder */</b>}
+input[type=email] {
+<b class="notes">/* exact match */</b>}
+abbr[title~=unicorn] { 
+<b class="notes">/* matches unicorn but not unicorns */</b>}
+abbr[title|=en] { 
+<b class="notes">/* matches en-us and en-uk */</b>}
+a[href^=mailto] { 
+<b class="notes">/* starts with */</b>}
+a[href$=pdf]{ 
+<b class="notes">/* ends in */</b>}
+abbr[title*=unicorn] { 
+<b class="notes">/* matches unicorn and unicorns */</b>}
+</pre>
+<pre contenteditable style="float:left; width: 40%; margin-top:0;">E:[att] <b class="notes"><br/>/* have the attribute at all */</b>
+
+E:[att=val] <b class="notes"><br/>/* exact */</b>
+
+E:[att~=val] <b class="notes"><br/>/* val is a space separated word */</b>
+
+E:[att|=val] <b class="notes"><br/>/* with a dash */</b>
+
+E:[att^=val] <b class="notes"><br/>/* begins with val */</b>
+
+E:[att$=val]  <b class="notes"><br/>/* ends with val */</b>
+
+E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
+.</pre>
+<pre contenteditable style="clear:both">
+@media print{
+  abbr[title]:after { 
+    content: "(" attr(title) ")";
+  }
+  a[href^=http]:after { 
+    content: "(" attr(href) ")";
+  }
+}</pre>
+     </section>
+ </div>  
+  
+<!-- Using attribute selectors -->
+<div class="slide normal"> 
+     <header><h1>Using attribute selectors</h1></header> 
+     <section class="content play"> 
+  <h1><a href="files/01_attr.html" target="play">Play Time: Attribute Selectors</a></h1>
+  <p><strong>Note:</strong> The top line of the example is editable. The CSS will impact the contents on the rest of the page.</p>
+     </section>
+    </div>
+   
+<!-- UI pseudo-classes -->
+<div class="slide normal"> 
+     <header><h1>UI pseudo-classes</h1></header> 
+     <section class="content"> 
+  <p>Based on current state of UI</p>
+  <pre contenteditable>
+  :enabled
+  
+  :disabled
+  
+  :checked
+  </pre>
+  <p style="float: left; margin-right:20px">Example:<p>
+<pre  style="float: left">input[type=checkbox]:checked + label {
+  color: red;
+}</pre>
+<div style="clear:both;">
+<input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
+<input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
+    </div>
+    
+<!--Form related UI pseudo-classes -->
+<div class="slide normal"> 
+     <header><h1>Form related UI pseudo-classes</h1></header> 
+     <section class="content"> 
+  <pre contenteditable class="columns2">:valid
+:invalid
+:required
+:optional
+
+
+:in-range
+:out-of-range
+:read-only
+:read-write
+
+:default</pre>
+  <p style="float: left; margin-right:20px">Example:<p>
+<pre  style="float: left">input:valid { border: 1px solid green;}
+input:invalid { border: 1px solid red;}
+input:required {border-width: 5px;}
+input:optional {border-width: 10px;}
+input:out-of-range { background-color: pink;}
+input:in-range { background-color:lightgreen;}</pre>
+<div style="clear:both;">
+<input type="number" min="5" max="7" id="test3ck" required/> <label  for="test3ck">Nuber between 5 an 7</label><br/>
+<input type="color" pattern="#[a-fA-F0-9]{6}" id="test4ck" /> <label  for="test4ck">Hexidecimal color</label>
+</div>   </section>
+    </div>	
+    
+<!-- UI selectors -->
+<div class="slide normal"> 
+     <header><h1>UI selectors</h1></header> 
+     <section class="content play"> 
+  <h1><a href="files/02_uiselectors.html" target="play">Play Time: UI Selectors</a></h1>
+  <p>Test them out for yourselves</p>
+     </section>
+    </div>     
+ 
+   
+<!-- List of Structural selectors -->
+<div class="slide normal"> 
+     <header><h1>Structural selectors</h1></header> 
+     <section class="content"> 
+  <pre contenteditable class="columns2">:nth-child() 
+
+:nth-last-child() 
+
+:nth-of-type() 
+
+:nth-last-of-type() 
+
+:first-child<sup style="color:#C61800">*</sup>
+
+:last-child 
+
+:first-of-type 
+
+:last-of-type 
+
+:only-child 
+
+:only-of-type 
+
+:root
+
+:empty
+
+:not(:empty) 
+</pre>
+<ul><li>Target elements on the page based on their relationships to other elements in the DOM.</li>
+<li>Updates dynamically if page updates.</li>
+
+  <li>Reduced need for extra markup, classes and IDs</li>
+</ul>
+<p><small><sup style="color:#C61800">*</sup> CSS2 / IE8 </small></p>
+     </section>
+    </div>
+ 
+ 
+ 
+ 
+   
+<!--root  -->
+<div class="slide normal"> 
+     <header><h1>:root</h1></header> 
+     <section class="content"> 
+ <pre contenteditable> 
+:root
+</pre>
+
+<p>Selects the document root, which is &lt;html&gt;</p>
+<ul><li>Declare <em>font-size</em> on <strong>:root</strong> if using <strong>rem</strong> units</li>
+<li>Style <strong>:root</strong> only if showing <strong>&lt;head&gt;</strong> (as in our exercise files)</li>
+
+  <li>In CSS4, define Defining Variables on root. (see <a href="http://dev.w3.org/csswg/css-variables/"  target="play">Variables module</a>)</li>
+</ul>
+<p><small><a href="files/03_root.html" target="play">example</a></small></p>
+     </section>
+    </div>    
+
+<!--First, last, & only -->
+<div class="slide normal"> 
+     <header><h1>First, last, &amp; only</h1></header> 
+     <section class="content"> 
+ <pre contenteditable> 
+:first-child
+
+:last-child 
+
+:first-of-type 
+
+:last-of-type 
+
+:only-child 
+
+:only-of-type 
+</pre>
+
+<p>Easier to explain <a href="files/04_firstlastonly.html"  target="play">by example</a></p>
+     </section>
+    </div>    
+  
+
+    
+   
+     
+  
+  
+<!--nth pseudo-classes -->
+<div class="slide normal"> 
+     <header><h1>nth pseudo-classes</h1></header> 
+     <section class="content"> 
+<pre contenteditable>:nth-child(<b>3n</b>) 
+
+:nth-last-child(<b>odd</b>) 
+
+:nth-of-type(<b>5</b>) 
+
+:nth-last-of-type(<b>3n+1</b>) </pre>
+
+<p>Target element or elements based on argument passed to the selector</p> 
+<ul class="pre">
+	<li>:nth-of-type(<b>even</b>)</li>
+    <li>:nth-of-type(<b>odd</b>)</li>
+    <li>:nth-of-type(<b>an+b</b>) </li>
+</ul>
+<p><a href="files/05_nth.html" target="play">Let's Play</a> <small style="float:right">Note: Play with negative values for 'a'</small></p>
+     </section>
+    </div>
+       
+<!--Structural Selectors -->
+<div class="slide normal"> 
+     <header><h1>Structural Selectors</h1></header> 
+     <section class="content"> 
+     <pre contenteditable style="margin-top: 0; float: left;">
+tr:<b>first-child</b>,
+tr:<b>last-child</b> {
+  font-weight: bold;
+}
+tr:<b>first-of-type</b>,
+tr:<b>last-of-type</b>{
+  text-decoration:line-through;
+}
+tr:<b>nth-child</b>(<b>even</b>) {
+  background-color: #CCC;
+}
+tr:nth-child(<b>3</b>) {
+  color: #CCC;
+}
+tr:<b>nth-of-type</b>(<b>odd</b>) {
+  background-color: #FFF;
+}
+tr:nth-of-type(<b>4n</b>) {
+  color: #C61800;
+}
+tr:nth-of-type(<b>3n-1</b>) {
+  font-style: italic;
+}
+
+</pre>
+<table class="structural" cellpadding="1" cellspacing="0" border="0" style="float: right; width:33%;">
+<tbody>
+<tr><td>Row 1</td></tr>
+<tr><td>Row 2</td></tr>
+<tr><td>Row 3</td></tr>
+<tr><td>Row 4</td></tr>
+<tr><td>Row 5</td></tr>
+<tr><td>Row 6</td></tr>
+<tr><td>Row 7</td></tr>
+<tr><td>Row 8</td></tr>
+<tr><td>Row 9</td></tr>
+<tr><td>Row 10</td></tr>
+</tbody>
+</table>
+     </section>
+ </div>
+
+<!-- :empty pseudo-class -->
+<div class="slide normal"> 
+     <header><h1>:empty pseudo-class </h1></header> 
+     <section class="content"> 
+  <pre contenteditable>p<strong>:empty</strong> {
+  	/* styles here */
+    }
+</pre>
+<p>Matches:
+ <pre contenteditable>&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- this is a comment --&gt;&lt;/p&gt;
+</pre>
+     </section>
+    </div>   
+  
+  
+<!-- :not -->
+<div class="slide normal"> 
+     <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header> 
+     <section class="content">
+     <pre contenteditable>
+ <span class="hilite" style="background-color:#ededed">div</span><span class="hilite" style="background-color:#deded8">:not(</span><span class="hilite" style="background-color:#f9f9f9">.excludeMe</span><span class="hilite"  style="background-color:#deded8">)</span></pre>
+  </pre>
+  <p><a href="files/06_not.html" target="play">Practice makes perfect</a></p>
+     </section>
+    </div>
+   
+<!-- lang, target, anchor links-->
+<div class="slide normal"> 
+     <header><h1>Other Pseudo Classes</h1></header> 
+     <section class="content"> 
+  <pre contenteditable>
+  :lang
+  :target
+  </pre>
+    <p>link &amp; user action pseudo-classes</p>
+  <pre contenteditable>
+  :link
+  :visited
+  
+  :hover
+  :active
+  :focus
+  </pre>
+  <p>  <a href="files/07_target.html" target="play">:target</a> example</p>
+     </section>
+    </div>
+     
+       
+<!-- Pseudo elements -->
+<div class="slide normal thisSlide"> 
+     <header><h1>Pseudo elements</h1></header> 
+     <section class="content">
+     <p><i class="imp">Pseudo-classes</i> select elements that 
+
+already exist.<br>
+
+<i class="imp">Pseudo-elements</i> create "faux" elements you can style.</p> 
+    <pre contenteditable>
+::first-line
+::first-letter
+::selection (not in specification)
+::before
+::after
+    </pre>
+    <pre contenteditable>.thisSlide *::selection {
+   background-color: #C61800;
+   color: #ffffff;
+}
+    </pre>
+    
+    <p class="notes">Prefix with -moz- for Firefox<br>
+    Use single colon because of IE</p>
+     </section>
+    </div>
+      
+<!-- selectors tips -->
+<div class="slide normal"> 
+     <header><h1>Tips</h1></header> 
+     <section class="content"> 
+<ul>
+	<li><a href="http://selectivizr.com/" target="_blank">selectivizr.com</a> + JS Library = JS for backward compatibility</li>
+    <li>jQuery $(selector) == document.querySelectorAll(selector)</li>
+    <li>Many, many more pseudo-elements with prefixes currently treated as a shadow DOM
+    	<ul><li>::-webkit-progress-bar</li>
+         <li>::-webkit-progress-value</li>
+         <li>::-webkit-meter-even-less-good-value
+         </li>
+         <li>::-webkit-inner-spin-button /outer-spin-button
+         </li>
+         <li>::-webkit-validation-bubble / arrow-clipper /arrow /message</li>
+         <li>::-webkit-scrollbar</li>
+         <li>::-webkit-scrollbar-button / thumb / track
+         <li><a href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions#section_22" target="_new">Mozilla Pseudo-elements and pseudo-classes</a></li>
+         
+         </ul>
+    </li>
+    
+</ul>
+     </section>
+ </div>
+ 
+  <!-- -->
+<div class="slide intro"> 
+     <header><h1>Specificity </h1></header> 
+     <section class="content"> 
+  <h1><a href="part_02_specificity.html">Next ➹</a></h1>
+     </section>
+    </div>
+    
+   
+    
+    
+   
+    
+    
+    
+  
+   
+  </div>
+  <script src="css/slide.js"></script>
+  </body> 
+</html>

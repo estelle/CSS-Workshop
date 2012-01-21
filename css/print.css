@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.slide {
+  page-break-inside: avoid;
+  page-break-after: always;
+  visibility: visible !important;
+  font-size: 20pt;
+  font-family: Arial, sans-serif;
+}
+
+@page {
+  size: landscape;
+}
+
+body {
+  font-size: 12pt;
+  background: white;
+}
+
+header h1 {
+  border-top: 2pt solid gray;
+  border-bottom: 1px dotted silver;
+}
+
+#presentation-counter, #info, #topinfo, .counter {
+  display: none
+}

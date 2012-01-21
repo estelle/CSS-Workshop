@@ -1,0 +1,41 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace;}
+ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+li {color: black;}
+li li {color: green;}
+p, pre {font-size: 2em;padding: 20px; background-color: #ccc; border-radius: 15px;}
+p {}
+</style>
+
+<style contenteditable>.quote {
+	border-radius: 10px;
+	position:relative;
+	padding: 20px;
+	background-color: red;
+	color: white;
+	float: left;
+}
+.quote:after {
+	position:absolute;
+	content: '';
+	width: 0;
+	height:0;
+	border: 20px solid blue;
+	border-color: red transparent transparent transparent;
+	bottom: -39px;
+	left: 20px;	
+}</style>
+<title>Generate Text</title>
+</head>
+
+<body>
+<p class="quote">This is a quote</p>
+</body>
+</html>
+

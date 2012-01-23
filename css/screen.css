@@ -5,7 +5,7 @@ div, li, a, p, pre {
 }
 body {
   font-size: 20px;
-  font-family: 'Droid Sans', sans-serif;
+  font-family: Lato, sans-serif;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -487,3 +487,12 @@ input:in-range { background-color:lightgreen;}
 .specificity .element {
 	background-image:url(../img/plankton.png);	
 }
+
+.objectlink {position:absolute;top:0; right:0;color: white; background-color: #C7573A; padding: 3px 5px; border: none;}
+.slide.object {padding:0;}
+.object object {width: 100%; height: 100%;}
+
+.deprecated dt {margin-bottom: 1em;}
+.deprecated dd {display: none;}
+.deprecated dt:hover + dd {display:inherit;}
+.appearance dt {margin-bottom:0.5em;}

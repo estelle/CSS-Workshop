@@ -67,6 +67,20 @@ p.firstletter {width: 300px;
 	font-weight:bold;
 		
 }
+.count li {display: inline-block; text-align:center;}
+.count li:nth-of-type(even) {background-color: white;}
+.count li:nth-of-type(odd){background-color: #C7573A;}
+.count li:first-of-type:last-of-type{width: 100%;}
+.count li:nth-of-type(1):nth-last-of-type(2),
+.count li:nth-of-type(2):nth-last-of-type(1){width: 50%;}
+.count li:nth-of-type(1):nth-last-of-type(3),
+.count li:nth-of-type(3):nth-last-of-type(1),
+.count li:nth-of-type(2):nth-last-of-type(2){width: 33.33%;}
+.count li:nth-of-type(1):nth-last-of-type(4),
+.count li:nth-of-type(2):nth-last-of-type(3),
+.count li:nth-of-type(3):nth-last-of-type(2),
+.count li:nth-of-type(4):nth-last-of-type(1){width: 25%;}
+
 
 /* brown: C7573A;*/
    </style>  
@@ -81,7 +95,7 @@ p.firstletter {width: 300px;
   <div id="info">
     <p>
     <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
-    <span class="key">2</span> for comments.
+    <span class="key">2</span> for comments. <a href="http://www.standardista.com/webstock">www.standardista.com/webstock</a>
     </p>
   </div>
   
@@ -273,28 +287,27 @@ p.firstletter {width: 300px;
       
 <!-- Older attribute selectors -->
 <div class="slide normal"> 
-     <header><h1>Older attribute selectors</h1></header> 
+     <header style="position:absolute; top: 20px; right: 20px;"><h1>Older attribute selectors</h1></header> 
      <section class="content"> 
   <dl>
   <dt>E[attr]</dt>
   <dd>Element E that has the attribute attr with any value.</dd>
   <dt>E[attr=&quot;val&quot;]</dt>
-  <dd>Element E that has the attribute attr with the exact, case-insensitive, value <em>val</em>.</dd>
+  <dd>Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value <em>val</em>.</dd>
   <dt>E[attr|=val]</dt>
   <dd>Element E whose attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
     <pre>p[lang|=&quot;en&quot;]{/*    &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
   </dd>
   <dt>E[attr~=val]</dt>
-  <dd>Element E whose attribrute attr has within its value the space-separated full word val.<br />
+  <dd>Element E whose attribute <em>attr</em> has within its value the space-separated full word <em>val</em>.<br />
     <pre>a[title~=more] {/* &lt;a title=&quot;want more info about this?&quot;&gt;}</pre>
-  </dd>
-  <dt>&nbsp;</dt></dl>
+  </dd></dl>
      </section>
     </div>
        
 <!-- CSS3 Attribute Selectors -->
 <div class="slide normal"> 
-     <header><h1>CSS3 Attribute Selectors</h1></header> 
+     <header  style="position:absolute; top: 20px; right: 20px;"><h1>CSS3 Attribute Selectors</h1></header> 
      <section class="content">
      <dl>
   <dt>E[attr^=val]</dt>
@@ -464,12 +477,9 @@ input:in-range { background-color:lightgreen;}</pre>
 
   <li>Reduced need for extra markup, classes and IDs</li>
 </ul>
-<p><small><sup style="color:#C61800">*</sup> CSS2 / IE8 </small></p>
+<small style="position:absolute; bottom: 10px; right: 10px;"><sup style="color:#C61800">*</sup> CSS2 / IE8 </small>
      </section>
     </div>
- 
- 
- 
  
 <!--root  -->
 <div class="slide normal"> 
@@ -585,6 +595,28 @@ tr:nth-of-type(<b>3n-1</b>) {
 </table>
      </section>
  </div>
+ 
+ <!--Advanced Structural Selectors -->
+<div class="slide normal"> 
+     <header><h1>Structural Selectors</h1></header> 
+     <section class="content"> 
+     <ul class="count"><li>1</li></ul>
+     <ul class="count"><li>1</li><li>2</li></ul>
+     <ul class="count"><li>1</li><li>2</li><li>3</li></ul>
+     <ul class="count"><li>1</li><li>2</li><li>3</li><li>4</li></ul>
+     <pre> li:first-of-type:last-of-type{width: 100%;}
+ li:nth-of-type(1):nth-last-of-type(2),
+ li:nth-of-type(2):nth-last-of-type(1){width: 50%;}
+ li:nth-of-type(1):nth-last-of-type(3),
+ li:nth-of-type(3):nth-last-of-type(1),
+ li:nth-of-type(2):nth-last-of-type(2){width: 33.33%;}
+ li:nth-of-type(1):nth-last-of-type(4),
+ li:nth-of-type(2):nth-last-of-type(3),
+ li:nth-of-type(3):nth-last-of-type(2),
+ li:nth-of-type(4):nth-last-of-type(1){width: 25%;}</pre>
+     </section>
+ </div>
+
 
 <!-- :empty pseudo-class -->
 <div class="slide normal"> 

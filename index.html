@@ -66,6 +66,50 @@ body, #presentation, #slides {
   <a href="http://meiert.com/en/indices/css-properties/" class="objectlink" target="_new">Visit Site</a>
  </div>  
  
+ <div class="slide preintro">
+ <pre>selectorA {
+   property1: value1;
+   property2: value2;
+}
+
+selectorB {
+   property1: value3;
+   property2: value4;
+}</pre>
+ </div>
+ 
+ 
+ 
+  <div class="slide preintro">
+ <pre>selector:pseudo-class::pseudo-element {
+    -vendor-property: value;
+}
+
+selector[attribute],
+selector ~ relation {
+    property: -vendor-value;
+    -vendor-property: -vendor-value;
+    -vendor-property: weirdsyntax;
+}</pre>
+ </div>
+ 
+ 
+ <div class="slide preintro">
+ <pre>@at-rule {
+    property: value;
+ }
+ 
+@at-rule {
+    selector {
+    	property: value;
+    }
+    selector2 {
+    	property: value;
+    }
+ }</pre>
+ </div>
+ 
+
   
 <!-- OUTLINE -->
 <div class="slide normal"> 

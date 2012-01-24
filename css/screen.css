@@ -358,6 +358,11 @@ pre, .ex, .pre {
 		font-size: 130%;
 		list-style-type: none;
 	}
+	.preintro pre {
+		font-size: 1.5em;
+		margin: 30px 20px 0 0;	
+		line-height: 1.5;
+	}
 
 pre b, .pre b, .imp {
   font-weight: normal;

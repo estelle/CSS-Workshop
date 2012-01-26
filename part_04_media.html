@@ -8,7 +8,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
     <![endif]--> 
     <meta charset="utf-8" />
-    <title>CSS3: From Knowledgable to Ninja</title>
+    <title>Media Queries - CSS: From Knowledgable to Ninja</title>
      <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
    <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
    <link rel="stylesheet" href="css/print.css" media="print"/>
@@ -60,7 +60,7 @@ body, #presentation, #slides {
    <div id="presentation-counter"></div>
       
    <div id="slides">
-   
+<!-- intro --> 
 <div class="slide normal">
     <header> 
     	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
@@ -87,37 +87,40 @@ body, #presentation, #slides {
  </section>
 </div>
 
-
+<!-- section title -->
 <div class="slide intro"> 
      <header><h1>Part 5:<br>Media Queries</h1></header> 
      <section class="content">(briefly)</section>
 </div>
  
+ 
 <!-- media queries: browser support -->
  <div class="slide normal">
 	<header><h1>media queries</h1></header>
     <section class="content">
-    <pre contenteditable>&lt;link rel='stylesheet' 
-  <b>media='screen and (min-width: 320px) and (max-width: 480px)'</b> 
-  href='css/smartphone.css' /&gt;</pre>
+    <pre contenteditable>&lt;link rel='stylesheet' type='text/css' 
+    <b>media='screen'</b> href='css/styles.css' /&gt;
+
+&lt;link rel='stylesheet' type='text/css' 
+    <b>media='print'</b> href='css/print.css' /&gt</pre>
   <pre contenteditable><b>@media screen {</b>
-  a {
-    transition: background-color 200ms linear 50ms;
+  p {
+    color: blue;
   }
 <b>}
 
 @media print</b> {
-  a:after {
-    content: "(" attr(href) ");
+  p {
+    color: red;
   }
 <b>}</b>
   </pre>
 <ul class="icons">
          <li class="chrome">Chrome</li>
-         <li class="safari">Safari 3.5</li>
-         <li class="firefox">Firefox 3.5</li>
-         <li class="opera">Opera 9.5</li>
-         <li class="ie new">IE 9</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox</li>
+         <li class="opera">Opera</li>
+         <li class="ie">IE 5</li>
      </ul>
     </section>
 </div> 
@@ -157,6 +160,36 @@ body, #presentation, #slides {
     </div>
     </section>
 </div>  
+
+<!-- media queries: browser support -->
+ <div class="slide normal">
+	<header><h1>media queries</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;link rel='stylesheet' 
+<b>media='screen and (min-width: 320px) and (max-width: 480px)'</b><br/>href='css/smartphone.css' /&gt;</pre>
+  <pre contenteditable><b>@media screen and (max-width: 480px)</b>{
+  a {
+    transition: background-color 200ms linear 50ms;
+  }
+<b>}
+
+@media screen and (orientation: landscape)</b> {
+  a[href^="mailto:]:before {
+    content: url(icons/email.gif);
+  }
+<b>}</b>
+  </pre>
+<ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari 3.5</li>
+         <li class="firefox">Firefox 3.5</li>
+         <li class="opera">Opera 9.5</li>
+        <li class="ie new">IE 9</li>
+     </ul>
+    </section>
+</div> 
+
+
 
 <!-- media queries: v 3 -->
 <div class="slide normal">

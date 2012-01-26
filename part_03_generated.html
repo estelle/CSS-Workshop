@@ -21,8 +21,6 @@ body, #presentation, #slides {
 	-o-transition: all 1.5s linear;
 	transition: all 1.5s linear;	
 }
-
- }
 	
 /* INTRO TO GENERATED CONTENT */
 .beforeafter::before {
@@ -207,7 +205,7 @@ p [data-tooltip="true"]:hover:after {
    <div id="presentation-counter"></div>
       
    <div id="slides">
-   
+<!-- slidedeck title -->  
 <div class="slide normal">
     <header> 
     	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
@@ -234,6 +232,7 @@ p [data-tooltip="true"]:hover:after {
  </section>
 </div>
 
+<!-- title -->
 <div class="slide intro"> 
      <header><h1>Part 3: Generated Content</h1></header>
 </div>
@@ -252,17 +251,17 @@ p [data-tooltip="true"]:hover:after {
 p:after{
   content: " - after content";
   font-weight: bold;
-}
+}</pre>
 
-&lt;p>the content&lt;/p></pre>
+<pre>&lt;p>the content&lt;/p></pre>
 
 <p class="beforeafter">the content</p>
 <pre contenteditable>&lt;p>
-&lt;before&gt;before content - &lt;/before>
-the content
-&lt;after&gt; - after content&lt;/after>
+    &lt;before&gt;before content - &lt;/before>
+        the content
+    &lt;after&gt; - after content&lt;/after>
 &lt;/p></pre> 
-<p><a href="files/31_generatetext.html" target="play">Try it out</a></p> </section>
+<a href="files/31_generatetext.html" target="play" class="objectlink">Try it out</a> </section>
     </div>   
     
 <!-- 2 free elements  --> 
@@ -298,6 +297,8 @@ the content
     content: " (.pdf) ";          /* any text */
     content: "\2603";             /* unicode */
     content: " (" attr(href) ")"; /* attributes */
+    content: counter(name); 
+        counter-increment: name;  /* counters */
  } 
  </pre>
      </section>
@@ -313,11 +314,42 @@ the content
  } 
  </pre>
 <object data="http://evotech.net/articles/testjsentities.html" style="height:300px; width:100%;"></object>
-<p ><a href="files/32_generatetext.html" target="play">Try it out</a><br>
+<p><a href="files/32_generatetext.html" target="play">Try it out</a><br>
  <a href="http://copypastecharacter.com/">CopyPasteCharacter.com</a></p>
+ <a class="objectlink" href="http://evotech.net/articles/testjsentities.html" target="resource">Calculator</a>
      </section>
  </div>
 
+<!-- counters and content -->
+<div class="slide normal"> 
+     <header><h1>Values for content:</h1></header> 
+     <section class="content">
+     <dl class="deprecated listed">
+  <dt><span title="none"><strong>none</strong></span></a></dt>
+  <dd>Same as no content property declared.</dd>
+  <dt><span title="normal"><strong>normal</strong></span></a></dt>
+  <dd>Same as no content property declared.</dd>
+  <dt><span title="&lt;string&gt;"><strong>string</strong></a></span></dt>
+  <dd>A string of text. Can be combined with URL, counter, attr(x), quotes, etc.</dd>
+  <dt><span title="&lt;uri&gt;"><strong>image</strong></span></dt>
+  <dd>URL of  a resource, usual an image</dd>
+  <dt><span title="&lt;counter&gt;"><strong>counter</strong></a></span></dt>
+  <dd>'counter(name), counter(name, style), 'counters(name, string)' or 'counters(name, string, style)'.  'name' is a string, but not  'none', 'inherit' or 'initial'. </dd>
+  <dt><span title="open-quote"><strong>open-quote</strong></a></span> / <span title="close-quote"><strong>close-quote</strong></a></span><a href="http://www.w3.org/TR/CSS2/generate.html" target="resource">⎘</a></dt>
+  <dd>The appropriate string set in the  <strong>'quotes'</strong></a> property.</dd>
+  <dt><span title="no-open-quote"><strong>no-open-quote</strong></a></span> / <span title="no-close-quote"><strong>no-close-quote</strong></a></span></dt>
+  <dd>Does not include quotes,  but increments  the level of nesting for quotes.</dd>
+  <dt><span title="attr()"><strong>attr(X)</strong></span></a></dt>
+  <dd>Displays the value of the attribute 'X'</dd>
+</dl> 
+<pre>body {counter-reset: sections;}
+header h1.sectiontitle:before{
+	content: "Part " counter(sections) ": ";
+	counter-increment: sections;	
+}</pre>
+<a href="http://www.standardista.com/css3/creating-counters-with-generated-content/" target="resource" class="objectlink">Tutorial</a>
+     </section>
+ </div>
 <!-- Generated Content: links icons -->
 <div class="slide normal"> 
      <header><h1>Simple Use Cases</h1></header> 
@@ -386,50 +418,50 @@ blockquote p:last-child:after {
      
      <p class="quote">This is a quote <a href="files/33_bubbles.html" target="play" style="color: inherit">✍</a> </p>
      <p class="thought">This is a thought bubble <a href="files/34_bubbles.html" target="play" style="color: inherit">✍</a></p>
-     
-<pre style="float: left; clear:both; position: relative; font-size: 75%; padding:0">.quote:after {
+<div style="float: left; clear:both; position: relative; margin-top: -40px">  
+<pre style="font-size: 75%; padding:0"">.quote:after {
   position:absolute;
   content: '';
   width: 0; height:0;
-  border: 20px solid blue;
-  border-color: red 
-   transparent transparent;
-  bottom:-39px; left:20px;	
-}
-.thought,.thought:before,
+  border: 20px solid tran&hellip;
+  border-top-color: red;
+  bottom:-39px; left:20px;
+}</pre>
+<pre style="font-size: 75%; padding:0">.thought,.thought:before,
 .thought:after  {
   border-radius: 50%;
   border: 5px solid blue;
   background-color: white;
   position:relative;
 }
-</pre>
+</pre></div>
 <pre style="float: right; margin-left: -40px; font-size: 75%;">
-.thought:before,
+.thought:before, 
 .thought:after {
   content: '';
   position:absolute;
   left: 20%; bottom: -30px;
-  width: 40px; height: 40px;
+  height: 40px; width: 40px; 
 }
 .thought:after {
+  left: 12%; bottom: -50px; 
   height: 20px; width: 20px;
-  bottom: -50px; left: 12%;	
 }</pre>
      </section>
  </div>
  
- 
 <!-- CSS-Tricks shapes --> 
-<div class="slide normal"> 
+<div class="slide object"> 
      <object data="http://css-tricks.com/examples/ShapesOfCSS/" style="width:100%; height: 100%;"></object>
      <header style="position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9);"><h1><a href="http://css-tricks.com/examples/ShapesOfCSS/" target="play">Shapes</a></h1></header>
+     <a class="objectlink" href="http://css-tricks.com/examples/ShapesOfCSS/" target="resource">Visit Site</a>
  </div>
  
 <!-- CSS-Tricks --> 
-<div class="slide normal"> 
+<div class="slide object"> 
      <object data="http://css-tricks.com/pseudo-element-roundup/" style="width:100%; height: 100%;"></object>
       <header style="position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9);"><h1><a href="http://css-tricks.com/pseudo-element-roundup/" target="play">Other ideas</a></h1></header>
+      <a class="objectlink" href="http://css-tricks.com/pseudo-element-roundup/" target="resource">Visit Site</a>
  </div>
  
 <!-- Tool Tip Example -->
@@ -442,17 +474,13 @@ blockquote p:last-child:after {
      </section>
 </div>
 
+<!--NEXT-->
 <div class="slide intro"> 
      <header><h1>Part 4:<br>Media Queries</h1></header> 
      <section class="content">(briefly)</section>
-    <h1><a href="part_04_media.html">Next ➹</a></h1>
+    <h1><a href="part_04_media.html#slide3">Next ➹</a></h1>
 </div>
  
-  
-    
-    
-  
-   
   </div>
   <script src="css/slide.js"></script>
   </body> 

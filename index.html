@@ -21,7 +21,11 @@ body, #presentation, #slides {
 	-o-transition: all 1.5s linear;
 	transition: all 1.5s linear;	
 }
-
+body {counter-reset: sections;}
+header h1.sectiontitle:before{
+	content: "Part " counter(sections) ": ";
+	counter-increment: sections;	
+}
 
 /* brown: C7573A;*/
    </style>  
@@ -140,7 +144,7 @@ selector ~ relation {
   
   
 <div class="slide"> 
- <header><h1><a href="part_01_selectors.html" target="deck">Part 1: Selectors</a></h1></header> 
+ <header><h1 class="sectiontitle"><a href="part_01_selectors.html" target="deck">Selectors</a></h1></header> 
 <section class="content">
         <ul style="-webkit-column-count:2;">
             <li>Basic Selectors</li>
@@ -170,7 +174,7 @@ selector ~ relation {
  </div>
     
 <div class="slide"> 
-    <header><h1><a href="part_02_specificity.html" target="deck">Part 2: Specificity</a></h1></header> 
+    <header><h1 class="sectiontitle"><a href="part_02_specificity.html" target="deck">Specificity</a></h1></header> 
     <section class="content">
         <ul>
             <li>Understanding Specificity</li>
@@ -181,7 +185,7 @@ selector ~ relation {
 </div>
    
 <div class="slide"> 
-     <header><h1><a href="part_03_generated.html" target="deck">Part 3: Generated Content</a></h1></header>
+     <header><h1 class="sectiontitle"><a href="part_03_generated.html" target="deck">Generated Content</a></h1></header>
     <section class="content">
         <ul>
             <li>before and ::after</li>
@@ -200,7 +204,7 @@ selector ~ relation {
 </div>
 
 <div class="slide"> 
-    <header><h1><a href="part_04_media.html" target="deck">Part 4: Media Queries</a></h1>
+    <header><h1 class="sectiontitle"><a href="part_04_media.html" target="deck">Media Queries</a></h1>
     </header> 
     <section class="content">
         <ul>
@@ -216,7 +220,7 @@ selector ~ relation {
  
 
 <div class="slide"> 
-    <header><h1><a href="part_04_media.html#slide10" target="deck">Part 5: Debugging</a></h1></header> 
+    <header><h1 class="sectiontitle"><a href="part_04_media.html#slide10" target="deck">Debugging</a></h1></header> 
     <section class="content">
         <ul>
             <li>Debuggers</li>
@@ -227,7 +231,7 @@ selector ~ relation {
 
 
 <div class="slide"> 
-    <header><h1><a href="part_06_colors.html" target="deck">Part 6: Colors</a></h1></header> 
+    <header><h1 class="sectiontitle"><a href="part_06_colors.html" target="deck">Colors</a></h1></header> 
     <section class="content">
         <ul>
             <li>Color formats</li>
@@ -248,7 +252,7 @@ selector ~ relation {
   
 
 <div class="slide normal"> 
-    <header><h1><a href="part_07_fonts.html" target="deck">Part 7: Fonts</a></h1></header> 
+    <header><h1 class="sectiontitle"><a href="part_07_fonts.html" target="deck">Fonts</a></h1></header> 
     <section class="content"> 
         <ul>
             <li>@font-face </li>

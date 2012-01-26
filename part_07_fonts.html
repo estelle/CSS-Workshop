@@ -51,7 +51,8 @@ box-shadow:
 margin: 20px;
 }
 
-
+.fontfamily td {text-align:center;}
+th span {background-repeat:no-repeat;}
 /* 
    brown: C7573A;
    blue:  BDD9D5;
@@ -175,43 +176,43 @@ margin: 20px;
     <tbody>
     <tr>
     	<th>EOT</th>
-        <td>&Chi;</td>
-        <td>&Chi;</td>
-        <td>&Chi;</td>
-        <td>&Chi;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td>✓</td>
-        <td>&Chi;</td>
-        <td>&Chi;</td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
     	<th>TTF/OTF</th>
         <td>✓</td>
-        <td>✓ (3.5+)</td>
-        <td>✓ (10+)</td>
-        <td>✓ (iOS 4.2)</td>
-        <td>(9)</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>9</td>
         <td>✓ 4.2</td>
         <td>✓ 2.2</td>
     </tr>
     <tr>
     	<th>SVG</th>
         <td>✓</td>
-        <td>&Chi;</td>
+        <td></td>
         <td>✓</td>
         <td>✓</td>
-        <td>&Chi;</td>
+        <td></td>
         <td>✓</td>
-        <td>✓ (3)</td>
+        <td>✓ 3</td>
     </tr>
     <tr>
     	<th>WOFF</th>
-        <td>✓ (5+)</td>
-        <td>✓ (3.6+)</td>
-        <td>✓ (11.1+)</td>
-        <td>✓ (5.1)</td>
-        <td>✓ (9)</td>
-        <td>✓ (5)</td>
-        <td>&Chi;</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>✓ 11.1+</td>
+        <td>✓ 5.1</td>
+        <td>✓ 9</td>
+        <td>✓ 5</td>
+        <td></td>
     </tr>
     
     </tbody>
@@ -219,6 +220,7 @@ margin: 20px;
   </section>
   </div>
   
+<!-- font tips --> 
 <div class="slide normal"> 
      <header><h1>Issues</h1></header> 
      <section class="content">
@@ -231,29 +233,26 @@ margin: 20px;
     <dt>File Size</dt>
     <dd>Character sets can be huge, so file sizes can be huge</dd>
     <dd>Need a different file for each font style</dd>
+    <dd>Font services</dd>
 </dl> 
      </section>
  </div> 
  
-
+<!-- Google Fonts -->
 <div class="slide object"> 
 		<object data="http://www.google.com/webfonts"  style="height:100%; width: 100%; background:url(img/googlefonts.gif); background-position: top center">
-		<a href="http://www.google.com/webfonts">cat</a>
-        </object>
+        </object><header><h1>Google Fonts</h1></header>
         <a href="http://www.google.com/webfonts" class="objectlink" target="resource">Google Fonts</a>
 </div> 
+
 <!--Font resources -->
 <div class="slide object">
 	<object data="http://www.fontsquirrel.com/fontface/generator"></object>
-    <a href="http://www.fontsquirrel.com/fontface/generator" class="objectlink">FontSquirrel @font-face generator</a>
-</div>  
-
+    <header><h1>font-squirrel</h1></header>
+    <a href="http://www.fontsquirrel.com/fontface/generator" class="objectlink" target="resource">FontSquirrel @font-face generator</a>
+</div>    
   
- 
-   
-    
-  
-    
+<!-- Text shadows -->   
 <div class="slide normal"> 
 <header><h1>Text Shadows</h1></header> 
 <section class="content">
@@ -303,15 +302,17 @@ text-shadow: [horiz] [vert] [blur] [color];</pre> <pre contenteditable>.textshad
 </section>
 </div>
  
-<!-- text-shadow -->    
+<!-- text-shadow Westcit-->    
 <div class="slide object">
 	<object data="http://westciv.com/tools/shadows/"></object>
-  <a href="http://westciv.com/tools/shadows" class="objectlink" target="_new">Visit Site</a>
+  <a href="http://westciv.com/tools/shadows" class="objectlink" target="resource">Visit Site</a>
+  <header><h1>Text-Shadow</h1></header>
 </div>
 
+<!-- MotherEffing -->
 <div class="slide object">
 	<object data="http://mothereffingtextshadow.com/"></object>
-  <a href="http://mothereffingtextshadow.com/" class="objectlink" target="_new">Visit Site</a>
+  <a href="http://mothereffingtextshadow.com/" class="objectlink" target="resource">Visit Site</a>
 </div>     
 
 <!-- box-shadow< --> 
@@ -340,14 +341,21 @@ box-shadow:
      </ul>
 </section>
 </div>   
-      
+ 
+<!-- Text Stroke -->
+<div class="slide object"> 
+<object data="http://westciv.com/tools/textStroke/index.html"></object>
+     <header><h1>Text-Stroke</h1></header>
+     <a href="http://westciv.com/tools/textStroke/index.html" class="objectlink" target="resource">Visit Site</a> 
+ </div>     
   
-<!-- -->
+<!-- All CSS Properties -->
 <div class="slide object"> 
   <object data="http://meiert.com/en/indices/css-properties/"></object>
-  <a href="http://meiert.com/en/indices/css-properties/" class="objectlink" target="_new">Visit Site</a>
+  <a href="http://meiert.com/en/indices/css-properties/" class="objectlink" target="resource">Visit Site</a>
  </div>
  
+ <!-- W3C-->
  <div class="slide normal"> 
      <header><h1>Specifications</h1></header> 
      <section class="content"> 
@@ -369,17 +377,17 @@ box-shadow:
       <dd>&lt;integer&gt; | &lt;length&gt;</dd>
       <dt><a href="http://www.w3.org/TR/css3-text/#text-align0">text-align</a></dt>
       <dd>[ [ start | end | left | right | center ] || &lt;string&gt; ] | justify | match-parent | start end</dd>
-      <dt><a href="http://www.w3.org/TR/css3-text/#text-align-last0">text-align-last</a></dt>
+      <dt><a href="https://developer.mozilla.org/en/CSS/text-align-last">text-align-last</a></dt>
       <dd>auto | start | end | left | right | center | justify</dd>
-      <dt><a href="http://www.w3.org/TR/css3-text/#text-decoration0">text-decoration</a></dt>
+      <dt><a href="https://developer.mozilla.org/en/CSS/text-decoration">text-decoration</a></dt>
       <dd>&lt;text-decoration-line&gt; || &lt;text-decoration-style&gt; || &lt;text-decoration-color&gt; || blink</dd>
-      <dt><a href="http://www.w3.org/TR/css3-text/#text-decoration-color0">text-decoration-color</a></dt>
+      <dt><a href="https://developer.mozilla.org/en/CSS/text-decoration-color">text-decoration-color</a></dt>
       <dd>&lt;color&gt;</dd>
-      <dt><a href="http://www.w3.org/TR/css3-text/#text-decoration-line0">text-decoration-line</a></dt>
+      <dt><a href="https://developer.mozilla.org/en/CSS/text-decoration-line">text-decoration-line</a></dt>
       <dd>none | [ underline || overline || line-through ]</dd>
       <dt><a href="http://www.w3.org/TR/css3-text/#text-decoration-skip0">text-decoration-skip</a></dt>
       <dd>none | [ objects || spaces || ink || edges ]</dd>
-      <dt><a href="http://www.w3.org/TR/css3-text/#text-decoration-style0">text-decoration-style</a></dt>
+      <dt><a href="https://developer.mozilla.org/en/CSS/text-decoration-style">text-decoration-style</a></dt>
       <dd>solid | double | dotted | dashed | wavy</dd>
       <dt><a href="http://www.w3.org/TR/css3-text/#text-emphasis0">text-emphasis</a></dt>
       <dd>&lsquo;&lt;text-emphasis-style&gt;&rsquo; || &lsquo;&lt;text-emphasis-color&gt;&rsquo;</dd>
@@ -413,7 +421,7 @@ box-shadow:
      </section>
  </div>
    
-    
+<!-- Prefixed properties -->   
 <div class="slide  object"> 
      <object data="http://peter.sh/experiments/vendor-prefixed-css-property-overview/"></object>
      <a href="http://peter.sh/experiments/vendor-prefixed-css-property-overview/" class="objectlink" target="_new">Visit Site</a>
@@ -421,9 +429,9 @@ box-shadow:
     
   
   
-  <!-- -->
+  <!-- Next -->
 <div class="slide normal"> 
-     <header><h1> multi-column text</h1></header> 
+     <header><h1></h1></header> 
      <section class="content"> 
   <h1><a href="part_08_xxxxxxxx.html#slide3">Next ➹</a></h1>
      </section>

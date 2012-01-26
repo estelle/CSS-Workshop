@@ -189,16 +189,15 @@
 <div class="slide normal"> 
      <header><h1>background-image</h1></header> 
      <section class="content">
-     
-     <pre>background-image: url(brown.gif), url(blue.gif);</pre> 
-     <div class="multiplebg"></div>  
-     <ul>
-     	<li>Comma separated</li>
-        <li>layered front to back</li>
-        <li>Include background-color</li>
-        <li>Don't print</li>
-        <li>Not accessible</li>
-     </ul> 
+     <pre style="overflow: auto;">background-image:
+  linear-gradient(top, red, blue);</pre> 
+  <pre>background:
+  url(data:image/gif;base64,SKudfOulrSOp3WOyDR0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGol);</pre>    
+     <pre style="overflow: auto;">background-image:
+  url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'&gt;&lt;circle cx='55' cy='190' r='25' fill='#FFF' /&gt;&lt;path d='M160 213h-34a82 82 0 0 0 -82 -82v-34a116 116 0 0 1 116 116z' fill='#666'/&gt;&lt;path d='M184 213A140 140 0 0 0 44 73 V 38a175 175 0 0 1 175 175z' fill='#666'/&gt;&lt;/svg&gt;&quot;);</pre>
+<pre>background-image: element('#myID');</pre>
+<pre>background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
+<pre>background-image: none;</pre>
         
      </section>
  </div>
@@ -206,7 +205,25 @@
  <!-- background-repeat-->
 <div class="slide normal"> 
      <header><h1>background-repeat</h1></header> 
-     <section class="content"> 
+     <section class="content">
+     <pre>background-repeat: 
+  repeat | repeat-x | repeat-y | no-repeat | space | round;</pre> 
+  <p>Takes 1 or 2 values (horizontal &amp; vertical repeating)</p>
+     <dl class="deprecated listed">
+  <dt>repeat</dt>
+  <dd>Tiled as often as needed to cover background</dd>
+  <dt>no-repeat</dt>
+  <dd>Placed once, not tiled or repeated</dd>
+  <dt>repeat-x</dt>
+  <dd>Tiled along X axis only (Equivalent to repeat no-repeat)</dd>
+  <dt>repeat-y</dt>
+  <dd>Tiled along Y axis only (Equivalent to no-repeat repeat)</dd>
+  <dt>space</dt>
+  <dd>Repeated as often as will fit without being clipped, spaced out evenly</dd>
+  <dt>round</dt>
+  <dd>Repeated as often as will fit without being clipped then scaled so no space in between</dd>
+</dl>
+<p>Tip: Include <code>background-repeat: no-repeat;</code> in your reset CSS</p>
      </section>
  </div>
  

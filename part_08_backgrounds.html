@@ -27,7 +27,94 @@
 	float: right;
 	margin: 20px;	 
  }
+ .bgimage {
+	background-image: -webkit-radial-gradient(50% 50%, circle closest-side, transparent 70%, #C7573A 70%,#C7573A 85%,transparent  85% );
+	background-image: -moz-radial-gradient(50% 50%, circle closest-side, transparent 70%, #C7573A 70%,#C7573A 85%,transparent  85% );
+	background-image: -ms-radial-gradient(50% 50%, circle closest-side, transparent 70%, #C7573A 70%,#C7573A 85%,transparent  85% );
+	background-image: -o-radial-gradient(50% 50%, circle closest-side, transparent 70%, #C7573A 70%,#C7573A 85%,transparent  85% );
+	background-image: radial-gradient(50% 50%, circle closest-side, transparent 70%, #C7573A 70%,#C7573A 85%,transparent  85% );
+	background-size: 95px 95px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	 
+	 
+ }
+ #bgattachment {width:300px; height:300px; overflow:scroll; border: 1px solid #BDD9D5; float:right; top:0; left:0;}
+ .backgroundclip {
+	width: 150px; 
+	height: 150px; 
+	border: 20px dotted rgba(128, 128, 128, 0.8); 
+	padding: 20px; margin: 20px; 
+	background-color: #BDD9D5; 
+	float:left;
+	text-align:center;
+}
+#bcksizeexample {
+	background-repeat:repeat;
+	float: right;
+	box-shadow: inset 5px 5px 5px rgba(0,0,0,0.4),inset -5px -5px 5px rgba(0,0,0,0.4) ;
+	width: 200px;
+	height:400px;
+	text-align:center;
+	margin-left: 20px;	
+}
+.borderstyle dt {
+	border: 9px solid #C7573A;	
+	margin-bottom:0; margin-top:0.2em; 
+	display:block; width: 30%; padding-left: 7px;
+}
+.radius pre {float: left; width:70%;}
+.radius b {
+	display: inline-block;
+	height:50px;
+	width: 50px;
+	border: 10px inset #C7573A;
+	float:left;
+	margin-left: 10px;
+}
+
+.whatisborderimage {
+	margin: auto;
+	height: 400px;
+	width: 400px;
+	background-image:
+		-webkit-linear-gradient(#C7573A 5px, transparent 5px, transparent 245px, #C7573A 245px),
+		-webkit-linear-gradient(left, #C7573A 5px, transparent 5px, transparent 245px, #C7573A 245px), 
+		-webkit-linear-gradient(#BDD9D5, #C7573A, #BDD9D5);
+	background-image:
+		-moz-linear-gradient(#C7573A 5px, transparent 5px, transparent 245px, #C7573A 245px),
+		-moz-linear-gradient(left, #C7573A 5px, transparent 5px, transparent 245px, #C7573A 245px), 
+		-moz-linear-gradient(#BDD9D5, #C7573A, #BDD9D5);
+	background-image:
+		-ms-linear-gradient(#C7573A 5px, transparent 5px, transparent 245px, #C7573A 245px),
+		-ms-linear-gradient(left, #C7573A 5px, transparent 5px, transparent 245px, #C7573A 245px), 
+		-ms-linear-gradient(#BDD9D5, #C7573A, #BDD9D5);
+	background-image:
+		-o-linear-gradient(#C7573A 5px, transparent 5px, transparent 245px, #C7573A 245px),
+		-o-linear-gradient(left, #C7573A 5px, transparent 5px, transparent 245px, #C7573A 245px), 
+		-o-linear-gradient(#BDD9D5, #C7573A, #BDD9D5);
+	background-size: 400px 250px, 250px 400px, 350px 350px;
+	background-position: center;
+	background-position: no-repeat;	
+}
+/* Border-image */
+#boderimage {
+	background-repeat:repeat;
+	width: 400px;
+	height:100px;
+	text-align:center;
+	margin-left: 20px;
+	border-width: 10px;
+	float:left;
+	-webkit-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
+	-moz-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
+	-ms-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
+	-o-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
+	border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
+}
+ 
  </style>   
+ 
   </head> 
   <body> 
   
@@ -154,7 +241,7 @@
   background-color: rgba(100%,100%,100%, 1);
   background-color: hsl(0, 100%, 100%);
   background-color: hsla(0, 100%, 100%, 1);
-  background-color: transparent;
+  background-color: <span class="imp">transparent</span>;
   background-color: currentColor;</pre>
   <p>Confused? See <a href="part_06_colors.html">Part 6: Colors &amp; Transparency</a></p>
      </section>
@@ -203,12 +290,11 @@
  </div>
  
  <!-- background-repeat-->
-<div class="slide normal"> 
+<div class="slide normal bgimage" id="bgrepeat"> 
      <header><h1>background-repeat</h1></header> 
      <section class="content">
      <pre>background-repeat: 
-  repeat | repeat-x | repeat-y | no-repeat | space | round;</pre> 
-  <p>Takes 1 or 2 values (horizontal &amp; vertical repeating)</p>
+  <span class="imp">repeat</span> | repeat-x | repeat-y | no-repeat | space | round;</pre> 
      <dl class="deprecated listed">
   <dt>repeat</dt>
   <dd>Tiled as often as needed to cover background</dd>
@@ -223,52 +309,176 @@
   <dt>round</dt>
   <dd>Repeated as often as will fit without being clipped then scaled so no space in between</dd>
 </dl>
-<p>Tip: Include <code>background-repeat: no-repeat;</code> in your reset CSS</p>
+<pre>background-repeat: <b><span id="txt_bgrepeat">no-repeat</span></b>; <select id="cmd_bgrepeat" onChange="fnc_bgrepeat(this);">
+	<option>no-repeat</option>
+    <option>repeat</option>
+    <option>repeat-x</option>
+    <option>repeat-y</option>
+    <option>space</option>
+    <option>round</option>
+</select></pre>
+  <p>Should accept 2 values (H &amp; V), but only Opera supports<br>
+Tip: Include <code>background-repeat: no-repeat;</code> in your reset CSS</p>
+
+<script defer>
+  function fnc_bgrepeat(event) {
+			  var backsize = event.value;
+			  var slide = document.getElementById('bgrepeat');
+              slide.style.backgroundRepeat = event.value;
+			  document.getElementById('txt_bgrepeat').innerHTML = event.value;
+			  
+            }
+	</script>
+
      </section>
  </div>
  
  <!-- background-attachment -->
 <div class="slide normal"> 
      <header><h1>background-attachment</h1></header> 
-     <section class="content"> 
-     </section>
+     <section class="content">
+     <pre>background-attachment: fixed | local | <span class="imp">scroll</span></pre>
+     
+     
+     <pre>background-attachment: <b><span id="txt_bgattachment">scroll</span></b></pre>
+     <div class="bgimage" id="bgattachment">
+     <p>Filet mignon kielbasa pork chop short ribs short loin shank hamburger. Bresaola hamburger venison shankle pork andouille. Pastrami venison andouille pancetta sausage chicken biltong. Tri-tip jerky short loin tenderloin pork chop. Shoulder frankfurter turkey ribeye, jowl tail leberkase brisket sausage boudin ham hock shankle ground round short loin.
+
+<!--<p>Bresaola ball tip meatball capicola beef ribs chicken. Pork tri-tip turkey bresaola shank. Strip steak sirloin cow pork, ribeye chicken short loin capicola jerky chuck. Shank ham hock rump strip steak, pork chop t-bone pork kielbasa beef andouille ham shankle pancetta. Flank cow strip steak, boudin pork loin chicken tri-tip leberkase meatloaf tail pig beef ribs turkey t-bone.
+</p><p>
+Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye fatback bacon pork chop t-bone drumstick boudin spare ribs tail jerky. Pastrami ham beef ribs, frankfurter filet mignon chicken ground round salami tri-tip shoulder turkey rump meatball hamburger cow. Sausage jowl shank, beef ribs bresaola fatback brisket ham hock chuck pork loin ribeye shankle spare ribs kielbasa. Pork shoulder ham hock ham, chicken pastrami venison drumstick ball tip turducken t-bone frankfurter.</p>
+ -->    </div> 
+<div  style="position:absolute;top:10px; right:10px;"><select id="cmd_bgattachment" onChange="fnc_bgattachment(this);">
+    <option>scroll</option>
+    <option>fixed</option>
+    <option>local</option>
+</select>
+<select onChange="document.getElementById('bgattachment').style.position = this.value;">
+	<option value="static">Default</option>
+    <option value="absolute">Move Me</option>
+    </select>
+     </div></section>
+     <script defer>
+  function fnc_bgattachment(event) {
+			  var attachment = event.value;
+			  var slide = document.getElementById('bgattachment');
+              slide.style.backgroundAttachment = event.value;
+			  document.getElementById('txt_bgattachment').innerHTML = event.value;
+			  
+            }
+	</script>
  </div>
  
  <!--background-position -->
-<div class="slide normal"> 
+<div class="slide normal bgimage" style="background-position: right 50px bottom 50p;"> 
      <header><h1>background-position</h1></header> 
      <section class="content"> 
+     <p>New in CSS3: Positioning relative to any corner</p>
+     <pre>background-position: right 50px bottom 50p;</pre>
+      </ul> 
+        <ul class="icons" style="clear: both;">
+         <li class="chrome bad">Chrome</li>
+         <li class="safari bad">Safari</li>
+         <li class="firefox bad">Firefox</li>
+         <li class="opera">Opera</li>
+         <li class="ie bad">IE 9</li>
+     </ul>
      </section>
  </div>
  
   
 <!--background-clip -->
-<div class="slide normal"> 
-     <header><h1>background-clip</h1></header> 
-     <section class="content"> 
-     </section>
+<div class="slide" id="bgclip">
+	<header><h1>background-clip</h1></header>
+    <section class="content">
+    <pre contenteditable><b><u></u>background-clip</b>: <span class="imp">border-box</span> | padding-box | content-box</pre>
+    
+    <div style="background-clip: content-box;" class="backgroundclip bgimage">content-box</div>
+    <div style="background-clip: padding-box;" class="backgroundclip bgimage">padding-box</div>
+    <div style="background-clip: border-box;" class="backgroundclip bgimage">border-box</div>
+     <ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari"><span onClick="vendorPrefix('r', 'bgsize')">Safari</span></li>
+         <li class="firefox">Firefox 4</li>
+         <li class="opera">Opera</li>
+         <li class="ie new">IE 9</li>
+         <li class="txt">add <span onClick="vendorPrefix('m', 'bgclip')">-moz-</span> for FF 3.6 and earlier</li>
+     </ul>
+    </section>
  </div>
  
  <!--background-origin -->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
- </div>
+<div class="slide" id="bgorigin">
+	<header><h1>background-origin</h1></header>
+    <section class="content">
+    
+    <pre contenteditable><b><u></u>background-origin</b>: border-box | <span class="imp">padding-box</span> | content-box</pre>
+    <div style="background-origin: content-box;" class="backgroundclip bgimage">content-box</div>
+    <div style="background-origin: padding-box;" class="backgroundclip bgimage">padding-box</div>
+    <div style="background-origin: border-box;" class="backgroundclip bgimage">border-box</div>
+     <ul class="icons">
+         <li class="chrome"><span onClick="vendorPrefix('r', 'bgorigin')">Chrome</span></li>
+         <li class="safari">Safari 5.1</li>
+         <li class="firefox">Firefox 4</li>
+         <li class="opera">Opera</li>
+         <li class="ie new">IE 9</li>
+         <li class="txt">add <span onClick="vendorPrefix('m', 'bgorigin')">-moz-</span> for FF 3.6, <span onClick="vendorPrefix('w', 'bgorigin')">-webkit-</span> for Safari 5</li>
+     </ul>
+    </section>
+</div>
  
  <!--background-size -->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
- </div>
+<div class="slide" id="bgsize">
+	<header><h1>background-size</h1></header>
+    <section class="content">
+    <pre contenteditable><b><u></u>background-size</b>: <span class="imp">auto<</span> | contain | cover | <span id="actualsize">&lt;length&gt;</span></pre>
+    <div id="bcksizeexample" class="bgimage">
+    <input type="range" min="3" max="30" step="1" value="15" id="bcksizechange" onChange="changeBackSide(this)" style="position:relative; top: -30px;"/>
+    </div><ul>
+    	<li>Use for creating gradients backgrounds</li>
+        <li>Needed for hiDPI images</li>
+        <li>&lsquo;contain&rsquo; grows/shrinks to fully fit</li>
+        <li>&lsquo;cover&rsquo; grows to min size that covers 100% of height &amp; width</li>
+    </ul>
+     <ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari"><span onClick="vendorPrefix('r', 'bgsize')">Safari</span></li>
+         <li class="firefox">Firefox 4</li>
+         <li class="opera">Opera 11</li>
+         <li class="ie new">IE 9</li>
+         <li class="txt">add <span onClick="vendorPrefix('m', 'bgsize')">-moz-</span> for FF 3.6 and earlier</li>
+     </ul>
+    </section>
+    <script defer>
+    function changeBackSide(event) {
+			  var backsize = event.value;
+			  var image = document.getElementById('bcksizeexample');
+              image.style.backgroundSize = backsize + "px " + backsize + "px, " + backsize + "px " + backsize + "px, 100% 100%"   ;
+			  document.getElementById('actualsize').innerHTML = "<b>"+ backsize +"px " +  backsize +"px</b>;";
+			  
+            }
+	</script>
+</div> 
  
  <!-- background shorthand-->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
- </div>    
+<div class="slide">
+	<header><h1>background shorthand</h1></header>
+    <section class="content">
+    
+    <pre>background: 
+ img position / size repeat attachment origin clip, 
+ img position / size repeat attachment box{1,2} bgcolor;    </pre>
+<pre>background: 
+ url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box, 
+ url(botImg.jpg) 15px 15px / 30px 30px fixed border-box #609;</pre>
+ <h1>DO NOT USE BACKGROUND SHORTHAND!!!</h1>
+ <ul>
+    <li><a href="http://www.standardista.com/css3/css3-background-properties">Border properties &amp; browser support</a></li>
+    
+   <li class="notes">If one &lsquo;box&rsquo; value is present then it sets both 'background-origin' and 'background-clip' to that value. If two values are present, then the first sets 'background-origin' and the second 'background-clip'</li>
+   </ul>
+    </section>
+    </div> 
     
     
 <!--Border properties -->
@@ -280,13 +490,57 @@
 <div class="slide normal"> 
      <header><h1>border-color</h1></header> 
      <section class="content"> 
+ <ul>
+ 	<li>Use any of the color types</li>
+    <li>Nothing really new here</li>
+ </ul>
+ <pre>  border-color: white;
+  border-color: #fff;
+  border-color: #FFFFFF;
+  border-color: rgb(255,255,255);
+  border-color: rgb(100%,100%,100%);
+  border-color: rgba(255,255,255,1);
+  border-color: rgba(100%,100%,100%, 1);
+  border-color: hsl(0, 100%, 100%);
+  border-color: hsla(0, 100%, 100%, 1);
+  border-color: transparent;
+  border-color: <span class="imp">currentColor</span>; /* default */</pre>
      </section>
  </div>
  
  <!--border-style -->
-<div class="slide normal"> 
+<div class="slide normal borderstyle"> 
      <header><h1>border-style</h1></header> 
-     <section class="content"> 
+     <section class="content">
+  <div style="position: absolute; right: 0; width: 50%;">
+	 <ul>
+     	<li>Up to 4 values (TRouBLe)</li>
+        <li> Old Webkit browsers ignored color for groove, inset, outset &amp; ridge. Fixed!</li>
+		<li>IE6 &amp; IE7 do not understand 'hidden', and inherit.</li>
+     </ul>
+  </div>
+     <dl class="deprecated">
+  <dt style="border-style:none;" class="imp">none</dt>
+  <dd style="width: 50%">No border. As if border-width: 0; except with border-image</dd>
+  <dt style="border-style: hidden;">hidden</dt>
+  <dd style="width: 50%">Same as none, but relevant in border-collapsed tables</dd>
+  <dt style="border-style:dotted;">dotted</dt>
+  <dd> Round dots.</dd>
+  <dt style="border-style:dashed;">dashed</dt>
+  <dd>Square-ended dashes.</dd>
+  <dt style="border-style:solid;">solid</dt>
+  <dd>a single solid line.</dd>
+  <dt style="border-style:double;">double</dt>
+  <dd>Two parallel solid lines. Only relevant if border-width &gt;= 3px. line + space + line = border-width value. </dd>
+  <dt style="border-style:groove;">groove</dt>
+  <dd>Shadow effect using  two colors on each side, with a slightly lighter and darker than the border-color value. Top / left half of each side darker.</dd>
+  <dt style="border-style:ridge;">ridge</dt>
+  <dd>Looks as if it were coming out of the canvas.  Bottom / Right darker</dd>
+  <dt style="border-style:inset;">inset</dt>
+  <dd>Looks sunken into page. Top and left border are made darker, bottom and right are lighter.. Treated as ridge in border-collapsed tables.</dd>
+  <dt style="border-style:outset;">outset</dt>
+  <dd>Looks as if popping out of page. Bottom and right are darker. Top and left border are lighter.. Treated as groove in border-collapsed tables. </dd>
+</dl> 
      </section>
  </div>
  
@@ -294,6 +548,11 @@
 <div class="slide normal"> 
      <header><h1>border-width</h1></header> 
      <section class="content"> 
+     <pre>border-width: (length) | thin | <span class="imp">medium</span> | thick | inherit {1,4};</pre>
+     <ul>
+     <li>Up to 4 values (TRouBLe)</li>
+     <li>Nothing new here</li>
+     </ul>
      </section>
  </div>
  
@@ -301,15 +560,67 @@
 <div class="slide normal"> 
      <header><h1>border shorthand</h1></header> 
      <section class="content"> 
+     <pre>border: width style color;</pre>
+     <pre>border-left: width style color;</pre>
+     <pre>border-top: 5px dashed rgba(217,68,11, 0.8);</pre>
+     <ul>
+     <li>style is REQUIRED.</li>
+     <li>width defaults to <span class="imp">medium</span></li>
+     <li>color defaults to <span class="imp">currentColor</span></li>
+     <li>IE up to 8 is buggy</li>
+     </ul>
      </section>
  </div>
  
  <!--border-radius -->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
+<div class="slide"> 
+<header><h1>border-radius</h1></header> 
+<section class="content">
+<div class="radius">
+	<div><pre contenteditable>border-radius: 0;</pre> <b></b>
+    </div>
+    <div><pre contenteditable>border-radius: 20px;</pre><b style="border-radius: 20px"></b>
+    </div>
+    <div><pre contenteditable>border-radius: 50%;</pre><b style="border-radius: 50%"></b>
+    </div>
+</div>
+ <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome / Chrome 4</li>
+         <li class="safari">Safari 3 / Safari 5</li>
+         <li class="firefox">Firefox 1 / Firefox 4</li>
+         <li class="opera">  <br/> Opera 10.5</li>
+         <li class="ie new">  <br/> IE 9</li>
+     </ul>
+  <pre style="float: left; margin-right: 40px;">border-top-left-radius
+border-top-right-radius
+border-bottom-right-radius
+border-bottom-left-radius</pre>
+     <ul sytyle="float: left; overflow: hidden;">
+     <li>-moz- prefix for 3.6 and earlier</li>
+     <li>longhand syntax in FF3.6</li>
+     <li>% works since Safari 5.1 and FF 4.0</li>
+     </ul>
+</section>
+</div>
+     
+     
+ <!--border-radius --> 
+<div class="slide"> 
+<header><h1>border-radius</h1></header> 
+<section class="content">
+<div class="radius">
+	<div><pre contenteditable>.circle {border-radius: 50%;}</pre> <b style="border-radius: 50%;"></b></div>
+	<div><pre contenteditable>.oval { border-radius: 50%;}</pre> <b style="border-radius: 50%; width: 100px;"></b></div> 
+	<div><pre contenteditable>.different { border-radius: 10px 30px;}</pre> <b style="border-radius: 10px 30px; "></b></div> 
+	<div><pre contenteditable>.elliptical { border-radius: 10px / 30px;}</pre> <b style="border-radius: 10px / 30px;"></b></div>  
+	<div><pre contenteditable>.uglier {
+  border-radius: 10px 35px 20px 15px /
+                 30px 35px 5px 5px;}</pre> <b style="border-radius: 10px 35px 20px 15px / 30px 35px 5px 5px; width: 75px; height: 75px;"></b></div>   
  </div>
+
+</section>
+</div>
+
 
     
     
@@ -318,64 +629,89 @@
 <div class="slide intro"> 
      <header><h1>Border Images</h1></header> 
  </div>
- 
- <!-- -->
+
+
+<!-- what is -->
 <div class="slide normal"> 
-     <header><h1></h1></header> 
+     <header><h1>What is Border Image</h1></header> 
      <section class="content"> 
- 
+     
+     <div class="whatisborderimage">
+     
+     </div>
+     </section>
+ </div>
+ <!-- -->
+ <div class="slide">
+	<header><h1>border-image</h1></header>
+    <section class="content">
+<pre contenteditable><b>border-image</b>: source || slice / width / outset  || repeat;</pre>
+    <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari 3.1</li>
+         <li class="firefox">Firefox 3.5</li>
+         <li class="opera">Opera 10.5</li>
+         <li class="ie bad">IE 10?</li>
+     </ul> 
+    <h1 style="text-align:left">Underlying Properties</h1>
+    <ul style="float:right">
+    <li>All vendor prefixed</li>    
+    <li><a href="http://border-image.com/">Border image tool</a></li>
+    <li><a href="http://www.sitepoint.com/css3-border-image/">border-image tutorial</a></li>
+    <li><a href="http://www.standardista.com/css3/css3-border-properties">border-image browser support</a></li> 
+    </ul>
       <ul>
         <li>border-image-source</li>
         <li>border-image-slice</li>
         <li>border-image-width</li>
         <li>border-image-outset</li>
-        <li>border-image-repea</li>
+        <li>border-image-repeat</li>
         <li class="imp">border-image</li>
       </ul>
      </section>
  </div>
  
- <!-- -->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
- </div>
  
- <!-- -->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
- </div>
+ <div class="slide">
+	<header><h1>border-image</h1></header>
+    <section class="content">	
+<pre contenteditable>
+<b>border-image-source</b>: <strong>none</strong> | url() | &lt;image>
+
+<b>border-image-slice</b>: &lt;number> | XX% {1,4} &amp;&amp; fill
+
+<b>border-image-width</b>: &lt;length> | XX% | &lt;number> | <strong>1</strong> | auto {1,4}
+
+<b>border-image-outset</b>: &lt;length> | &lt;number> {1,4}	
+
+<b>border-image-repeat</b>: <strong>stretch</strong> | repeat | round {1,2}		
+	
+</pre>	
+<pre contenteditable style="float:right; margin-bottom:40px;">
+S = <input type="range" id="slice" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
+W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
+<select id="repeat" onChange="changeBorderImage();"><option value="stretch" selected>stretch</option><option value="repeat">repeat</option><option value="round">round</option></select> </pre> 
+
+<div id="boderimage"></div> 
+
  
- <!-- -->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
- </div>
- 
- <!-- -->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
- </div>
- 
- <!-- -->
-<div class="slide normal"> 
-     <header><h1></h1></header> 
-     <section class="content"> 
-     </section>
- </div>
-    
-
-
-
-
-
-
+<pre contenteditable style="clear:both;">border-image: url(gradient.png) <b id="sliceval">34</b> / <b id="widthval">34</b><b>px</b> <b id="repeatval">stretch</b>;</pre>
+</section>
+<script defer>
+	function changeBorderImage(){
+		var slice = document.getElementById('slice').value;
+		var width = document.getElementById('width').value;
+		var repeat = document.getElementById('repeat');
+		repeat = repeat.options[repeat.selectedIndex].text;
+		document.getElementById('boderimage').style.webkitBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
+		document.getElementById('boderimage').style.mozBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
+		document.getElementById('sliceval').innerHTML = slice;
+		document.getElementById('widthval').innerHTML = width;
+		
+		document.getElementById('repeatval').innerHTML = repeat;
+	}
+</script>
+</div>  
    
 <div class="slide intro"> 
      <header><h1>Part 9: Gradients</h1></header>

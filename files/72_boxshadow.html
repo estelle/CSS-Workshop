@@ -1,0 +1,38 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace;}
+p {font-family:Verdana, Geneva, sans-serif; font-size:1.2em;
+	margin: 60px 60px 140px 60px; padding:20px; text-align:center;}
+
+</style>
+
+<style contenteditable>.rainbow {
+  box-shadow: 
+    0 0 0 10px red,
+    0 0 0 20px orange,
+    0 0 0 30px yellow,
+    0 0 0 40px green,
+    0 0 0 50px blue,
+    0 0 0 60px purple;
+}
+.borders {
+  box-shadow: 
+    0 0 0 20px purple,
+    0px 0px 10px 25px rgba(255,255,255,0.5),
+    0 0 0 60px purple;
+}
+</style>
+<title>box-shadow as borders</title>
+</head>
+
+<body>
+	<p class="borders">This has borders</p>
+	<p class="rainbow">This has borders</p>
+</body>
+</html>
+

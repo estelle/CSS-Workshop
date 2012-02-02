@@ -155,10 +155,10 @@
     <li>Specificity</li>
     <li>Generated Content</li>
     <li>Media Queries</li>
-    <li>Debugging</li>
-    <li>Colors &amp; Transparency </li>
+    <li>Debugging</li> <li>Colors &amp; Transparency </li>
     <li>Fonts &amp; Text</li>
     <li>Backgrounds &amp; Borders</li>
+    <li>Gradients</li>
  </ol>
  </section>
 </div>
@@ -232,7 +232,7 @@
     <li>Declare only once in a shorthand declaration.</li>
     <li>Nothing really new here</li>
  </ul>
- <pre>  background-color: white;
+ <pre contenteditable>  background-color: white;
   background-color: #fff;
   background-color: #FFFFFF;
   background-color: rgb(255,255,255);
@@ -252,7 +252,7 @@
      <header><h1>background-image</h1></header> 
      <section class="content">
      
-     <pre>background-image: url(brown.gif), url(blue.gif);</pre> 
+     <pre contenteditable>background-image: url(brown.gif), url(blue.gif);</pre> 
      <div class="multiplebg"></div>  
      <ul>
      	<li>Comma separated</li>
@@ -276,15 +276,15 @@
 <div class="slide normal"> 
      <header><h1>background-image</h1></header> 
      <section class="content">
-     <pre style="overflow: auto;">background-image:
+     <pre contenteditable style="overflow: auto;">background-image:
   linear-gradient(top, red, blue);</pre> 
-  <pre>background:
+  <pre contenteditable>background:
   url(data:image/gif;base64,SKudfOulrSOp3WOyDR0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGol);</pre>    
-     <pre style="overflow: auto;">background-image:
+     <pre contenteditable style="overflow: auto;">background-image:
   url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'&gt;&lt;circle cx='55' cy='190' r='25' fill='#FFF' /&gt;&lt;path d='M160 213h-34a82 82 0 0 0 -82 -82v-34a116 116 0 0 1 116 116z' fill='#666'/&gt;&lt;path d='M184 213A140 140 0 0 0 44 73 V 38a175 175 0 0 1 175 175z' fill='#666'/&gt;&lt;/svg&gt;&quot;);</pre>
-<pre>background-image: element('#myID');</pre>
-<pre>background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
-<pre>background-image: none;</pre>
+<pre contenteditable>background-image: element('#myID');</pre>
+<pre contenteditable>background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
+<pre contenteditable>background-image: none;</pre>
         
      </section>
  </div>
@@ -293,7 +293,7 @@
 <div class="slide normal bgimage" id="bgrepeat"> 
      <header><h1>background-repeat</h1></header> 
      <section class="content">
-     <pre>background-repeat: 
+     <pre contenteditable>background-repeat: 
   <span class="imp">repeat</span> | repeat-x | repeat-y | no-repeat | space | round;</pre> 
      <dl class="deprecated listed">
   <dt>repeat</dt>
@@ -309,7 +309,7 @@
   <dt>round</dt>
   <dd>Repeated as often as will fit without being clipped then scaled so no space in between</dd>
 </dl>
-<pre>background-repeat: <b><span id="txt_bgrepeat">no-repeat</span></b>; <select id="cmd_bgrepeat" onChange="fnc_bgrepeat(this);">
+<pre contenteditable>background-repeat: <b><span id="txt_bgrepeat">no-repeat</span></b>; <select id="cmd_bgrepeat" onChange="fnc_bgrepeat(this);">
 	<option>no-repeat</option>
     <option>repeat</option>
     <option>repeat-x</option>
@@ -337,10 +337,10 @@ Tip: Include <code>background-repeat: no-repeat;</code> in your reset CSS</p>
 <div class="slide normal"> 
      <header><h1>background-attachment</h1></header> 
      <section class="content">
-     <pre>background-attachment: fixed | local | <span class="imp">scroll</span></pre>
+     <pre contenteditable>background-attachment: fixed | local | <span class="imp">scroll</span></pre>
      
      
-     <pre>background-attachment: <b><span id="txt_bgattachment">scroll</span></b></pre>
+     <pre contenteditable>background-attachment: <b><span id="txt_bgattachment">scroll</span></b></pre>
      <div class="bgimage" id="bgattachment">
      <p>Filet mignon kielbasa pork chop short ribs short loin shank hamburger. Bresaola hamburger venison shankle pork andouille. Pastrami venison andouille pancetta sausage chicken biltong. Tri-tip jerky short loin tenderloin pork chop. Shoulder frankfurter turkey ribeye, jowl tail leberkase brisket sausage boudin ham hock shankle ground round short loin.
 
@@ -374,7 +374,7 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
      <header><h1>background-position</h1></header> 
      <section class="content"> 
      <p>New in CSS3: Positioning relative to any corner</p>
-     <pre>background-position: right 50px bottom 50p;</pre>
+     <pre contenteditable>background-position: right 50px bottom 50p;</pre>
       </ul> 
         <ul class="icons" style="clear: both;">
          <li class="chrome bad">Chrome</li>
@@ -465,10 +465,10 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
 	<header><h1>background shorthand</h1></header>
     <section class="content">
     
-    <pre>background: 
+    <pre contenteditable>background: 
  img position / size repeat attachment origin clip, 
  img position / size repeat attachment box{1,2} bgcolor;    </pre>
-<pre>background: 
+<pre contenteditable>background: 
  url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box, 
  url(botImg.jpg) 15px 15px / 30px 30px fixed border-box #609;</pre>
  <h1>DO NOT USE BACKGROUND SHORTHAND!!!</h1>
@@ -494,7 +494,7 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
  	<li>Use any of the color types</li>
     <li>Nothing really new here</li>
  </ul>
- <pre>  border-color: white;
+ <pre contenteditable>  border-color: white;
   border-color: #fff;
   border-color: #FFFFFF;
   border-color: rgb(255,255,255);
@@ -548,7 +548,7 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
 <div class="slide normal"> 
      <header><h1>border-width</h1></header> 
      <section class="content"> 
-     <pre>border-width: (length) | thin | <span class="imp">medium</span> | thick | inherit {1,4};</pre>
+     <pre contenteditable>border-width: (length) | thin | <span class="imp">medium</span> | thick | inherit {1,4};</pre>
      <ul>
      <li>Up to 4 values (TRouBLe)</li>
      <li>Nothing new here</li>
@@ -560,9 +560,9 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
 <div class="slide normal"> 
      <header><h1>border shorthand</h1></header> 
      <section class="content"> 
-     <pre>border: width style color;</pre>
-     <pre>border-left: width style color;</pre>
-     <pre>border-top: 5px dashed rgba(217,68,11, 0.8);</pre>
+     <pre contenteditable>border: width style color;</pre>
+     <pre contenteditable>border-left: width style color;</pre>
+     <pre contenteditable>border-top: 5px dashed rgba(217,68,11, 0.8);</pre>
      <ul>
      <li>style is REQUIRED.</li>
      <li>width defaults to <span class="imp">medium</span></li>
@@ -591,7 +591,7 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
          <li class="opera">  <br/> Opera 10.5</li>
          <li class="ie new">  <br/> IE 9</li>
      </ul>
-  <pre style="float: left; margin-right: 40px;">border-top-left-radius
+  <pre contenteditable style="float: left; margin-right: 40px;">border-top-left-radius
 border-top-right-radius
 border-bottom-right-radius
 border-bottom-left-radius</pre>

@@ -53,6 +53,18 @@ margin: 20px;
 
 .fontfamily td {text-align:center;}
 th span {background-repeat:no-repeat;}
+
+pre.borders {
+	border-radius: 0;
+	box-shadow: 
+    0 0 0 10px red,
+    0 0 0 20px orange,
+    0 0 0 30px yellow,
+    0 0 0 40px green,
+    0 0 0 50px blue,
+    0 0 0 60px purple;
+	width: 80%;	margin: 60px auto;
+}
 /* 
    brown: C7573A;
    blue:  BDD9D5;
@@ -106,10 +118,10 @@ th span {background-repeat:no-repeat;}
     <li>Specificity</li>
     <li>Generated Content</li>
     <li>Media Queries</li>
-    <li>Debugging</li>
-    <li>Colors &amp; Transparency </li>
+    <li>Debugging</li> <li>Colors &amp; Transparency </li>
     <li>Fonts &amp; Text</li>
     <li>Backgrounds &amp; Borders</li>
+    <li>Gradients</li>
  </ol>
  </section>
 </div>
@@ -253,6 +265,10 @@ th span {background-repeat:no-repeat;}
     <a href="http://www.fontsquirrel.com/fontface/generator" class="objectlink" target="resource">FontSquirrel @font-face generator</a>
 </div>    
   
+<div class="slide intro"> 
+     <header><h1>Shadows</h1></header> 
+    </div>
+    
 <!-- Text shadows -->   
 <div class="slide normal"> 
 <header><h1>Text Shadows</h1></header> 
@@ -342,6 +358,25 @@ box-shadow:
      </ul>
 </section>
 </div>   
+
+<!-- box shadow as borders-->
+<div class="slide normal"> 
+     <header><h1>Multiple Borders with Box Shadow</h1></header> 
+     <section class="content">
+     
+     <pre class="borders">.rainbowBorders {
+  box-shadow: 
+    0 0 0 10px red,
+    0 0 0 20px orange,
+    0 0 0 30px yellow,
+    0 0 0 40px green,
+    0 0 0 50px blue,
+    0 0 0 60px purple;
+  }
+     </pre>
+     <a class="objectlink" href="files/72_boxshadow.html">Check it out!</a> 
+     </section>
+ </div>
  
 <!-- Text Stroke -->
 <div class="slide object"> 
@@ -427,10 +462,8 @@ box-shadow:
      <object data="http://peter.sh/experiments/vendor-prefixed-css-property-overview/"></object>
      <a href="http://peter.sh/experiments/vendor-prefixed-css-property-overview/" class="objectlink" target="_new">Visit Site</a>
  </div>    
-    
   
-  
-  <!-- Next -->
+<!-- Next -->
 <div class="slide normal"> 
      <header><h1></h1></header> 
      <section class="content"> 

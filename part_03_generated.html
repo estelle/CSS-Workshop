@@ -225,10 +225,10 @@ p [data-tooltip="true"]:hover:after {
     <li>Specificity</li>
     <li>Generated Content</li>
     <li>Media Queries</li>
-    <li>Debugging</li>
-    <li>Colors &amp; Transparency </li>
+    <li>Debugging</li> <li>Colors &amp; Transparency </li>
     <li>Fonts &amp; Text</li>
     <li>Backgrounds &amp; Borders</li>
+    <li>Gradients</li>
  </ol>
  </section>
 </div>
@@ -245,7 +245,7 @@ p [data-tooltip="true"]:hover:after {
      
       
      <section class="content"> 
-  <pre>p:before {
+  <pre contenteditable>p:before {
   content: "before content - ";
   font-weight: bold;
 }	
@@ -254,7 +254,7 @@ p:after{
   font-weight: bold;
 }</pre>
 
-<pre>&lt;p>the content&lt;/p></pre>
+<pre contenteditable>&lt;p>the content&lt;/p></pre>
 
 <p class="beforeafter">the content</p>
 <pre contenteditable>&lt;p>
@@ -343,7 +343,7 @@ p:after{
   <dt><span title="attr()"><strong>attr(X)</strong></span></a></dt>
   <dd>Displays the value of the attribute 'X'</dd>
 </dl> 
-<pre>body {counter-reset: sections;}
+<pre contenteditable>body {counter-reset: sections;}
 header h1.sectiontitle:before{
 	content: "Part " counter(sections) ": ";
 	counter-increment: sections;	
@@ -356,7 +356,7 @@ header h1.sectiontitle:before{
      <header><h1>Simple Use Cases</h1></header> 
      <section class="content ba"> 
  
-     <pre style="float: left; margin-right: 30px;">a:before {
+     <pre contenteditable style="float: left; margin-right: 30px;">a:before {
   color: #ffffff;
   background: #000000;
   font-size: 120%;
@@ -388,11 +388,11 @@ a[href$="vcs"]:before {
 <div class="slide normal"> 
      <header><h1>More uses</h1></header> 
      <section class="content">
-<pre>&lt;blockquote&gt;
+<pre contenteditable>&lt;blockquote&gt;
   &lt;p&gt;With generated content you can create text effects.&lt;/p&gt;
   &lt;p&gt;We'll cover other uses next.&lt;/p&gt;
 &lt;/blockquote&gt;</pre> 
-<pre style="float: left; position:relative; margin-right: 50px;">
+<pre contenteditable style="float: left; position:relative; margin-right: 50px;">
 blockquote p:before, 
 blockquote p:after {
   font-size: 2em;
@@ -420,7 +420,7 @@ blockquote p:last-child:after {
      <p class="quote">This is a quote <a href="files/33_bubbles.html" target="play" style="color: inherit">✍</a> </p>
      <p class="thought">This is a thought bubble <a href="files/34_bubbles.html" target="play" style="color: inherit">✍</a></p>
 <div style="float: left; clear:both; position: relative; margin-top: -40px">  
-<pre style="font-size: 75%; padding:0"">.quote:after {
+<pre contenteditable style="font-size: 75%; padding:0"">.quote:after {
   position:absolute;
   content: '';
   width: 0; height:0;
@@ -428,7 +428,7 @@ blockquote p:last-child:after {
   border-top-color: red;
   bottom:-39px; left:20px;
 }</pre>
-<pre style="font-size: 75%; padding:0">.thought,.thought:before,
+<pre contenteditable style="font-size: 75%; padding:0">.thought,.thought:before,
 .thought:after  {
   border-radius: 50%;
   border: 5px solid blue;
@@ -436,7 +436,7 @@ blockquote p:last-child:after {
   position:relative;
 }
 </pre></div>
-<pre style="float: right; margin-left: -40px; font-size: 75%;">
+<pre contenteditable style="float: right; margin-left: -40px; font-size: 75%;">
 .thought:before, 
 .thought:after {
   content: '';

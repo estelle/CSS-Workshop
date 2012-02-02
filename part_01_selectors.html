@@ -125,10 +125,10 @@ p.firstletter {width: 300px;
     <li>Specificity</li>
     <li>Generated Content</li>
     <li>Media Queries</li>
-    <li>Debugging</li>
-    <li>Colors &amp; Transparency </li>
+    <li>Debugging</li> <li>Colors &amp; Transparency </li>
     <li>Fonts &amp; Text</li>
     <li>Backgrounds &amp; Borders</li>
+    <li>Gradients</li>
  </ol>
  </section>
 </div>
@@ -137,7 +137,7 @@ p.firstletter {width: 300px;
 <div class="slide normal light" id="slcElement"> 
      <header><h1>Basic Selectors</h1></header> 
      <section class="content"> 
-     <pre style="font-size:100%; line-height:1.5">&lt;ul&gt; 
+     <pre contenteditable style="font-size:100%; line-height:1.5">&lt;ul&gt; 
  &lt;li id=&quot;myID&quot; class=&quot;myClass&quot;&gt;item 1&lt;/li&gt;
  &lt;li class=&quot;myClass&quot;&gt;item 2&lt;/li&gt;    
  &lt;li&gt;item 3&lt;/li&gt;
@@ -271,7 +271,7 @@ p.firstletter {width: 300px;
   <dt>element[attribute]</dt>
   <dd>Select elements containing the named attribute</dd>
 </dl>
-<pre><strong>img[alt] {}</strong>
+<pre contenteditable><strong>img[alt] {}</strong>
   <u>selects:</u>     
      &lt;img src=&quot;image.jpg&quot; <strong>alt</strong>=&quot;accessible&quot;&gt;     
   <u>does not select: </u>
@@ -297,11 +297,11 @@ p.firstletter {width: 300px;
   <dd>Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value <em>val</em>.</dd>
   <dt>E[attr|=val]</dt>
   <dd>Element E whose attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
-    <pre>p[lang|=&quot;en&quot;]{/*    &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
+    <pre contenteditable>p[lang|=&quot;en&quot;]{/*    &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
   </dd>
   <dt>E[attr~=val]</dt>
   <dd>Element E whose attribute <em>attr</em> has within its value the space-separated full word <em>val</em>.<br />
-    <pre>a[title~=more] {/* &lt;a title=&quot;want more info about this?&quot;&gt;}</pre>
+    <pre contenteditable>a[title~=more] {/* &lt;a title=&quot;want more info about this?&quot;&gt;}</pre>
   </dd></dl>
      </section>
     </div>
@@ -313,12 +313,12 @@ p.firstletter {width: 300px;
      <dl>
   <dt>E[attr^=val]</dt>
   <dd>Element E whose attribute <em>attr</em> starts with the value <em>val</em>.<br />
-    <pre>a[href^=mailto] {background-image: url(emailicon.gif);}  
+    <pre contenteditable>a[href^=mailto] {background-image: url(emailicon.gif);}  
 a[href^=http]:after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
   </dd>
   <dt>E[attr$=val]</dt>
   <dd>Element E whose attribute <em>attr</em> ends in <em>val</em> . <br />
-    <pre>a[href$=pdf] {background-image: url(pdficon.gif);}
+    <pre contenteditable>a[href$=pdf] {background-image: url(pdficon.gif);}
 a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
   </dd>
   <dt>E[attr*=val]</dt>
@@ -396,7 +396,7 @@ E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
   :checked
   </pre>
   <p style="float: left; margin-right:20px">Example:<p>
-<pre  style="float: left">input[type=checkbox]:checked + label {
+<pre contenteditable style="float: left">input[type=checkbox]:checked + label {
   color: red;
 }</pre>
 <div style="clear:both;">
@@ -421,7 +421,7 @@ E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
 
 :default</pre>
   <p style="float: left; margin-right:20px">Example:<p>
-<pre  style="float: left">input:valid { border: 1px solid green;}
+<pre contenteditable style="float: left">input:valid { border: 1px solid green;}
 input:invalid { border: 1px solid red;}
 input:required {border-width: 5px;}
 input:optional {border-width: 10px;}
@@ -605,7 +605,7 @@ tr:nth-of-type(<b>3n-1</b>) {
      <ul class="count"><li>1</li><li>2</li></ul>
      <ul class="count"><li>1</li><li>2</li><li>3</li></ul>
      <ul class="count"><li>1</li><li>2</li><li>3</li><li>4</li></ul>
-     <pre> li:first-of-type:last-of-type{width: 100%;}
+     <pre contenteditable> li:first-of-type:last-of-type{width: 100%;}
  li:nth-of-type(1):nth-last-of-type(2),
  li:nth-of-type(2):nth-last-of-type(1){width: 50%;}
  li:nth-of-type(1):nth-last-of-type(3),

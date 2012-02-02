@@ -54,10 +54,10 @@
     <li>Specificity</li>
     <li>Generated Content</li>
     <li>Media Queries</li>
-    <li>Debugging</li>
-    <li>Colors &amp; Transparency </li>
+    <li>Debugging</li> <li>Colors &amp; Transparency </li>
     <li>Fonts &amp; Text</li>
     <li>Backgrounds &amp; Borders</li>
+    <li>Gradients</li>
  </ol>
  </section>
 </div>
@@ -97,14 +97,14 @@
      <header><h1>Specificity: The less than obvious</h1></header> 
      <section class="content">
  <p>The * selector, or global selector, has no value.</p>
- <pre>* {} 0-0-0 </pre>
+ <pre contenteditable>* {} 0-0-0 </pre>
 
 <p>Combinators, like ~, >, and + have no value</p>
-<pre>ul li {} 0-0-2
+<pre contenteditable>ul li {} 0-0-2
 ul > li {} 0-0-2</pre>
 
 <p>:not has no value, but parameter does</p>
-<pre>.myClass:not(p) {} 0-1-1</pre>
+<pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
 
 <p>Specificity is not inheritance</p>
      </section>

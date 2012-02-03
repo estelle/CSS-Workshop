@@ -518,3 +518,4 @@ button, .button {
 button:hover {
 	background: -webkit-linear-gradient(#ddd, #fff);
 }
+.slide.object section {margin-top:100px;}

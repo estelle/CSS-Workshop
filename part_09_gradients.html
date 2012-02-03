@@ -156,6 +156,38 @@ background-image:
       blue 80%
     );
 	}
+#rainbow5{
+	background-image: 
+	repeating-linear-gradient(145deg,
+      red 0,
+	  red 20px,
+      orange 20px,
+      orange 40px, 
+      yellow 40px, 
+      yellow 60px, 
+      green 60px, 
+      green 80px, 
+      blue 80px,
+	  blue 100px,
+	  purple 100px,
+	  purple 120px);
+}
+
+#angledStripes {
+	background-color: #C7573A;
+	background-image: 
+			linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%, 
+					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+	background-size: 100px 100px;	
+	background-repeat: repeat;
+}
 /* color: #C7573A; 
 BDD9D5*/
  </style>
@@ -276,8 +308,6 @@ BDD9D5*/
      </section>
  </div>
  
- 
- 
  <!-- simple syntax -->
  <div class="slide dark object basiclinear"> 
      <header><h1>Basic Linear Gradient Syntax</h1></header> 
@@ -310,9 +340,6 @@ background-image:
      </section>
  </div>
  
- 
- 
- 
  <!-- keyterm values -->
  <div class="slide dark object basiclinear" id="basiclinear"> 
      <header><h1>Basic Syntax: Linear Gradient</h1></header> 
@@ -343,10 +370,10 @@ background: linear-gradient(<span id="basicgradient"></span>brown, khaki);
   bottom left
   bottom right</pre>
    
-        <div class="angle notes"  style="top:0; left: 400px">top</div>
-        <div class="angle notes"  style="bottom: 0; left: 400px;">bottom</div>
-        <div class="angle notes"  style="left: 0; top: 300px;">left</div>
-        <div class="angle notes"  style="right: 0; top: 300px;">right</div>
+        <div class="angle notes"  style="top:0; left: 350px">top <br> (270deg)</div>
+        <div class="angle notes"  style="bottom: 0; left: 350px;">bottom<br>  (90deg)</div>
+        <div class="angle notes"  style="left: 0; top: 300px;">left <br> (0deg/360deg)</div>
+        <div class="angle notes"  style="right: 0; top: 300px;">right<br>  (180deg)</div>
         <div class="angle notes"  style="top:0; left:0;">top left</div>
         <div class="angle notes"  style="top:0; right:0;">top right</div>
         <div class="angle notes"  style="bottom:0; left:0;">bottom left</div>
@@ -492,21 +519,12 @@ background: linear-gradient(<span id="anglevkeyterm"></span>brown, khaki);
       blue, 
       purple
     )</span>;
- background-image:
-     <span  contenteditable id="colerme2"  onKeyUp="changeBackgroundGradient('rainbow','#colerme2')">linear-gradient(top,
-      red 0%,
-      orange 20%, 
-      yellow 40%, 
-      green 60%, 
-      blue 80%, 
-      purple 100%
-    )</span>; 	</pre>
      </section>
  </div>
  
 <!-- color stops -->
  <div class="slide object rainbow" id="rainbow3"> 
-     <header><h1>Colors</h1></header> 
+     <header><h1>Color Stops</h1></header> 
      <section class="content" style="margin-top:100px;">
 <pre contenteditable id="colorme" onKeyUp="changeBackgroundGradient('rainbow3','#colorme span')">  background-image:
     <span>linear-gradient(top,
@@ -523,9 +541,9 @@ background: linear-gradient(<span id="anglevkeyterm"></span>brown, khaki);
  
 <!-- color stops -->
 <div class="slide object rainbow2" id="rainbow4"> 
-     <header><h1>Colors Lines</h1></header> 
+     <header><h1>Hard Color Stops</h1></header> 
      <section class="content" style="margin-top:100px;">
-<pre style="background-color: rgba(255,255,255,0.9)">.rainbow {
+<pre style="background-color: rgba(255,255,255,0.7)">.rainbow {
   background-image:
     <span contenteditable id="colorme3"  onKeyUp="changeBackgroundGradient('rainbow4','#colorme3')">linear-gradient(top,
       red 20%,
@@ -542,6 +560,77 @@ background: linear-gradient(<span id="anglevkeyterm"></span>brown, khaki);
  </div>
  
  
+ <!-- color stops -->
+<div class="slide object rainbow2" id="rainbow5"> 
+     <header><h1>Stripes</h1></header> 
+     <section class="content">
+<pre style="background-color: rgba(255,255,255,0.7)">.rainbow {
+  background-image:
+    <span contenteditable id="colorme5"  onKeyUp="changeBackgroundGradient('rainbow5','#colorme5')">repeating-linear-gradient(145deg,
+      red 0,
+      red 20px,
+      orange 20px,
+      orange 40px, 
+      yellow 40px, 
+      yellow 60px, 
+      green 60px, 
+      green 80px, 
+      blue 80px,
+      blue 100px,
+      purple 100px,
+      purple 120px
+    )</span>; 	
+}</pre> 
+     </section>
+ </div>
+ 
+<div class="slide object angledStripes" id="angledStripes"> 
+     <header><h1>Stripes with background-size</h1></header> 
+     <section class="content">
+<pre style="background-color: rgba(255,255,255,0.7)">background-color: <span id="feature01" onKeyUp="changeFeature('backgroundColor', 'feature01', 'angledStripes')" contenteditable>#C7573A</span>;
+background-image: 
+   <span contenteditable id="colorme6"  onKeyUp="changeBackgroundGradient('angledStripes','#colorme6')">linear-gradient(135deg,
+    rgba(255, 255, 255, 0.2) 25%, 
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0) 50%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.2) 75%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 100%
+)</span>;
+background-size: <span id="feature02" onKeyUp="changeFeature('backgroundSize', 'feature02', 'angledStripes')" contenteditable>100px 100px</span>;
+background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat', 'feature03', 'angledStripes')" contenteditable>repeat</span>;
+</pre> 
+     </section>
+ </div> 
+ 
+ 
+ 
+ <div class="slide "> 
+     <header><h1>Tips on Gradient</h1></header> 
+     <section class="content"> 
+     <ul>
+     	<li>vendor-prefix &lsquo;linear-gradient&rsquo; and &lsquo;radial-gradient&rsquo; </li>
+     	<li>keyword &lsquo;transparent&rsquo; = rgba(0,0,0,0) so fades to grey</li>
+     	<li>create effects with color stops at same location</li>
+        <li>create effects by adding multiple gradients, playing with position and size</li>
+        <li>learn from others: <a href="http://leaverou.me/css3patterns/">Lea Verou's Gradients</a>, <a href="http://www.standardista.com/cssgradients">Estelle Weyl's Gradients</a>, and <a href="http://www.standardista.com/CSS3gradients/flags.html">Estelle's Flags</a></li>
+        <li>Use tools: <a href="http://westciv.com/tools/gradientsnustyle/">John Allsopp's tool</a>, <a href="http://gradients.glrzad.com/">Damian Galarza's tool</a>, <a href="http://www.colorzilla.com/gradient-editor/">Colorzilla</a></li>
+     </ul> 
+     <ul class="icons" style="margin:0">
+         <li class="chrome">Chrome 3* <br/>Chrome 10</li>
+         <li class="safari">Safari 4* <br/>Safari 5.1</li>
+         <li class="firefox">Firefox 3.6<br/>Firefox 10**</li>
+         <li class="opera new">Opera 11.1<br/>&nbsp;</li>
+         <li class="ie new">Internet Explorer 10</li>
+        
+     </ul><p style="margin-top: 0">Prefixed -webkit-, -moz-, -ms-, -o-</p>
+     <p>* legacy syntax, ** future syntax</p>
+     </section>
+     </div>
+ 
+ 
+ 
  
  
 <!-- NEXT -->
@@ -554,6 +643,9 @@ background: linear-gradient(<span id="anglevkeyterm"></span>brown, khaki);
   </div>
   <script src="css/slide.js"></script>
   <script defer>
+   function changeFeature(changestyle, content, slide) {
+	   document.getElementById(slide).style[changestyle] = document.getElementById(content).innerHTML;
+   }
    function changeBackgroundGradient(pageID,changedText){
 	   	document.getElementById(pageID).style.backgroundImage = PrefixFree.prefix + document.querySelector(changedText).innerHTML;
    }

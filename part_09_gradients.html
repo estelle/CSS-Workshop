@@ -188,6 +188,18 @@ background-image:
 	background-size: 100px 100px;	
 	background-repeat: repeat;
 }
+#tablecloth {
+background-color: #C7573A;
+background-image: 
+    linear-gradient(
+    	rgba(255, 255, 255, 0.2) 50%, 
+    	rgba(255, 255, 255, 0) 50%),
+    linear-gradient(left,
+    	rgba(255, 255, 255, 0.2) 50%, 
+    	rgba(255, 255, 255, 0) 50%);
+	background-size: 100px 100px;	
+	background-repeat: repeat;	
+}
 /* color: #C7573A; 
 BDD9D5*/
  </style>
@@ -226,15 +238,15 @@ BDD9D5*/
 <div class="slide normal"> 
  <header><h1>Course Outline</h1></header> 
  <section class="content"> 
-  <ol>
-    <li>Selectors</li>
-    <li>Specificity</li>
-    <li>Generated Content</li>
-    <li>Media Queries</li>
-    <li>Debugging</li> <li>Colors &amp; Transparency </li>
-    <li>Fonts &amp; Text</li>
-    <li>Backgrounds &amp; Borders</li>
-    <li>Gradients</li>
+  <ol><li><a href="part_01_selectors.html">Selectors</a></li>
+    <li><a href="part_02_specificity.html">Specificity</a></li>
+    <li><a href="part_03_generated.html">Generated Content</a></li>
+    <li><a href="part_04_media.html">Media Queries</a></li>
+    <li><a href="part_04_media.html#slide10">Debugging</a></li>
+    <li><a href="part_06_colors.html">Colors &amp; Transparency </a></li>
+    <li><a href="part_07_fonts.html">Fonts / Typography </a></li>
+    <li><a href="part_08_backgrounds.html">Backgrounds &amp; Borders </a></li>
+    <li><a href="part_09_gradients.html">Gradients</a></li>
  </ol>
  </section>
 </div>
@@ -600,6 +612,23 @@ background-image:
 )</span>;
 background-size: <span id="feature02" onKeyUp="changeFeature('backgroundSize', 'feature02', 'angledStripes')" contenteditable>100px 100px</span>;
 background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat', 'feature03', 'angledStripes')" contenteditable>repeat</span>;
+</pre> 
+     </section>
+ </div> 
+ 
+ <div class="slide object angledStripes" id="tablecloth"> 
+     <header><h1>Different effects</h1></header> 
+     <section class="content">
+<pre style="background-color: rgba(255,255,255,0.7)">background-color: <span id="feature04" onKeyUp="changeFeature('backgroundColor', 'feature04', 'tablecloth')" contenteditable>#C7573A</span>;
+
+background-image: 
+    linear-gradient(
+    	rgba(255, 255, 255, 0.2) 50%, 
+    	rgba(255, 255, 255, 0) 50%),
+    linear-gradient(left,
+    	rgba(255, 255, 255, 0.2) 50%, 
+    	rgba(255, 255, 255, 0) 50%);
+background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', 'feature05', 'tablecloth')" contenteditable>100px 100px, 100px 100px</span>;
 </pre> 
      </section>
  </div> 

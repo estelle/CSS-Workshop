@@ -104,14 +104,13 @@ background-image:
 	position: absolute;
 	padding: 50px 50px 30px 50px;
 	color: rgba(255,255,255,0.01);
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.012); 
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.01); 
 	text-align: center;
 	
  }
 .angle:hover {
-	 visibility: visible;
 
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 		color: white;
  }
 #basiclinear:after,
@@ -172,6 +171,11 @@ background-image:
 	  purple 100px,
 	  purple 120px);
 }
+#rainbow5b {
+	background-image: linear-gradient(90deg,
+  #C7573A 40%,
+  #BDD9D5 60%);	
+}
 
 #angledStripes {
 	background-color: #C7573A;
@@ -188,7 +192,7 @@ background-image:
 	background-size: 100px 100px;	
 	background-repeat: repeat;
 }
-#tablecloth {
+#tablecloth, #ancientgrad {
 background-color: #C7573A;
 background-image: 
     linear-gradient(
@@ -200,6 +204,55 @@ background-image:
 	background-size: 100px 100px;	
 	background-repeat: repeat;	
 }
+
+#ancientgrad {
+	 background-image: 
+    -webkit-gradient(linear, 0 0, 100% 0, 
+        color-stop(0.5, rgba(255, 255, 255, 0.25)), 
+        color-stop(0.5, rgba(255, 255, 255, 0)), 
+        color-stop(1, rgba(255, 255, 255, 0)));
+} 	
+#radial01 {
+background-image:
+  radial-gradient( 
+  #C7573A, 
+  #BDD9D5);	
+}
+#radial02 {
+background-image:
+  radial-gradient(25% 35%, 
+  #C7573A, 
+  #BDD9D5);	
+}
+#radial03 {
+background-image:
+  radial-gradient(25% 35%, 
+  #C7573A 20%, 
+  #BDD9D5 20%);	
+}
+#radial04 {
+background-image:
+  radial-gradient(75% 75%, circle,
+  #C7573A 20%, 
+  #BDD9D5 20%);	
+}
+#radial05 {
+background-image:
+  radial-gradient(75% 75%, farthest-corner,
+  #C7573A, 
+  #BDD9D5);	
+}
+
+#radial06 {
+background-image:radial-gradient(
+     circle, 
+      #BDD9D5 50%,
+      #C7573A 50%);
+background-size: 50px 50px;
+background-repeat:repeat;
+background-color: red;
+}
+input[type=range] {width: 360px;}
 /* color: #C7573A; 
 BDD9D5*/
  </style>
@@ -494,7 +547,7 @@ background: linear-gradient(<span id="anglevkeyterm"></span>brown, khaki);
      <section class="content"> 
      <div class="comparegrad comparegradkeyterm" id="comparegrad1"><span class="button">bottom left</span></div>
      <div class="comparegrad comparegradangle" id="comparegrad2"><span class="button">45deg</span></div>
-     <input type="range" onChange="heightChange(this);" min="100" max="450" style="transform: rotate(90deg); position:absolute; right:50px; top: 200px;">
+     <input type="range" onChange="heightChange(this);" min="100" max="450" style="transform: rotate(90deg); position:absolute; right:10px; top: 200px;">
      </section>
      
      <script defer>
@@ -596,6 +649,22 @@ background: linear-gradient(<span id="anglevkeyterm"></span>brown, khaki);
      </section>
  </div>
  
+ 
+ <!-- color stops Ends of gradient -->
+<div class="slide object rainbow2" id="rainbow5b"> 
+     <header><h1>End Points</h1></header> 
+     <section class="content">
+<pre style="background-color: rgba(255,255,255,0.7)">.centeredGradient {
+  background-image:
+    <span contenteditable id="colorme5b"  onKeyUp="changeBackgroundGradient('rainbow5b','#colorme5b')">linear-gradient(90deg,
+       #C7573A 40%,
+       #BDD9D5 60%
+    )</span>; 	
+}</pre> 
+     </section>
+ </div>
+ 
+<!-- angled stripes -->
 <div class="slide object angledStripes" id="angledStripes"> 
      <header><h1>Stripes with background-size</h1></header> 
      <section class="content">
@@ -616,6 +685,8 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
      </section>
  </div> 
  
+ 
+<!-- table cloth -->
  <div class="slide object angledStripes" id="tablecloth"> 
      <header><h1>Different effects</h1></header> 
      <section class="content">
@@ -633,8 +704,23 @@ background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', '
      </section>
  </div> 
  
- 
- 
+<!-- old webkit syntax -->
+<div class="slide object" id="ancientgrad"> 
+     <header><h1>Old Webkit</h1></header> 
+     <section class="content">
+     <pre>.iPhone, .android, .safari5andOlder {     
+  background-image: 
+    -webkit-gradient(linear, 0 0, 100% 0, 
+        color-stop(0.5, rgba(255, 255, 255, 0.25)), 
+        color-stop(0.5, rgba(255, 255, 255, 0)), 
+        color-stop(1, rgba(255, 255, 255, 0)));
+    background-color: <span id="feature06" onKeyUp="changeFeature('backgroundColor', 'feature06', 'ancientgrad')" contenteditable>#C7573A</span>
+    background-size: <span id="feature07" onKeyUp="changeFeature('backgroundSize', 'feature07', 'ancientgrad')" contenteditable>100px 100px</span>;
+} </pre>
+     </section>
+ </div> 
+
+<!-- tips on gradients --> 
  <div class="slide "> 
      <header><h1>Tips on Gradient</h1></header> 
      <section class="content"> 
@@ -659,6 +745,111 @@ background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', '
      </div>
  
  
+ <!-- radial gradients title-->
+ <div class="slide intro"> 
+     <header><h1>Radial Gradients</h1></header> 
+ </div>
+
+
+ 
+ <!-- radial gradients -->
+ <div class="slide object" id="radial01"> 
+     <header><h1>Radial Gradients</h1></header> 
+     <section class="content">
+     <pre>.thisSlide {
+  background-image: 
+    <span contenteditable id="radialfeature01" onKeyUp="changeBackgroundGradient('radial01','#radialfeature01')">radial-gradient( 
+      #C7573A, 
+      #BDD9D5)</span>;
+}</pre> 
+     </section>
+ </div> 
+ 
+ 
+ <!-- radial gradients -->
+ <div class="slide object" id="radial02"> 
+     <header><h1>Radial Gradients</h1></header> 
+     <section class="content">
+     <pre>.thisSlide {
+  background-image: 
+    <span contenteditable id="radialfeature02" onKeyUp="changeBackgroundGradient('radial02','#radialfeature02')">radial-gradient(25% 35%, 
+      #C7573A, 
+      #BDD9D5)</span>;
+}</pre> 
+     </section>
+ </div> 
+ 
+ 
+  
+ <!-- radial gradients -->
+ <div class="slide object" id="radial03"> 
+     <header><h1>Radial Gradients</h1></header> 
+     <section class="content">
+     <pre>.thisSlide {
+  background-image: 
+    <span contenteditable id="radialfeature03" onKeyUp="changeBackgroundGradient('radial03','#radialfeature03')">radial-gradient(25% 35%, 
+      #C7573A 20%, 
+      #BDD9D5 20%)</span>;
+}</pre> 
+     </section>
+ </div> 
+
+<!-- radial shape --> 
+ <div class="slide object" id="radial04"> 
+     <header><h1>Shape</h1></header> 
+     <section class="content">
+     <pre>.thisSlide {
+  background-image: 
+    <span contenteditable id="radialfeature04" onKeyUp="changeBackgroundGradient('radial04','#radialfeature04')">radial-gradient(75% 75%, circle, 
+      #C7573A 20%, 
+      #BDD9D5 20%)</span>;
+}</pre> 
+<ul>
+	<li>circle</li>
+    <li class="imp">ellipse</li>
+</ul>
+     </section>
+ </div> 
+  
+<!-- radial size --> 
+  <div class="slide object" id="radial05"> 
+     <header><h1>Size</h1></header> 
+     <section class="content">
+     <pre>.thisSlide {
+  background-image: 
+    <span contenteditable id="radialfeature05" onKeyUp="changeBackgroundGradient('radial05','#radialfeature05')">radial-gradient(75% 75%, 
+     farthest-corner,
+      #C7573A, 
+      #BDD9D5)</span>;
+}</pre> 
+<ul>
+	<li>closest-side</li>
+<li>closest-corner</li>
+<li>farthest-side</li>
+<li class="imp">farthest-corner</li>
+<li>contain (same as closest-side)</li>
+<li>cover (same as farthest-corner)</li>
+</ul>
+     </section>
+ </div> 
+   
+<!-- effects1 -->
+   <div class="slide object" id="radial06"> 
+     <header><h1>with Background size</h1></header> 
+     <section class="content">
+     <pre style="background-color: rgba(255,255,255,0.9)">.thisSlide {
+  background-image: 
+    <span contenteditable id="radialfeature06" onKeyUp="changeBackgroundGradient('radial06','#radialfeature06')">radial-gradient(
+     circle, 
+      #BDD9D5 50%,
+      #C7573A 50%)</span>;
+  background-size: <span id="radialfeature06b" onKeyUp="changeFeature('backgroundSize', 'radialfeature06b', 'radial06')" contenteditable>100px 100px, 100px 100px</span>;
+  background-repeat: <span id="radialfeature06c" onKeyUp="changeFeature('backgroundRepeat', 'radialfeature06c', 'radial06')" contenteditable>repeat</span>;
+  background-color: <span id="radialfeature06d" onKeyUp="changeFeature('backgroundColor', 'radialfeature06d', 'radial06')" contenteditable>red</span>;
+}</pre> 
+
+     </section>
+ </div> 
  
  
  

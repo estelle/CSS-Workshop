@@ -3,6 +3,7 @@
 div, li, a, p, pre {
 	background-repeat: no-repeat;
 }
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
 body {
   font-size: 20px;
   font-family: Lato, sans-serif;

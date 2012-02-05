@@ -1,0 +1,40 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace;}
+:root {background-color:#ccc; 
+  background-image:url(../css/page-bg.jpg);}
+p {font-family:Verdana, Geneva, sans-serif;}
+</style>
+
+<style contenteditable>p{font-size:2em;}
+blockquote p:first-of-type::before, 
+blockquote p:last-of-type::after {
+  font-size: 2em;
+  color: #C7573A;
+  line-height: 0;
+  vertical-align: middle; 
+}
+blockquote p:first-child:before {
+  content: "\275D"; 
+  margin: 0 5px 0 -1.4ex;
+}
+blockquote p:last-child:after {
+  content: "\275E";
+  padding-left:5px;
+}
+</style>
+<title>Quotes</title>
+</head>
+
+<body>
+	<blockquote><p>With generated content you can created text effects.</p>
+
+<p>We'll cover other uses next.</p></blockquote>
+</body>
+</html>
+

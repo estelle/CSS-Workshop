@@ -38,6 +38,34 @@ body, #presentation, #slides {
 	}
 }
 
+.scrollbar { height: 500px; overflow:auto;}
+	
+	::-webkit-scrollbar {
+    margin-right: 5px;
+    background-color: #bdd9d5;
+	border-radius: 6px;
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    border: 1px #eee solid;
+    border-radius: 12px;
+    background: #C7573A;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+    -webit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #bbb;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+}
+::-webkit-scrollbar-thumb:hover { 
+	background: #b7472A; 
+}	
+pre {
+	
 
 
 /* brown: C7573A;*/

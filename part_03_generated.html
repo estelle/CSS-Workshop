@@ -36,7 +36,8 @@ body, #presentation, #slides {
 .beforeafterdivcont {position:relative;}
 .beforeafterdiv,
 .beforeafterdiv:before,
-.beforeafterdiv:after {
+.beforeafterdiv:after,
+.beforeafterdiv i {
 	height: 100px;
 	content: "";
 	border: 1px solid blue;
@@ -44,21 +45,27 @@ body, #presentation, #slides {
 	background-color: red;
 	-webkit-transform: none;
 	display:inline-block;
+	box-shadow:3px 3px rgba(0,0,0,0.2),-3px -3px rgba(0,0,0,0.2), ;
+	margin: 5px;
 }
 
 .beforeafterdiv:before {
 	content: "before";	
-	background-color: rgba(0,0,0,0.5); 
+	background-color: green;
 	margin-right: -50px;
 	color: #fff;
+	-webkit-transform: translatez(15px);
 }
 .beforeafterdiv:after {
 	content: "after";
-	background-color: rgba(0,0,0,0.5);
+	background-color: blue;
 	margin-left: -50px; 
 	color: #fff;
+	-webkit-transform: translatez(5px);
 	}
-
+.beforeafterdiv i {
+	background-color: yellow;	
+}
 /* GENERATED CONTENT : LINKS */
 .ba li {list-style-type: none; margin-bottom: 20px;}
 .ba a:before {
@@ -103,8 +110,7 @@ blockquote.gc p:last-child:after {
 	position:relative;
 	padding: 20px;
 	background-color: red;
-	color: white; 
-	float:left;	
+	color: white;
 }
 .quote:after {
 	position:absolute;
@@ -182,7 +188,24 @@ p [data-tooltip="true"]:hover:after {
 	border-color:  transparent transparent #C7573A ; 	
 }
 
-
+.d3 {
+	-webkit-transform: perspective(500px) rotateY(40deg);
+	margin: 20px auto;
+		
+}
+.attribute a[href^=http]:hover {
+   position: relative;
+}
+.attribute a[href^=http]:hover:after {
+   content: attr(href);
+   position: absolute;
+   top: 1em;
+   left: 0;
+   background-color: black;
+   color: white;
+   padding: 3px 5px;
+   line-height:1;     
+} 
 /* brown: C7573A;*/
    </style>  
     
@@ -263,6 +286,7 @@ p:after{
     &lt;after&gt; - after content&lt;/after>
 &lt;/p></pre> 
 <a href="files/31_generatetext.html" target="play" class="objectlink">Try it out</a> </section>
+
     </div>   
     
 <!-- 2 free elements  --> 
@@ -270,7 +294,7 @@ p:after{
      <header><h1>Pseudo Elements</h1></header> 
      <section class="content"> 
      You get 2 free stylable faux elements for every non-empty element 
-     <div class="beforeafterdivcont">
+     <div class="beforeafterdivcont  d3">
      	<div class="beforeafterdiv"><i>Content</i></div>
       </div>
      </section>
@@ -384,6 +408,28 @@ a[href$="vcs"]:before {
      </section>
  </div> 
  
+ <!-- attribute example -->
+ <div class="slide normal"> 
+     <header><h1>Attribute Values as content</h1></header> 
+     <section class="content attribute">
+     <p>There are <a href="files/32_generatetext.html">exercises</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes">Google</a>.</p>
+     <pre>a[href^=http]:hover {
+   position: relative;
+}
+a[href^=http]:hover:after {
+   <b>content: attr(href);</b>
+   position: absolute;
+   top: 1em;
+   left: 0;
+   background-color: black;
+   color: white;
+   padding: 3px 5px;
+   line-height:1;     
+} </pre>
+     </section>
+ </div>
+ 
+ 
 <!-- quotes example -->
 <div class="slide normal"> 
      <header><h1>More uses</h1></header> 
@@ -414,20 +460,39 @@ blockquote p:last-child:after {
  
 <!-- quote bubble --> 
  <div class="slide normal"> 
-     <header><h1>Quote &amp; Thought bubbles</h1></header> 
+     <header><h1>Quotes</h1></header> 
      <section class="content"> 
      
-     <p class="quote">This is a quote <a href="files/33_bubbles.html" target="play" style="color: inherit">✍</a> </p>
-     <p class="thought">This is a thought bubble <a href="files/34_bubbles.html" target="play" style="color: inherit">✍</a></p>
-<div style="float: left; clear:both; position: relative; margin-top: -40px">  
-<pre contenteditable style="font-size: 75%; padding:0"">.quote:after {
-  position:absolute;
-  content: '';
-  width: 0; height:0;
-  border: 20px solid tran&hellip;
-  border-top-color: red;
-  bottom:-39px; left:20px;
+     <p class="quote">This is a quote<a href="files/33_bubbles.html" target="play" style="color: inherit">✍</a> </p>
+      
+<pre contenteditable>.quote {
+    border-radius: 10px;
+    position:relative;
+    padding: 20px;
+    background-color: red;
+    color: white;
+}
+.quote:after {
+    position:absolute;
+    content: '';
+    width: 0; height:0;
+    border: 20px solid tran&hellip;
+    border-top-color: red;
+    bottom:-39px; left:20px;
 }</pre>
+     </section>
+ </div>
+ 
+ 
+ 
+ 
+ <!-- quote bubble --> 
+ <div class="slide normal"> 
+     <header><h1>Thought bubbles</h1></header> 
+     <section class="content"> 
+     
+     <p class="thought">This is a thought bubble <a href="files/34_bubbles.html" target="play" style="color: inherit">✍</a></p>
+
 <pre contenteditable style="font-size: 75%; padding:0">.thought,.thought:before,
 .thought:after  {
   border-radius: 50%;
@@ -435,8 +500,6 @@ blockquote p:last-child:after {
   background-color: white;
   position:relative;
 }
-</pre></div>
-<pre contenteditable style="float: right; margin-left: -40px; font-size: 75%;">
 .thought:before, 
 .thought:after {
   content: '';

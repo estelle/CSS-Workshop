@@ -111,7 +111,9 @@
 	-ms-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
 	-o-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
 	border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
-} [title="prefix"] {white-space:nowrap;}
+} [title="prefix"] {white-space:nowrap; display: block;}
+tr {height: 2em;}
+th {text-align: right; padding-right: 10px;}
  
  </style>   
  
@@ -159,6 +161,8 @@
     <li><a href="part_07_fonts.html">Fonts / Typography </a></li>
     <li><a href="part_08_backgrounds.html">Backgrounds &amp; Borders </a></li>
     <li><a href="part_09_gradients.html">Gradients</a></li>
+    <li><a href="part_10_transforms.html">Transforms</a></li>
+    <li><a href="part_11_animation.html">Transitions &amp; Animation</a></li>
  </ol>
  </section>
 </div>
@@ -390,19 +394,17 @@ background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
  <div class="slide normal"> 
      <header><h1>Browser Support</h1></header> 
      <section class="content"> 
-     <table>
-  <tbody>
-    <tr></tr>
+   <table class="fontfamily" cellspacing="0"><thead class="icons">
     <tr>
       <th>Feature</th>
-      <th>Firefox (Gecko)</th>
-      <th>Chrome</th>
-      <th>Internet Explorer</th>
-      <th>Opera</th>
-      <th>Safari</th>
-    </tr>
-    <tr>
-      <td>Basic support</td>
+      <th><span style="float: left; padding-top:20px;">/ Browser</span> <span  class="firefox browser">Firefox</span></th>
+      <th><span class="chrome browser">Chrome</span></th>
+      <th><span  class="ie browser">Internet Explorer</span></th>
+      <th><span  class="opera browser">Opera</span></th>
+      <th><span  class="safari browser">Safari</span></th>
+    </tr></thead>
+<tbody>    <tr>
+      <th>Basic support</th>
       <td>1</td>
       <td>1</td>
       <td>4</td>
@@ -410,7 +412,7 @@ background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
       <td>1</td>
     </tr>
     <tr>
-      <td>Multiple backgrounds</td>
+      <th>Multiple backgrounds</th>
       <td>3.6</td>
       <td>1</td>
       <td>9</td>
@@ -418,7 +420,7 @@ background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
       <td>1.3</td>
     </tr>
     <tr>
-      <td>Gradients</td>
+      <th>Gradients</th>
       <td>3.6 <span title="prefix">-moz</span></td>
       <td>1 <span title="prefix">-webkit</span></td>
       <td>10 <span title="prefix">-ms</span></td>
@@ -426,7 +428,7 @@ background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
       <td>4 <span title="prefix">-webkit</span></td>
     </tr>
     <tr>
-      <td>SVG images</td>
+      <th>SVG images</th>
       <td>4</td>
       <td>8</td>
       <td>9</td>
@@ -434,7 +436,7 @@ background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
       <td>5</td>
     </tr>
     <tr>
-      <td>element()</td>
+      <th>element()</th>
       <td> <span title="prefix">-moz</span></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -442,13 +444,14 @@ background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>image()</td>
+      <th>image()</th>
       <td><span title="prefix">-moz-image-rect()</span></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
+    </tbody>
   </tbody>
 </table>
      </section>
@@ -482,7 +485,7 @@ background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
     <option>space</option>
     <option>round</option>
 </select></pre>
-  <p>Should accept 2 values (H &amp; V), but only Opera supports<br>
+  <p style="font-size: 90%;">Should accept 2 values (H &amp; V), but only Opera supports that<br>
 Tip: Include <code>background-repeat: no-repeat;</code> in your reset CSS</p>
 
 <script defer>
@@ -596,7 +599,7 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
 <div class="slide" id="bgsize">
 	<header><h1>background-size</h1></header>
     <section class="content">
-    <pre contenteditable><b><u></u>background-size</b>: <span class="imp">auto<</span> | contain | cover | <span id="actualsize">&lt;length&gt;</span></pre>
+    <pre contenteditable><b><u></u>background-size</b>: <span class="imp">auto</span> | contain | cover | <span id="actualsize">&lt;length&gt;</span></pre>
     <div id="bcksizeexample" class="bgimage">
     <input type="range" min="3" max="30" step="1" value="15" id="bcksizechange" onChange="changeBackSide(this)" style="position:relative; top: -30px;"/>
     </div><ul>

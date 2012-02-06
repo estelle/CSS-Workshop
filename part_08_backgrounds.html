@@ -111,7 +111,7 @@
 	-ms-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
 	-o-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
 	border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
-}
+} [title="prefix"] {white-space:nowrap;}
  
  </style>   
  
@@ -317,9 +317,9 @@ image("leftArrow.png" ltr, "rightArrow.png" rtl)</pre>
  
 url(multipleImages.gif), url(otherGif.gif)
 
-url(sprite.png<strong>#xywh=40,0,20,20</strong>)
+url(SVGImages.<strong>svg</strong>);
 
-url(sprite.<strong>svg</strong>#xywh=40,0,20,20)
+url(sprite.png<strong>#xywh=40,0,20,20</strong>)
 
 url(<strong>data:</strong>image/gif;<strong>base64</strong>,fOulrS123hEAAa517sdfQfdafsPFRjuy187xxRM221...)
 
@@ -332,13 +332,32 @@ url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='2
 <div class="slide normal"> 
      <header><h1>Other background-image syntax</h1></header> 
        <section class="content">
- element('#someID')
-image('ico_sprite.jpg#xywh=32,64,16,16')
-image("try1.svg", 'try2.png' , "try3.gif")
-image("leftArrow.png" ltr, "rightArrow.png" rtl)
+<p>Allows the use of any element, including &lt;canvas&gt; where images can be used.</p>
+         
+<ul class="icons" style="float:right;"><li class="firefox">Firefox 4</li>
+</ul><pre>background-image: -moz-element('#someID');
+background-image: element('#someID')</pre>
+<p>Define which portion of the image to show:</p>
+<ul class="icons" style="float:right;">
+         <li class="firefox">Firefox 4</li>
+</ul><pre>background-image: 
+    -moz-image-rect(url(ico_sprite.jpg), 32, 64, 16, 16);
+background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
 </section></div>
  
  
+ 
+ <div class="slide normal"> 
+     <header><h1>Unsupported Syntax (future!!)</h1></header> 
+     <section class="content"> 
+<p>Fallback in case your images doesn't load:</p>
+
+<pre>background-image: 
+     image("try1.svg", "try2.png", "try3.gif", blue)</pre>
+<p>Flip the image if the direction is rtl.</p>
+<pre>background-image: image("arrow.png" rtl)</pre>
+     </section>
+ </div>
  
 
  
@@ -365,6 +384,73 @@ image("leftArrow.png" ltr, "rightArrow.png" rtl)
 <strong>background-image:</strong> image("try1.svg", 'try2.png' , "try3.gif");</pre>
 </pre>
       
+     </section>
+ </div>
+ 
+ <div class="slide normal"> 
+     <header><h1>Browser Support</h1></header> 
+     <section class="content"> 
+     <table>
+  <tbody>
+    <tr></tr>
+    <tr>
+      <th>Feature</th>
+      <th>Firefox (Gecko)</th>
+      <th>Chrome</th>
+      <th>Internet Explorer</th>
+      <th>Opera</th>
+      <th>Safari</th>
+    </tr>
+    <tr>
+      <td>Basic support</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>3.5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Multiple backgrounds</td>
+      <td>3.6</td>
+      <td>1</td>
+      <td>9</td>
+      <td>yes</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <td>Gradients</td>
+      <td>3.6 <span title="prefix">-moz</span></td>
+      <td>1 <span title="prefix">-webkit</span></td>
+      <td>10 <span title="prefix">-ms</span></td>
+      <td>11+ <span title="prefix">-o</span></td>
+      <td>4 <span title="prefix">-webkit</span></td>
+    </tr>
+    <tr>
+      <td>SVG images</td>
+      <td>4</td>
+      <td>8</td>
+      <td>9</td>
+      <td>9.5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>element()</td>
+      <td> <span title="prefix">-moz</span></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>image()</td>
+      <td><span title="prefix">-moz-image-rect()</span></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
      </section>
  </div>
  

@@ -3,9 +3,52 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
+<style>
+/* TOOL TIP */
+p {
+	margin: 1em;
+	font-size: 30px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+p [data-tooltip="true"] {
+	border-bottom: 1px solid;
+	text-decoration:none;
+	line-height:1;
+	display:inline;
+	z-index: 0;
+}
+p [data-tooltip="true"]:hover {	
+	position: relative;
+	}
+p [data-tooltip="true"]:hover:before {
+	content: attr(title);
+	position: absolute; 
+	top: 45px;
+	left: 0;
+	background-color: #C7573A;
+	color: white;
+	max-width: 10em;
+	min-width: 5em;
+	font-style: normal;
+	padding: 5px;
+	border-radius: 10px;
+	text-align:center;
+	z-index: 100;
+}
+p [data-tooltip="true"]:hover:after {
+	content: "";
+	position:absolute;
+	bottom: -10px;
+	border: 15px solid;
+	position: absolute; left: 20px;
+	border-color:  transparent transparent #C7573A ; 	
+}
+</style>
 </head>
 
 <body>
-<p>&lt;blockquote&gt;&lt;p&gt;With generated condent you can created textual effects.&lt;/p&gt;&lt;p&gt;We'll cover other uses next.&lt;/p&gt;&lt;/blockquote&gt;</p>
+<p>In this section you have learned the general idea of using generated content to create effects and / or to provide additional information.  Try hovering over me to find out how awesome <i title="Generated Content Rocks my world" data-tooltip="true">generated content</i> can be.</p>
+     <p>Open up a text editor and try creating a <i title="'Cause tool tips are awesome" data-tooltip="true">tooltip</i> without looking at the code. But, if you must, the code is attached, or you can check out your web inspector.</p>
+     <p style="margin-bottom: 50px;">Here is <a title="View source for solution" data-tooltip="true" href="files/35_tooltip.html" target="play">one solution</a></p>
 </body>
 </html>

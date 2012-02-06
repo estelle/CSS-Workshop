@@ -247,9 +247,26 @@
      </section>
  </div>
  
+ 
+ <!-- bacgkround image -->
+ <div class="slide normal"> 
+     <header><h1>Old School: background-image</h1></header> 
+     <section class="content">
+ <pre><em>none | &lt;url&gt; | inherit</em> </pre>
+ </pre><pre style="line-height:2;">background-image: url(path/aSingleLonelyCat);</pre>
+ <ul>
+ <li>background-color</li>
+ <li>background-image</li>
+ <li>background-repeat</li>
+ <li>background-attachment</li>
+ <li>background-position</li>
+ </ul>
+ </section>
+ </div>
+
  <!--background-image -->
 <div class="slide normal"> 
-     <header><h1>background-image</h1></header> 
+     <header><h1>multiple background-image</h1></header> 
      <section class="content">
      
      <pre contenteditable>background-image: url(brown.gif), url(blue.gif);</pre> 
@@ -272,20 +289,82 @@
  </div>
  
   
+ 
+ <!-- bacgkround image -->
+ <div class="slide normal"> 
+     <header><h1>CSS3 background-image value types</h1></header> 
+     <section class="content">
+ <pre><em>none | &lt;url&gt;</em> | <em>&lt;image-list&gt;</em> | <em>&lt;element-reference&gt;</em>  | <em>&lt;gradient&gt;</em></pre><pre style="line-height:2;">url(singleImage.png) 
+url(multipleImages.gif), url(otherGif.gif)
+none
+linear-gradient(top, red, blue)
+radial-gradient(circle, red, blue)
+url(data:image/gif;base64,fOulrS123hEAAa517sdfQfda...)
+url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'&gt;&lt;circle cx='55' cy='190' r='25' fill='#FFF' /&gt;&lt;/svg&gt;&quot;);
+element('#someID')
+image('ico_sprite.jpg#xywh=32,64,16,16')
+image("try1.svg", 'try2.png' , "try3.gif")
+image("leftArrow.png" ltr, "rightArrow.png" rtl)</pre>
+ </section>
+ </div>
+ 
+ 
+ 
+<div class="slide normal"> 
+     <header><h1>url() values</h1></header> 
+     <section class="content">
+<pre style="line-height:1; white-space:pre-wrap; word-break:break-all">url(singleImage.png) 
+ 
+url(multipleImages.gif), url(otherGif.gif)
+
+url(sprite.png<strong>#xywh=40,0,20,20</strong>)
+
+url(sprite.<strong>svg</strong>#xywh=40,0,20,20)
+
+url(<strong>data:</strong>image/gif;<strong>base64</strong>,fOulrS123hEAAa517sdfQfdafsPFRjuy187xxRM221...)
+
+url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'>&lt;circle cx='55' cy='190' r='25' fill='#FFF' />^lt;path d='M160 213h-34a82 82 0 0 0 -82 -82v-34a116 116 0 0 1 116 116z' fill='#666'/>&lt;path d='M184 213A140 140 0 0 0 44 73 V 38a175 175 0 0 1 175 175z' fill='#666'/>&lt;/svg>"); <a href="http://jsfiddle.net/estelle/sTd62/embedded/result/" target="play">SVG Example</a>
+</pre>
+<p>Media fragment will not break backwards... hash will be ignored</p>
+ </section>
+ </div>
+ 
+<div class="slide normal"> 
+     <header><h1>Other background-image syntax</h1></header> 
+       <section class="content">
+ element('#someID')
+image('ico_sprite.jpg#xywh=32,64,16,16')
+image("try1.svg", 'try2.png' , "try3.gif")
+image("leftArrow.png" ltr, "rightArrow.png" rtl)
+</section></div>
+ 
+ 
+ 
+
+ 
+  
  <!--background-image -->
 <div class="slide normal"> 
      <header><h1>background-image</h1></header> 
      <section class="content">
-     <pre contenteditable style="overflow: auto;">background-image:
-  linear-gradient(top, red, blue);</pre> 
-  <pre contenteditable>background:
-  url(data:image/gif;base64,SKudfOulrSOp3WOyDR0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGol);</pre>    
-     <pre contenteditable style="overflow: auto;">background-image:
-  url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'&gt;&lt;circle cx='55' cy='190' r='25' fill='#FFF' /&gt;&lt;path d='M160 213h-34a82 82 0 0 0 -82 -82v-34a116 116 0 0 1 116 116z' fill='#666'/&gt;&lt;path d='M184 213A140 140 0 0 0 44 73 V 38a175 175 0 0 1 175 175z' fill='#666'/&gt;&lt;/svg&gt;&quot;);</pre>
-<pre contenteditable>background-image: element('#myID');</pre>
-<pre contenteditable>background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
-<pre contenteditable>background-image: none;</pre>
-        
+     <pre contenteditable style="overflow: auto;"><strong>background-image:</strong> url(myGif.gif), url(otherGif.gif);
+
+<strong>background-image:</strong> none;
+
+<strong>background-image:</strong> linear-gradient(top, red, blue);
+  
+<strong>background-image: </strong>url(data:image/gif;base64,fOulrShEAAQ...);
+  
+<strong>background-image:</strong>
+  url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'&gt;&lt;circle cx='55' cy='190' r='25' fill='#FFF' /&gt;&lt;/svg&gt;&quot;);
+  
+<strong>background-image:</strong> element('#myID');
+
+<strong>background-image:</strong> image('ico_sprite.jpg#xywh=32,64,16,16');
+
+<strong>background-image:</strong> image("try1.svg", 'try2.png' , "try3.gif");</pre>
+</pre>
+      
      </section>
  </div>
  

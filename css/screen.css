@@ -223,6 +223,7 @@ body.three-d div.slides {
 			padding-top: 60px;
 			text-align:center;
 			position: relative;
+			background-repeat: no-repeat;
 		}
 		.icons .firefox {background-position:-80px 0}
 		.icons .ie {background-position:-280px 0}
@@ -520,3 +521,4 @@ button:hover {
 	background: -webkit-linear-gradient(#ddd, #fff);
 }
 .slide.object section {margin-top:100px;}
+td {text-align:center;}

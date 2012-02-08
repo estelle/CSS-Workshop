@@ -90,6 +90,9 @@
      translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
 }
 section {padding-top: 20px;}
+.x {width: 75%; float:right; margin:0; position:relative;}
+.y {float: left; line-height:1.62em;}
+#ABTrasform li {float: left; clear:both;
  </style>
   <style id="tempstyle"></style>  
   </head> 
@@ -211,14 +214,7 @@ transform:
      
      </section>
  </div>
- <script>
- 
- var temporaryStyleSheet = document.getElementById('tempstyle');
- function setTempStyle(thisclass, change){
-	 var browserprefix = document.getElementsByTagName('html')[0].getAttribute('class');
-	 temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {'+ browserprefix + 'transform: '+ change +';}';
- }
- </script>
+
  <div class="slide normal"> 
      <header><h1>Transform Function: Rotate</h1></header> 
      <section class="content"> <b class="plane plane_03">✈</b> 
@@ -252,30 +248,33 @@ transform:
  
   
 <div class="slide" id="gencontentlink"> 
-<header><h1>Tranforms</h1></header> 
+<header><h1>Multiple Tranforms</h1></header> 
 <section class="content transform">
 
-<ul>
-<li>translate <pre contenteditable>transform: translate(-80px, 200px);</pre></li>
-<li>rotate <pre contenteditable>transform: rotate(15deg);</pre></li>
-<li>scale <pre contenteditable>transform: scale(1.5, 2);</pre></li>
-<li>skew <pre contenteditable>transform: skewX(-8deg);</pre></li>
-<li>multiple transforms <pre contenteditable>transform: translate(-80px, 200px) 
-  rotate(-15deg) scale(2, 1.5) skewX(8deg);</pre></li>
+<ul id="ABTrasform">
+<li><b class="y">translate</b> <pre class="x">transform: <span contenteditable id="Atranslate">translate(-80px, 200px);</span></pre></li>
+<li><b class="y">rotate</b> <pre class="x">transform: <span contenteditable id="Arotate">rotate(15deg);</span></pre></li>
+<li><b class="y">scale</b> <pre class="x">transform: <span contenteditable id="Ascale">scale(1.5, 2);</span></pre></li>
+<li><b class="y">skew</b> <pre class="x">transform: <span contenteditable id="Askew">skewX(-8deg);</span></pre></li>
+<li>multiple transforms <pre>transform: <span contenteditable id="Btranslate">translate(-80px, 200px)</span> 
+  <span contenteditable id="Brotate">rotate(-15deg)</span> <span contenteditable id="Bscale">scale(2, 1.5)</span> <span contenteditable id="Bskew">skewX(8deg)</span>;</pre></li>
 </ul>
 </section>
 </div>
-     
+  <script>
+ 
+ var temporaryStyleSheet = document.getElementById('tempstyle');
+ function setTempStyle(thisclass, change){
+	 var browserprefix = document.getElementsByTagName('html')[0].getAttribute('class');
+	 temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {'+ browserprefix + 'transform: '+ change +';}';
+ }
+ var transformSpans = document.getElementById('ABTrasform').getElementsByTagName('span');
+ console.log(transformSpans.length);
+ </script>    
 <div class="slide"> 
     <header>
     	<h1>Transforms used</h1>
     </header> 
-    <section class="content"> 
-        <ul class="imp">
-            <li>transform: <em>translate</em>(200px, 0) 	<i class="translate show"></i></li>
-            <li>transform: <em>rotate</em>(360deg) 		<i class="rotate show"></i></li>
-            <li>transform: <em>scale</em>(1.5) 		<i class="scale show"></i></li>
-            <li><em>transform-origin</em>: -20px -20px		<i class="rotate origin show"></i></li>
         </ul>
          <ul class="icons" style="clear: both;">
          <li class="chrome">Chrome</li>

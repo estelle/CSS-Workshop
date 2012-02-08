@@ -311,7 +311,8 @@
     handleKeys: function(e) {
       
       if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
-      
+	  console.dir(e.target);
+      if(e.target.contentEditable == "true") return;
       switch (e.keyCode) {
         case 37: // left arrow
           this.prev(); break;

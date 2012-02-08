@@ -12,8 +12,86 @@
      <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
    <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
    <link rel="stylesheet" href="css/print.css" media="print"/>
- <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
-    
+ <style>
+ .bug,.plane, .plane:after {
+	position:relative;
+	font-size: 100px; 
+ 	color:#C7573A;
+  	display:block; 
+	height: 140px; 
+	width: 140px; 
+	border-radius: 7px; 
+	line-height: 140px; 
+	box-shadow: 5px 5px 0 5px rgba(0,0,0,0.2); 
+	background-color: #fff;
+	margin:10px auto;
+	text-align:center;
+	font-size: 140px;
+}
+.plane:after {
+	content:'✈';
+	position:absolute; top: 0; left:0; 
+	box-shadow: 5px 5px 0 5px #BDD9D5;
+	opacity: 0.9;
+	margin: 0;
+	pointer-events: none;
+}
+.plane_01:after {
+   transform: 
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+}
+
+.plane_02:after {
+   transform: 
+     translate(100px, 100px);     
+}
+
+.plane_03:after {
+   transform: 
+     rotate(90deg);     
+}
+
+.plane_04:after {
+   transform: 
+     scale(0.25, 0.75);     
+}
+.plane_05, 
+.plane_05:after {
+   border-radius: 0;
+   border: 1px solid #666;
+}
+.plane_05:after {
+   transform: 
+     skewX(15deg);     
+}
+
+.plane_06:after {
+   transform: 
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+}
+
+.plane_07:after {
+   transform: 
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+}
+
+.plane_08:after {
+   transform: 
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+}
+
+.plane_09:after {
+   transform: 
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+}
+
+.plane_10:after {
+   transform: 
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+}
+section {padding-top: 20px;}
+ </style>
+  <style id="tempstyle"></style>  
   </head> 
   <body> 
   
@@ -68,12 +146,115 @@
 <!-- Title Slide -->
 <div class="slide intro"> 
      <header><h1>Part 10: Transforms</h1></header> 
+     <b class="bug">✈</b>
 </div>
   
-  <div class="slide" id="gencontentlink"> 
-<header><h1>tranforms</h1></header> 
+<!-- Title Slide -->
+<div class="slide normal"> 
+     <header><h1>Tranforming Elements</h1></header>
+     <section class="content"><b class="plane plane_01">✈</b> 
+     <pre>.plane {
+-webkit-transform: 
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg); 
+-moz-transform: 
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg); 
+-ms-transform: 
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg); 
+-o-transform: 
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg); 
+transform: 
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+}</pre>
+<pre>selector {
+	transform: none | &lt;transFunc()&gt; [&lt;transFunc()&gt;];
+}</pre>
+     </section>
+</div>
+
+<div class="slide normal"> 
+     <header><h1>2D Transform Functions</h1></header> 
+     <section class="content">
+   <dl class="deprecated listed wide">
+
+  <dt><strong>translate</strong>(&lt;length&gt;[, &lt;length&gt;])</dt>
+  <dd>specifies a 2D translation by the vector [x, y], where x is the  translation-value parameter for the x axis and y  is the optional translation value along the y axis. parameter. If <em>y</em> is not provided, y==0.</dd>
+  <dt><strong>translateX</strong>(&lt;length&gt;)</dt>
+  <dd>specifies a translation by the given amount in the X direction.</dd>
+  <dt><strong>translateY</strong>(&lt;length&gt;)</dt>
+  <dd>specifies a translation by the given amount in the Y direction.</dd>
+  <dt><strong>scale</strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
+  <dd>specifies 2D scaling operation by the [sx,sy]. If sy  is not provided, sy will equal sx (growsing or shrinking with the same scale). Scale(1, 1)  or scale(1) leaves an element in it's default state. Scale(2, 2) or scale(2)  causes the element to appear twice as wide and twice as tall as its default size, taking up 4-times the original area.</dd>
+  <dt><strong>scaleX</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [sx, 1] scaling vector, where sx is given as the parameter.</dd>
+  <dt><strong>scaleY</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [1, sy] scaling vector, where sy is given as the parameter.</dd>
+  <dt><strong>rotate</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property. For example, rotate(90deg) would cause elements to appear rotated one-quarter of a turn in the clockwise direction.</dd>
+  <dt><strong>skewX</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the X axis by the given angle.</dd>
+  <dt><strong>skewY</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the Y axis by the given angle.</dd>
+    <dt><strong>matrix</strong>(&lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;)</dt>
+  <dd>Generally machine generated, specifies a 2D transformation in the form of a transformation matrix of six values. matrix(a,b,c,d,e,f) is equivalent to applying the transformation matrix <strong>[a b c d e f]</strong>.</dd>
+</dl>
+     </section>
+ </div>
+
+
+<div class="slide normal"> 
+     <header><h1>Transform Function: Translate</h1></header>
+     <b class="plane plane_02">✈</b> 
+     <section class="content">
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translate(100px, 100px)</span>;</pre> 
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translateX(100px)</span>;</pre>  
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translateY(100px)</span>;</pre> 
+     
+     </section>
+ </div>
+ <script>
+ 
+ var temporaryStyleSheet = document.getElementById('tempstyle');
+ function setTempStyle(thisclass, change){
+	 var browserprefix = document.getElementsByTagName('html')[0].getAttribute('class');
+	 temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {'+ browserprefix + 'transform: '+ change +';}';
+ }
+ </script>
+ <div class="slide normal"> 
+     <header><h1>Transform Function: Rotate</h1></header> 
+     <section class="content"> <b class="plane plane_03">✈</b> 
+    
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_03', this.innerHTML)">rotate(90deg)</span>;</pre> 
+     
+     </section>
+ </div>
+
+<div class="slide normal"> 
+     <header><h1>Transform Function: Scale</h1></header> 
+     <section class="content"><b class="plane plane_04">✈</b> 
+    
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scale(0.25, 0.75)</span>;</pre>
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scale(0.75)</span>;</pre> <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scaleX(0.25)</span>;</pre> 
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scaleY(0.75)</span>;</pre>  
+     </section>
+ </div>
+ 
+
+<div class="slide normal"> 
+     <header><h1>Transform Function: Skew</h1></header> 
+     <section class="content">
+     <b class="plane plane_05">✈</b> 
+    
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewX(5deg)</span>;</pre>
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewY(5deg)</span>;</pre> <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewX(5deg) skewY(5deg)</span>;</pre> <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skew(5deg,5deg)</span>;</pre> 
+   
+     </section>
+ </div>
+ 
+  
+<div class="slide" id="gencontentlink"> 
+<header><h1>Tranforms</h1></header> 
 <section class="content transform">
-<b></b>
+
 <ul>
 <li>translate <pre contenteditable>transform: translate(-80px, 200px);</pre></li>
 <li>rotate <pre contenteditable>transform: rotate(15deg);</pre></li>
@@ -120,7 +301,6 @@
 <li><a href="http://meyerweb.com/eric/tools/matrix/">Matrix</a> is another syntax</li>
 <li>More about <a href="http://www.standardista.com/css3/css3-transform-property-and-the-various-transform-functions">transforms</a></li>
 </section>
-</section>
 </div>
 
 <!-- NEXT -->
@@ -130,10 +310,11 @@
 </div>
 
     
-    
+  </div>  
   
    
   </div>
   <script src="css/slide.js"></script>
+<script src="https://raw.github.com/LeaVerou/prefixfree/master/prefixfree.min.js"></script>
   </body> 
 </html>

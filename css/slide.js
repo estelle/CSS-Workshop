@@ -1,4 +1,34 @@
 // JavaScript Document
+
+
+function vendorPrefix(prefix, id){
+	  var prefixTxt = 'cat';
+		switch (prefix){
+			case 'w':
+				prefixTxt = '-webkit-';
+			break;
+			case 'm':
+				prefixTxt = '-moz-';
+			break;
+			case 'ms':
+				prefixTxt = '-ms-';
+			break;	
+			case 'o':
+				prefixTxt = '-o-';
+			break;
+			case 'r':
+				prefixTxt = '';
+			break;
+		};
+	  var spans = document.getElementById(id).querySelectorAll('u');
+	  for(var i = 0, j = spans.length; i < j; i++ ){
+	  	spans[i].innerHTML = prefixTxt;
+	  }
+			
+	}
+	
+	
+	
   (function() {
   var doc = document;
   var disableBuilds = true;

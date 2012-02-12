@@ -341,7 +341,7 @@ a {
   border-bottom: 2px dotted #BDD9D5;
 }
 
-pre, .ex, .pre {
+pre, .ex, .pre, .codelike {
   text-align: left;
   font-size: 80%;
   padding: 10px 20px;
@@ -461,15 +461,6 @@ ul.columns {
 	-webkit-columns: 2 1em;
 	-webkit-column-rule: 1px solid #BDD9D5;	
 }
-input[type=checkbox]:checked + label {
-  color: red;
-}
-input:valid { border: 1px solid green;}
-input:invalid { border: 1px solid red;}
-input:required {border-width: 5px;}
-input:optional {border-width: 10px;}
-input:out-of-range { background-color: pink;}
-input:in-range { background-color:lightgreen;}
 
 .hilite {font-size: 120%; padding:5px 2px;}
 
@@ -524,3 +515,4 @@ button:hover {
 .slide.object section {margin-top:100px;}
 td {text-align:center;}
 [contenteditable]:focus {outline: 1px dashed #fff;}
+section > ol {-webkit-margin-start: 2em;}

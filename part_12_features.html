@@ -1,0 +1,664 @@
+<!doctype html>
+<html> 
+  <head> 
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]--> 
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]--> 
+    <meta charset="utf-8" />
+    <title>Other Features</title>
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+   <link rel="stylesheet" href="css/print.css" media="print"/>
+ <style>
+ .cursors li {
+	width: 170px; height: 70px; line-height:70px;
+	float: left; margin: 0 15px 15px 0;
+	border-radius: 15px; text-align:center;
+	background: linear-gradient(hsl(171, 27%, 80%), hsl(171, 15%, 80%));
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.3), inset 1px 1px #fff;
+	list-style-type: none;
+ }
+ .cursors ul:last-of-type li {
+	 
+	background: linear-gradient(hsl(171, 47%, 80%), hsl(171, 35%, 80%));
+ }
+ div.example {
+display: block;
+padding: 0 10px;
+background: rgba(255, 255, 255, 0.4);
+-moz-border-radius: 8px;
+border-radius: 8px;
+font-size:14px;
+border: 1px solid rgba(0, 0, 0, 0.2);
+column-rule: 1px solid #bbb;
+margin-bottom: -15px;
+}
+.boxsizing div {
+width: 200px;
+height: 100px;
+padding: 20px;
+border: 5px dashed #C7573A;
+margin: 20px;
+text-align: center;
+background-color: rgba(255, 255, 255, 0.5);
+-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+white-space: nowrap;
+}.boxsizing:first-of-type {
+margin: 0 10px 0 0;
+}
+.boxsizing {
+float: left;
+border: 1px solid #C7573A;
+margin: 20px 0 20px 20px;
+}
+.boxsizing div.bb {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+#box-orient-example {
+height: 220px;
+display: -webkit-box;
+-webkit-box-orient: horizontal;
+display: -moz-box;
+-moz-box-orient: horizontal;
+}
+	/* COLUMNS*/
+	
+	#columnsslide {
+            -webkit-column-count: 2;
+            -webkit-column-rule: 1px solid #bbb;
+            -webkit-column-gap: 2em;
+            -moz-column-count: 2;
+            -moz-column-rule: 1px solid #bbb;
+            -moz-column-gap: 2em;
+            column-count: 2;
+            column-rule: 1px solid #bbb;
+            column-gap: 2em;
+          }
+          #columnsslide p {
+            font-size: 15px;
+			font-family:Arial, Helvetica, sans-serif;
+          }
+/* Flexible Box Model */
+#box-orient-example {
+  height: 220px;
+  display: -webkit-box; -webkit-box-orient: horizontal;
+  display: -moz-box; -moz-box-orient: horizontal;
+}
+#box-orient-example div:nth-child(1) {
+  background: white; padding: 10px; -webkit-box-flex: 1; 
+  -moz-box-flex: 1; text-align: center;
+}
+#box-orient-example div:nth-child(2) {
+  background: #ddd; padding: 10px; -webkit-box-flex: 1; 
+  -moz-box-flex: 1; text-align: center;
+}
+#box-orient-example div:nth-child(3) {
+  background: white; padding: 10px; -webkit-box-flex: 3; 
+  -moz-box-flex: 3; text-align: center;
+}
+
+ #box-orient-example-2 {
+	height: 200px; 
+	display: -moz-box; 
+	-moz-box-pack: center;
+	-moz-box-align: center; 
+	-moz-box-orient: horizontal;
+	
+	display: -webkit-box; 
+	-webkit-box-pack: center;
+	-webkit-box-align: center; 
+	-webkit-box-orient: horizontal;
+	
+	display: -ms-box; 
+	-ms-box-pack: center;
+	-ms-box-align: center; 
+	-ms-box-orient: horizontal;
+}
+#box-orient-example-2 div, #box-orient-example-2 textarea {
+	background: #ddd; 
+	padding: 10px; 
+	width: 200px; 
+	font-size: 14px;
+}
+
+            .textwrap{width: 94%; height: 1.1em; 
+ height: 1.1em; overflow: hidden; line-height: 1.1em; margin:0.2em 0}
+ </style>   
+  </head> 
+  <body> 
+  
+  <div id="topinfo">
+
+  </div>
+  
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">2</span> for comments. <a href="http://www.standardista.com/webstock">www.standardista.com/webstock</a>
+    </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    
+<div class="slide normal">
+    <header> 
+    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
+    </header>
+     <section class="content"> 
+     <p> ◈ Estelle Weyl</p>
+  <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
+     </section>
+    </div>
+  
+<!-- OUTLINE -->
+<div class="slide normal"> 
+ <header><h1>Course Outline</h1></header> 
+ <section class="content"> 
+  <ol><li><a href="part_01_selectors.html">Selectors</a></li>
+    <li><a href="part_02_specificity.html">Specificity</a></li>
+    <li><a href="part_03_generated.html">Generated Content</a></li>
+    <li><a href="part_04_media.html">Media Queries</a></li>
+    <li><a href="part_04_media.html#slide10">Debugging</a></li>
+    <li><a href="part_06_colors.html">Colors &amp; Transparency </a></li>
+    <li><a href="part_07_fonts.html">Fonts / Typography </a></li>
+    <li><a href="part_08_backgrounds.html">Backgrounds &amp; Borders </a></li>
+    <li><a href="part_09_gradients.html">Gradients</a></li>
+    <li><a href="part_10_transforms.html">Transforms</a></li>
+    <li><a href="part_11_animation.html">Transitions &amp; Animation</a></li>
+<li><a href="part_12_features.html">Other Features</a></li>
+</ol>
+ </section>
+</div>
+
+
+    
+
+<div class="slide intro"> 
+     <header><h1>Part 11: Other Features</h1></header> 
+</div>
+ 
+ <div class="slide" id="columnpage">
+          <header> <h1>Columns</h1></header>
+          <section class="content" style="margin-top:0">
+          <pre contenteditable>
+<u></u>column-count: <span id="colcnt">1</span>;      <input id="columncounts" type="range" min="1" max="6" value="2" onChange="changeColumnNoSlider(event)">
+<u></u>column-width: <span id="colwidth">10</span>em;   <input id="columnwidth" type="range" min="5" max="40" step="1" value="10" onChange="changeColumnNoSlider(event)">
+<u></u>column-rule: 1px solid #bbb;
+<u></u>column-gap: <span id="colgap">2</span>em;      <input id="columngaps" type="range" min="0" max="10" step="0.1" value="2" onChange="changeColumnNoSlider(event)"></pre>
+
+            <div id="columnsslide" class="example">
+              <p>Adipisicing rump nostrud exercitation turkey, bresaola deserunt ullamco beef ribs pork loin ball tip pig pork belly nisi. Cillum sunt officia deserunt, beef aliqua ham ut t-bone sed ut consequat shoulder. Nostrud excepteur biltong non, fatback salami incididunt beef cupidatat occaecat. </p>
+              <p>Reprehenderit ham hock labore tri-tip chuck, excepteur ut. Meatball sint enim beef ribs, mollit laborum flank commodo fatback pariatur tail rump eiusmod spare ribs dolore. Ut minim qui, tongue eu short ribs pancetta excepteur incididunt culpa consequat pastrami magna chuck. Flank sunt sint, occaecat ut adipisicing labore turkey laboris in magna.</p>
+
+<p>Chicken bacon meatloaf minim meatball salami sunt spare ribs.</p><p> Bacon sed tail, pork loin pariatur meatloaf hamburger exercitation corned beef shank ex esse sirloin qui beef ribs. Consectetur anim corned beef, cupidatat ex enim tempor. Pariatur consectetur ad, enim ut quis consequat aliquip exercitation jowl tenderloin ham dolore. </p><p>Fugiat excepteur aliqua, cow dolor swine shoulder elit tri-tip shankle. Irure consectetur cow labore, cupidatat exercitation ea jerky ham officia dolore tongue eu aliqua. Ham hock irure beef ribs non, flank sausage eiusmod ham short loin nostrud.
+</p>
+            </div>
+
+<ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari 3.1</li>
+         <li class="firefox">Firefox 2</li>
+         <li class="opera">Opera 11</li>
+         <li class="ie new">IE 10</li>
+         <li class="txt"><span onClick="vendorPrefix('w', 'columnpage')">-webkit-</span><span onClick="vendorPrefix('r', 'columnpage')"> and </span> <span onClick="vendorPrefix('m', 'columnpage')">-moz-</span>required</li>
+     </ul>
+          </section>
+
+          <script defer="">
+            function changeColumnNoSlider(event) {
+			  var columngaps = roundNumber(document.getElementById('columngaps').value, 1);
+			  var columnwidth = document.getElementById('columnwidth').value;
+              var count =  document.getElementById('columncounts').value;
+              document.getElementById('colgap').textContent = columngaps;
+              document.getElementById('colwidth').textContent = columnwidth;
+              document.getElementById('colcnt').textContent = count;
+              var example = document.getElementById('columnsslide');
+              example.style.webkitColumnCount = count;
+              example.style.MozColumnCount = count;
+              example.style.webkitColumnGap = columngaps + "em";
+              example.style.MozColumnGap = columngaps + "em";
+              example.style.webkitColumnWidth = columnwidth + "em";
+              example.style.MozColumnWidth = columnwidth + "em";
+            }
+			function roundNumber(num, dec) {
+				var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+				return result;
+			}
+          </script>
+</div>     
+
+<div class="slide">
+	<header><h1>box-sizing</h1></header>
+    <section class="content">
+    <pre contenteditable>box-sizing: content-box | border-box</pre>
+    <div class="boxsizing"><div>content-box</div></div>
+    <div class="boxsizing"><div class="bb">border-box</div></div>
+<pre contenteditable style="float:left; margin-top:0;">div {
+width: 200px; 
+height:100px; 
+padding: 20px;
+margin:20px;
+border-width: 5px;
+}
+</pre>
+
+    <div class="boxsizing"><div class="bb">border-box</div></div>
+<div style="float:left"><ul><li style="list-style-type:none;">-webkit- Safari 5 and older</li>
+<li style="list-style-type:none;">-moz- for all Firefox versions</li></ul>
+ <ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari 3.1/5.1</li>
+         <li class="firefox">Firefox 2/8</li>
+         <li class="opera">Opera 9.5</li>
+         <li class="ie">IE 8</li>
+     </ul> 
+</div>
+<p class="notes" style="clear:both">border-box replicates the old IE box model</p>
+    </section>
+</div>  
+
+
+
+ <div class="slide">
+	<header><h1>Flexible Box Model</h1></header>
+    <section class="content">
+    <p>Used to position horizontal and vertical stacks.</p>
+<pre contenteditable style="float: left; margin: 0 10px 0 0;">.box {
+  display: box;
+  box-orient:<select onChange="changeBoxOrient(event)">&nbsp;&nbsp; &nbsp; &nbsp; <option>horizontal</option> &nbsp; &nbsp; &nbsp; <option>vertical</option> &nbsp; &nbsp; </select>;
+}
+.box .one, .box .two {
+  box-flex: 1;
+}
+.box .three {
+  box-flex: 3;
+}</pre>   <ul class="icons" style="float: left;">
+         <li class="chrome half">Chrome</li>
+         <li class="safari half">Safari 3.1</li>
+         <li class="firefox half">Firefox 2</li>
+         <li class="opera bad">Opera 12</li>
+         <li class="ie new half">IE 10</li>
+         <li class="txt">-webkit-, -moz-, -ms- required</li>
+     </ul>
+
+          <div id="box-orient-example" class="example">
+            <div>
+              Box one
+            </div> 
+            <div>
+              Box two
+            </div> 
+            <div>
+              Box three
+            </div> 
+          </div>
+
+          <script defer=""> 
+            function changeBoxOrient(event) {
+              var el = document.getElementById('box-orient-example');
+              el.style.webkitBoxOrient = event.target.value;
+              el.style.MozBoxOrient = event.target.value; 
+            }
+          </script>  
+  
+    </section>
+</div>  
+
+
+
+<div class="slide">
+	<header><h1>Flexible Box Model</h1></header>
+    <section class="content">
+<pre contenteditable>.box {
+  display: <b>box</b>;
+  box-pack: <select onChange="changeBoxPack(event)"><option>center</option>
+    <option>start</option> 
+    <option>end</option> </select>;
+  box-align: <select onChange="changeBoxAlign(event)"><option>center</option><option>start</option><option>end</option><option>stretch</option></select>;
+}</pre> 
+
+            <div id="box-orient-example-2" class="example">
+              <textarea>change the dropdowns and resize this &lt;textarea&gt;</textarea> 
+            </div>
+
+            <script defer=""> 
+              function changeBoxPack(event) {
+                var el = document.getElementById('box-orient-example-2');
+                el.style.webkitBoxPack = event.target.value;
+                el.style.MozBoxPack = event.target.value; 
+              }
+              function changeBoxAlign(event) {
+                var el = document.getElementById('box-orient-example-2');
+                el.style.webkitBoxAlign = event.target.value;
+                el.style.MozBoxAlign = event.target.value; 
+              }
+            </script> 
+
+    </section>
+</div>
+
+<div class="slide">
+	<header><h1>Old FlexBox Properties</h1></header>
+    <section class="content"> 
+<pre contenteditable class="new">display: box ;</pre>
+
+<pre contenteditable><b>box-orient:</b>  <strong>horizontal</strong> | vertical | inherit;
+      
+<b>box-pack:</b> <strong>start</strong> | end | center | justify;
+
+<b>box-align:</b> start | end | center | baseline | <strong>stretch</strong>;
+
+<b>box-flex:</b> integer | <strong>0</strong>;
+
+<span style="opacity: 0.4"><b>box-flex-group</b>
+
+<b>box-ordinal-group</b>
+
+<b>box-direction</b>: normal | reverse | inherit;
+
+<b>box-lines</b>:</span>
+</pre>
+<ul style="clear:both;"><li><a href="http://www.html5rocks.com/en/tutorials/flexbox/quick/">Quick tutorial</a></li><li><a href="http://msdn.microsoft.com/en-us/ie/hh272902#_CSSFlexBox">IE 10 Support</a></li></ul>
+    </section>
+</div>  
+
+<div class="slide">
+	<header><h1>New FlexBox Properties</h1></header>
+    <section class="content"> 
+<pre contenteditable class="new">display: flexbox | inline-flexbox;</pre>
+
+<pre contenteditable><b>flex-direction</b>: lr | rl | tb | bt | <strong>inline</strong> | 
+    inline-reverse | block | block-reverse</span>
+
+<b>flex-order:</b> integer | <strong>1</strong>;</span>
+      
+<b>flex-pack:</b> <strong>start</strong> | end | center | justify;
+
+<b>flex-align:</b> <strong>auto</strong> | baseline;
+</pre>
+<ul class="icons" style="float:left">
+         <li class="chrome">Chrome 15</li>
+         <li class="safari bad">Safari 5.1</li>
+         <li class="firefox bad">Firefox 7</li>
+         <li class="opera bad">Opera 12</li>
+         <li class="ie">IE 10</li>
+     </ul>
+     <p style="float:left"><a href="http://www.w3.org/TR/css3-flexbox/">W3C specs</a></p>
+     <p style="clear: both;" class="notes">The spec syntax changed drastically. Browsers are curently changing..</p>
+    </section>
+</div>  
+
+<div class="slide" id="gridlayout">
+	<header><h1>grid layout</h1></header>
+    <section class="content">
+    <p>Using grid system to lay out content, dividing available space into columns and rows</p>
+    <pre contenteditable style="float: right; margin: 0 0 0 20px"><u></u>grid-columns:
+<u></u>grid-rows:
+<u></u>grid-column:
+<u></u>grid-row:
+<u></u>grid-cell:
+<u></u>grid-cell-stacking:
+<u></u>grid-template:
+<u></u>grid-column-span:
+<u></u>grid-row-span:
+<u></u>grid-column-sizing:
+<u></u>grid-row-sizing:
+<u></u>grig-flow:
+<u></u>grid-column-align:
+<u></u>grid-row-align:
+<u></u>grid-layer:
+</pre>
+<div style="float:left; width: 480px; margin-right: -40px">
+
+<p style="font-size: 18px;"><a href="http://www.w3.org/TR/css3-grid-layout/">W3C Specifications</a></p>
+    <pre contenteditable>display: <u></u>grid | <u></u>inline-grid </pre>
+    
+    <ul class="icons">
+         <li class="chrome bad">Chrome</li>
+         <li class="safari bad">Safari 3.1</li>
+         <li class="firefox bad">Firefox 2</li>
+         <li class="opera bad">Opera 12</li>
+         <li class="ie new">IE 10</li>
+         <li class="txt"><span onClick="vendorPrefix('ms', 'gridlayout')">-ms-</span> required</li>
+     </ul>
+</div>
+    </section>
+</div>
+
+   
+ 
+  
+<div class="slide normal cursors" style="padding: 0"> 
+     <header><h1>Cursors</h1></header> 
+     <section class="content"> 
+			<ul>
+				<li style="cursor:crosshair">crosshair</li>
+				<li  style="cursor:default">default</li>
+				<li  style="cursor:help">help</li>
+				<li  style="cursor:move">move</li>
+				<li  style="cursor:e-resize">e-resize</li>
+				<li  style="cursor:ne-resize">ne-resize</li>
+				<li  style="cursor:nw-resize">nw-resize</li>
+				<li  style="cursor:n-resize">n-resize</li>
+				<li  style="cursor:se-resize">se-resize</li>
+				<li  style="cursor:sw-resize">sw-resize</li>
+				<li  style="cursor:s-resize">s-resize</li>
+				<li  style="cursor:w-resize">w-resize</li>
+				<li  style="cursor:text">text</li>
+				<li  style="cursor:wait">wait</li>
+				<li  style="cursor:progress">progress</li>
+			</ul>
+			<ul>
+				<li  style="cursor:none">none</li>
+				<li  style="cursor:context-menu">context-menu</li>
+				<li  style="cursor:cell">cell</li>
+				<li  style="cursor:vertical-text">vertical-text</li>
+				<li  style="cursor:alias">alias</li>
+				<li  style="cursor:copy">copy</li>
+				<li  style="cursor:no-drop">no-drop</li>
+				<li  style="cursor:not-allowed">not-allowed</li>
+				<li  style="cursor:col-resize">col-resize</li>
+				<li  style="cursor:row-resize">row-resize</li>
+				<li  style="cursor:all-scroll">all-scroll</li>
+				<li  style="cursor:zoom-in">zoom-in</li>
+				<li  style="cursor:zoom-out">zoom-out</li>
+			</ul>
+     </section>
+ </div>  
+ 
+ 
+ 
+ 
+
+
+<div class="slide">
+	<header><h1>text-overflow: ellipsis</h1></header>
+    <section class="content">
+          <section>
+            <pre contenteditable>p {
+  text-overflow: ellipsis; <input type="range" min="0" max="100" value="94" onChange="changeWrapping(event)" style="float:right">
+  white-space: nowrap;
+  overflow: hidden;
+}</pre>
+
+            <div id="textwraps">
+              <p class="textwrap codelike">
+                overflow-hidden only: Play with the slider to see what happens at the end of the line
+              </p>
+              <p style=" white-space:nowrap" class="textwrap codelike">
+                white-space: nowrap, overflow: hidden: Play with the slider to see what happens at the end of the line
+              </p>
+              <p style="text-overflow: ellipsis;  white-space: nowrap; " class="textwrap codelike">
+                text-overflow: ellipsis;  white-space: nowrap; and overflow: hidden: Play with the slider to see what happens at the end of the line
+              </p>
+            </div>
+            <p class="notes">Needs nowrap and overflow:hidden (anything other than visible) to work. Prefix in Opera</p>
+  <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox new">Firefox 7</li>
+         <li class="opera">Opera 11</li>
+         <li class="ie">IE 6</li>
+     </ul>          
+          </section>
+
+          <script defer="">
+            function changeWrapping(event) {
+              document.getElementById('textwraps').style.width = event.target.value + '%';
+            }
+          </script>
+    </section>
+</div> 
+
+<div class="slide">
+	<header><h1>word-wrap: breakword</h1></header>
+    <section class="content">
+    <pre contenteditable>word-wrap:  normal | break-word</pre>
+    <div style="width: 10em; word-wrap:break-word;" class="codelike">
+    Despite the old adage, smiles is not longer than supercalifragilisticexpialidocious.
+    </div>
+      <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 1</li>
+         <li class="safari">Safari 1</li>
+         <li class="firefox">Firefox 3.5</li>
+         <li class="opera">Opera 10.5</li>
+         <li class="ie">IE 5.5</li>
+     </ul>
+    </section>
+</div>  
+
+
+<div class="slide">
+	<header><h1>calc()</h1></header>
+    <section class="content">
+    <ul class="icons" style="clear: both;">
+         <li class="chrome bad">Chrome</li>
+         <li class="safari bad">Safari</li>
+         <li class="firefox new">Firefox 4</li>
+         <li class="opera bad">Opera 11</li>
+         <li class="ie new">IE 9</li>
+     </ul>
+<pre contenteditable>.colA {
+  width:50%;
+  margin-right: 1em;
+}
+.colB {
+  width: -moz-calc(50% - 1em);
+}</pre>
+     <ul>
+        <li>+, -, *, /, mod, min, and max operators.</li>
+     	<li>Vendor prefixed in Firefox, not in MS</li>
+     	<li>Not yet ready for production</li>
+        <li><a href="http://hacks.mozilla.org/2010/06/css3-calc/">Intro to calc()</a></li>
+        </ul> 
+    </section>
+</div>  
+
+<div class="slide">
+	<header><h1>rem</h1></header>
+    <section class="content">
+    <pre contenteditable>html { 
+    font-size: 62.5%; 
+} 
+p { 
+    font-size: 13px; 
+    font-size: 1.3rem; 
+} 
+small { 
+    font-size: 11px; 
+    font-size: 1.1rem; 
+}</pre>
+    
+    <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 6</li>
+         <li class="safari">Safari 5</li>
+         <li class="firefox">Firefox 3.6</li>
+         <li class="opera new">Opera 11.6</li>
+         <li class="ie new">IE 9</li>
+     </ul>
+     <ul>
+       <li><a href="http://snook.ca/archives/html_and_css/font-size-with-rem">Article on rem</a></li><li><a href="http://www.standardista.com/css3/css-values-lengths-times-frequenc-angles">Article on units of measurement</a></li></ul>
+     
+    </section>
+</div>
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ <div class="slide normal"> 
+     <header><h1>pointer-events: none;</h1></header> 
+     <section class="content">
+     <p>Can the element be clicked?!?!</p>
+     <pre class="contenteditable" style="font-size: 140%">.animatedElement {
+  pointer-events: none;
+}</pre>
+<p>Did you note that you could change the transforms examples even when the example was covering the code?</p>
+ <ul class="icons" style="clear: both;">
+         <li class="chrome"><br>Chrome</li>
+         <li class="safari"><br>Safari</li>
+         <li class="firefox"><br>Firefox</li>
+         <li class="opera bad">Opera<br>SVG only</li>
+         <li class="ie bad">IE<br>SVG Only</li>
+     </ul>
+     </section>
+ </div> 
+  
+  
+  
+  
+  <div class="slide normal"> 
+     <header><h1>-webkit-user-modify</h1></header> 
+     <section class="content">
+<p>Related to <em>contentEditable</em>: Determines whether content of an element is editable.
+
+<pre>
+-webkit-user-modify: read-only | read-write | read-write-plaintext-only;
+-moz-user-modify: read-only | read-write | write-only;</pre>
+<dl>
+<dt>read-only</dt>
+<dd>The content is read-only.</dd>
+
+<dt>read-write</dt>
+<dd>The content can be read and written.</dd>
+<dt>write-only (moz only)</dt>
+<dd>The user is able to edit the content, but not to read it.</dd>
+
+<dt>read-write-plaintext-only (webkit)</dt>
+<dd>The content can be read and written, but any rich formatting of pasted text is lost.</dd>
+</dl>
+
+     </section>
+ </div>
+ 
+ 
+ 
+ 
+<div class="slide intro"> 
+     <header><h1>The End</h1></header>
+    <h1><a href="index.html">Home ➹</a></h1>
+</div>
+
+    
+    
+  
+   
+  </div>
+<script src="css/prefixfree.js"></script>
+  <script src="css/slide.js"></script>
+  </body> 
+</html>

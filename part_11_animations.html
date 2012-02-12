@@ -1,0 +1,1036 @@
+<!doctype html>
+<html> 
+  <head> 
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]--> 
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]--> 
+    <meta charset="utf-8" />
+    <title>Gradients || CSS: From Knowledgable to Ninja</title>
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+   <link rel="stylesheet" href="css/print.css" media="print"/>
+   <style>
+   .h1 {font-size: 80px;}
+   .hoverme 		{color: #C7573A; text-decoration:underline;}
+.hoverme:hover {color: #BDD9D5;}
+.simptrans {transition:1s;}
+/*.simptrans:hover {transition:10s}*/
+
+.code {
+   color: #000000;
+   font-size: 85%;
+   background-color: rgba(255,255,255,0.4);
+   transition: all 0.5s ease-in 50ms;
+}
+.code:hover {
+   color: #C7573A;
+   font-size: 105%;
+   background-color: rgba(255,255,255,0.8);
+}
+.yes, .no {
+	position: relative;
+}
+.yes:after, .no:after {
+	content: '✓';
+	color:green;
+	font-size:60px;
+	position:absolute;
+	top: 5px;
+	right: 5px;	
+}
+.no:after {
+	content: 'X';
+	color: red;	
+	font-family: "Comic Sans MS", cursive;
+}
+.spinbox, .plane {
+	position:relative;
+	font-size: 100px; 
+ 	color:#C7573A;
+  	display:block; 
+	height: 140px; 
+	width: 140px;margin:10px auto;
+	text-align:center;
+	font-size: 140px; 
+}
+.plane, .plane2 {
+	display: block;
+	line-height: 140px; 
+	position: absolute;
+	top: 0; left: 0;	
+	transition: all 1s ease-in 50ms;
+    transform-origin: 100px 150px;
+}
+.spinbox .dot {
+	position: absolute;
+	top: 150px;
+	left: 100px;
+	height:5px; width: 5px;
+	border-radius: 0.5em}
+.spinbox:hover .dot {
+	background-color:#C7573A;	
+}
+.spin:hover {
+	transform: rotate(360deg) scale(2);
+}
+
+.plane_01 {animation: flying 3s infinite 1s; animation-play-state:paused;}
+.plane_03 {animation: flyingDangerously 3s infinite; animation-play-state:paused;}
+.plane_04 {animation: UFO 3s infinite; animation-play-state:paused;}
+.plane_05 {animation: flyingTowardsUser 3s infinite; animation-play-state:paused;}
+.to {transform-origin: left 300px;}
+.slide:hover .plane_01,
+.slide:hover .plane_03,
+.slide:hover .plane_04,
+.slide:hover .plane_05,
+.slide:hover .plane_06,
+.slide:hover .plane_07,
+.slide:hover .planeanim_01
+ {animation-play-state:running;}
+ .plane_pausing {
+	left: 350px;
+	transform-origin: center 300px;
+	animation: flyingInCircles 3s linear infinite;
+	 
+ }
+  .plane_pausing:hover {
+	animation-play-state:paused;
+	 
+ }
+@keyframes flyingInCircles {
+ 
+  100% {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+@keyframes flying {
+	0% {
+      left: 0;
+    }
+
+    100% {
+      left: 100%;
+    }
+}
+@keyframes flyingDangerously {
+0% {
+      left: 0;
+    }
+    
+    10% {
+      left: 45%;
+    }
+    
+    90% {
+      left: 55%;
+    }
+
+    100% {
+      left: 100%;
+    }
+}
+
+@keyframes UFO {
+
+   0% {
+      left: 0;
+      opacity: 1;
+    }
+    
+    50% {
+      opacity: 0.1;
+    }
+
+    100% {
+      left: 100%;
+      opacity: 1
+    }
+
+}
+
+@keyframes flyingTowardsUser {
+  0%{
+    transform: 
+      translate3d(0, 0, 0) rotate(0deg) scale(0.7, 0.7);	
+  }
+
+  100% {
+    transform:
+      translate3d(600px, 400px, 0) rotate(80deg) scale(1.2, 1.2);
+  }
+
+}
+.slide nav ul,.slide nav ul li  {margin: 0; padding: 0;}
+.slide nav ul li {list-style-type: none; background-color: #C7573A; color: white; margin:0; padding: 3px 5px; border: 1px solid #fff;}
+nav > ul > li {display: inline-block; position:relative;}
+nav ul ul {transform: scale(1,0); transform-origin: top center; transition:0.2s linear 50ms; position:absolute; top: 100%;}
+nav li:hover ul {transform: scale(1,1);}
+
+.planeanim {
+    -webkit-transform-origin: left 300px; 
+    -moz-transform-origin: left 300px; 
+    -ms-transform-origin: left 300px; 
+    transform-origin: left 300px; 
+}
+.planeanim_01 {
+  transform-origin: left 300px;
+  animation-name: flyingTowardsUser; 
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 3;
+  animation-play-state: paused;
+}
+pre u {text-decoration:none; font-weight:bold;}
+</style>
+    
+  </head> 
+  <body> 
+  
+  <div id="topinfo">
+
+  </div>
+  
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">2</span> for comments. <a href="http://www.standardista.com/webstock">www.standardista.com/webstock</a>
+    </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    
+<div class="slide normal">
+    <header> 
+    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
+    </header>
+     <section class="content"> 
+     <p> ◈ Estelle Weyl</p>
+  <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
+     </section>
+    </div>
+  
+<!-- OUTLINE -->
+<div class="slide normal"> 
+ <header><h1>Course Outline</h1></header> 
+ <section class="content"> 
+  <ol><li><a href="part_01_selectors.html">Selectors</a></li>
+    <li><a href="part_02_specificity.html">Specificity</a></li>
+    <li><a href="part_03_generated.html">Generated Content</a></li>
+    <li><a href="part_04_media.html">Media Queries</a></li>
+    <li><a href="part_04_media.html#slide10">Debugging</a></li>
+    <li><a href="part_06_colors.html">Colors &amp; Transparency </a></li>
+    <li><a href="part_07_fonts.html">Fonts / Typography </a></li>
+    <li><a href="part_08_backgrounds.html">Backgrounds &amp; Borders </a></li>
+    <li><a href="part_09_gradients.html">Gradients</a></li>
+    <li><a href="part_10_transforms.html">Transforms</a></li>
+    <li><a href="part_11_animation.html">Transitions &amp; Animation</a></li>
+    <li><a href="part_12_features.html">Other Features</a></li>
+ </ol>
+ </section>
+</div>
+
+    
+<!-- Title Slide -->
+<div class="slide intro"> 
+     <header><h1>Part 11: Transitions &amp; Animations</h1></header> 
+</div>
+
+<!-- Simplest Transition -->
+<div class="slide normal"> 
+     <header><h1>Simplest Transition</h1></header> 
+     <section class="content"> 
+     
+     <pre style="font-size:140%;">a {
+  color: #C7573A;
+}     
+a:hover {
+  color: #BDD9D5;
+}</pre>
+     <p class="hoverme h1">Hover Over Me</p>
+     </section>
+ </div>
+ 
+ 
+<!-- CSS3 Transition -->
+ <div class="slide normal"> 
+     <header><h1>CSS3 Transition</h1></header> 
+     <section class="content">
+     <pre style="font-size:140%;">a {
+  color: #C7573A; 
+  transition: 1s;
+}
+a:hover {
+  color: #BDD9D5;
+}</pre>
+     <p class="hoverme h1 simptrans">Hover Over Me</p> 
+     </section>
+ </div>
+ 
+ 
+ <!-- property overview -->
+<div class="slide"> 
+<header><h1>transitions</h1></header> 
+<section class="content"> 
+<p>Enables the transition of properties from one state to the next over a defined length of time</p>
+<ul>
+<li><em>transition-property:</em> properties (or 'all') that transition</li>
+<li><em>transition-duration:</em> s or ms it takes to transition</li>
+<li><em>transition-timing-function:</em> bezier curve of transition</li>
+<li><em>transition-delay:</em> s or ms before transition starts</li>
+<li><em>transition:</em> shorthand for 4  transition properties</li>
+</ul>
+<ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox 4</li>
+         <li class="opera">Opera 10.5</li>
+         <li class="ie new">IE 10</li>
+         <li class="txt">  &nbsp; all with vendor prefix</li>
+     </ul>
+</section>
+</div>  
+ 
+<!-- font transition example -->
+<div class="slide"> 
+<header><h1>transitions</h1></header> 
+<section class="content"> 
+<pre contenteditable class="code">code {
+   color: #000000;
+   font-size: 100%;
+   background-color: rgba(255,255,255,0.4);
+   transition: all 0.5s ease-in 50ms;
+}
+code:hover {
+   color: #C7573A;
+   font-size: 120%;
+   background-color: rgba(255,255,255,0.8);
+}
+</pre>
+<pre contenteditable>code {
+   transition: 
+      color, font-size, background-color 0.5s ease-in 50ms;
+}</pre>
+</section>
+</div>
+
+<!-- what can be transitioned? -->
+<div class="slide normal"> 
+     <header><h1>What can be transitioned?</h1></header> 
+     <section class="content">
+     <p>Anything that has intermediate values</p>
+     <pre style="width: 40%; float:left;" class="yes">code {
+  opacity: 1;
+}
+code:halfway {
+  opacity: 0.5;
+}
+code:hover {
+  opacity: 0;
+}</pre>
+     <pre style="width: 40%; float:right;" class="no">code {
+  display: block;
+}
+code:halfway {
+  display: ???
+}
+code:hover {
+  display: none;
+}</pre>
+ 
+ 
+     </section>
+ </div> 
+ 
+
+ 
+ 
+<!-- what can be transitioned2? -->
+ <div class="slide normal"> 
+     <header><h1>What can be transitioned?</h1></header> 
+     <section class="content">
+     <p>2 values that have REAL intermediary values</p>
+     <pre style="width: 40%; float:left;" class="yes">code {
+  font-size: 100%;
+}
+code:halfway {
+  font-size: 110%;
+}
+code:hover {
+  font-size: 120%;
+}</pre>
+     <pre style="width: 40%; float:right;" class="no">code {
+  height: auto;
+}
+code:halfway {
+  height: ???
+}
+code:hover {
+  height: 1000px;
+}</pre>
+      
+     </section>
+ </div>
+ 
+
+ 
+ 
+<!-- transitioning transforms -->
+  <div class="slide normal"> 
+     <header><h1>Transitioning Transforms</h1></header> 
+     <em class="spinbox"><i class="dot"></i><b class="plane2 spin">✈</b></em>
+     <section class="content">
+<pre>
+.plane {
+    transition: all 1s ease-in 50ms;
+    transform-origin: 100px 150px;
+}
+.plane:hover {
+    transform: rotate(360deg) scale(2);
+}</pre>
+     </pre>
+ 
+ 
+     </section>
+ </div> 
+ 
+ 
+ 
+<!-- Tranform Features (or Limitations) -->
+  <div class="slide normal"> 
+     <header><h1>Tranform Features (or Limitations)</h1></header> 
+     <section class="content">
+<ul>
+	<li>Single Iteration</li>
+	<li>Reverse is controllable</li>
+    <li>Reverse goes to initial state</li>
+    <li>No granular control</li>
+    <li>Limited methods of initiation</li>
+    <li>Can't force them to finish</li>
+</ul>
+     </section>
+ </div>          
+     
+ 
+<!-- Useful example -->
+<div class="slide normal"> 
+     <header><h1>Putting it together in the Real World</h1></header> 
+     <section class="content" style="min-height: 400px;">
+     
+<nav>
+	<ul>
+    	<li>About
+        <ul>
+            <li>Me</li>
+            <li>You</li>
+            <li>Them</li>
+            <li>Nobody</li>
+       </ul>
+        </li>
+        <li>Posts
+        <ul>
+            <li>Door Post</li>
+            <li>Wall hanging</li>
+            <li>Stair Banister</li>
+            <li>Washington</li>
+       </ul></li>
+        <li>Topics
+        <ul>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>HTML5</li>
+            <li>SEO</li>
+       </ul></li>
+        <li>Events
+        <ul>
+            <li>Party</li>
+            <li>Dinner</li>
+            <li>Hike</li>
+            <li>Foo Camp</li>
+       </ul></li>
+   </ul>
+</nav>
+ <pre>nav ul li {
+  list-style-type: none;
+}
+nav > ul > li {
+  display: inline-block; 
+  position:relative;
+}
+nav ul ul {
+  transform: scale(1,0); 
+  transform-origin: top center; 
+  transition:0.2s linear 50ms; 
+  position:absolute; 
+  top: 100%;
+}
+nav li:hover ul {
+  transform: scale(1,1);
+}</pre>
+     </section>
+ </div>
+ 
+ 
+ <div class="slide intro"> 
+     <header><h1>Animations</h1></header> 
+     <section class="content"> 
+     </section>
+ </div>    
+     
+ 
+ 
+ 
+ <div class="slide normal"> 
+     <header><h1>Animation Features (or limitations)</h1></header> 
+     <section class="content"> 
+ <ul>
+	<li>Single, many or infinite iterations</li>
+	<li>Single or bi-directional</li>
+    <li>Granular control</li>
+    <li>Can be initiated on page load</li>
+    <li>Has more robust JS Hooks</li>
+    <li>Can be paused</li>
+    <li>Lowest priority in UI Thread</li>
+</ul>    
+     </section>
+ </div>    
+     
+ 
+ <div class="slide normal"> 
+ <header>
+    <h1>Animation Essentials</h1>
+ </header> 
+ <section class="content"> 
+     <ul class="imp">
+        <li>@keyframes</li>
+        <li>animation-name</li>
+        <li>animation-duration</li>
+        <li>animation-timing-function</li>
+        <li>animation-iteration-count</li>
+        <li>animation-direction</li>
+        <li>animation-play-state</li>
+        <li>animation-delay</li>
+        <li>animation-fill-mode</li>
+        <li>animation (shorthand)</li>
+      </ul>
+ </section>
+</div>
+     
+     
+ <div class="slide intro"> 
+     <header><h1>@Keyframes</h1></header> 
+     <section class="content"> 
+     </section>
+ </div>   
+
+    
+<div class="slide">
+     <header><h1>Keyframes</h1></header> 
+     <section class="content"> 
+     <b class="plane plane_01">✈</b>
+     <pre contenteditable><b>@keyframes</b> <b>flying</b> {
+
+    <b>from</b> {
+      left: 0;
+    }
+
+    <b>to</b> {
+      left: 100%;
+    }
+}</pre>
+</section>
+</div>   
+     
+     
+    
+
+    
+<div class="slide">
+    <header><h1>Keyframes</h1></header> 
+    <section class="content"> 
+     <b class="plane plane_01">✈</b>
+    <pre contenteditable>@keyframes flying {
+
+    <b>0%</b> {
+      left: 0;
+    }
+
+    <b>100%</b> {
+      left: 100%;
+    }
+
+}</pre>
+
+	<p>Don't forget the <b class="imp" style="border-bottom:double 3px;">%</b></p>
+    <p>Don't quote the animation name</p>
+     </section>
+</div>  
+     
+     
+    
+
+    
+    
+<div class="slide"> 
+    <header>
+    	<h1>Granular animation control</h1>
+    </header> 
+    <section class="content"> 
+     <b class="plane plane_03">✈</b>
+    <pre contenteditable>@keyframes flyingDangerously {
+
+    <b>0%</b> {
+      left: 0;
+    }
+    
+    <b>10%</b> {
+      left: 45%;
+    }
+    
+    <b>90%</b> {
+      left: 55%;
+    }
+
+    <b>100%</b> {
+      left: 100%;
+    }
+
+}
+</pre>
+</section>
+</div> 
+    
+     
+    
+
+    
+    
+<div class="slide">
+     <header>
+     	<h1>Animating multiple properties</h1>
+     </header> 
+     <section class="content">
+     <b class="plane plane_04">✈</b> 
+     <pre contenteditable>@keyframes <b>UFO</b> {
+
+   0% {
+      <b>left:</b> 0;
+      <b>opacity:</b> 1;
+    }
+    
+    50% {
+      <b>opacity:</b> 0.1;
+    }
+
+    100% {
+      <b>left:</b> 100%;
+      <b>opacity:</b> 1
+    }
+
+}
+	</pre>
+     </section>
+</div> 
+     
+     
+
+     
+      
+
+    
+     
+<div class="slide" id="acsst">
+    <header>
+    	<h1>Animating CSS Transforms</h1>
+    </header> 
+    <section class="content"> 
+     <b class="plane plane_05">✈</b>
+    <pre contenteditable>@<u></u>keyframes flyingTowardsUser {
+  0%{
+    <u></u>transform: 
+      <b>translate3d(0, 0, 0) rotate(0deg) scale(0.7, 0.7);</b>	
+  }
+
+  100% {
+    <u></u>transform:
+      <b>translate3d(600px, 400px, 0) rotate(80deg) scale(1.2, 1.2);</b>
+  }
+
+}
+</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'acsst')">-webkit-</span><span onClick="vendorPrefix('r', 'acsst')"> | </span> <span onClick="vendorPrefix('m', 'acsst')">-moz-</span> | <span onClick="vendorPrefix('ms', 'acsst')">-ms-</span> </p>
+
+</section>
+</div> 
+      
+     
+   
+<div class="slide" id="trans3da">
+	<header>
+    	<h1>with &lsquo;transform-origin&rsquo;</h1>
+    </header> 
+	<section class="content"> 
+	   <b class="plane plane_05 to">✈</b>
+    <pre contenteditable>@<u></u>keyframes flyingTowardsUser {
+  0%{
+    <u></u>transform: 
+      <b>translate3d(0, 0, 0) rotate(0deg) scale(0.7, 0.7);</b>	
+  }
+
+  100% {
+    <u></u>transform:
+      <b>translate3d(600px, 400px, 0) rotate(80deg) scale(1.2, 1.2);</b>
+  }
+
+}
+</pre>
+<pre contenteditable><b>.plane {
+    -webkit-transform-origin: left 300px; 
+    -moz-transform-origin: left 300px;
+    -ms-transform-origin: left 300px;
+    }</b></pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'trans3da')">-webkit-</span><span onClick="vendorPrefix('r', 'trans3da')"> | </span> <span onClick="vendorPrefix('m', 'trans3da')">-moz-</span> | </span> <span onClick="vendorPrefix('ms', 'trans3da')">-ms-</span> </p>
+</section>
+</div>      
+    
+     
+    
+
+  
+    
+
+ 
+ 
+ <div class="slide intro"> 
+     <header><h1>But nothing is animated yet!</h1></header> 
+     <section class="content"> 
+     </section>
+ </div>    
+     
+ 
+ 
+ 
+ <div class="slide normal"> 
+     <header><h1>Base CSS</h1></header> 
+     <section class="content">
+     <pre contenteditable><b>.plane {
+    -webkit-transform-origin: left 300px; 
+    -moz-transform-origin: left 300px;
+    -ms-transform-origin: left 300px;
+}</b></pre>
+ 
+     </section>
+ </div>    
+    
+
+
+
+
+
+    
+ <div class="slide" id="animdur">
+  	<b id="animationduration" class="plane planeanim">✈</b>
+	<header>
+     	<h1>animation name and duration</h1>
+    </header> 
+    <section class="content"> 
+	<pre contenteditable>.plane { <input type="range" value="3" min="1" max="15" step="1" id="speedrange" onChange="changeDuration();"/>
+  ...
+  <u></u>transform-origin: left 300px;
+  ...
+  <b><u></u>animation-name: flyingTowardsUser; 
+  <u></u>animation-duration: <span class="changer">3</span>s;</b>
+  
+  
+</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animdur')">-webkit-</span><span onClick="vendorPrefix('r', 'animdur')"> | </span> <span onClick="vendorPrefix('m', 'animdur')">-moz-</span>  | </span> <span onClick="vendorPrefix('ms', 'animdur')">-ms-</span> </p>
+</section>
+<script defer>
+ function changeDuration(){
+	 var speed = document.getElementById('speedrange').value;
+	 document.getElementById('animationduration').style.webkitAnimationDuration = speed + 's';
+	 document.getElementById('animationduration').style.webkitAnimationName = 'flyingTowardsUser';
+	 var seconds = document.querySelectorAll("#animdur span.changer");
+	 for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+ }
+</script>
+</div>        
+    
+     
+    
+
+    
+ <div class="slide" id="animtf"> 
+  	<b id="animationtimingfunc" class="plane planeanim">✈</b> 
+    <header>
+    	<h1>&lsquo;animation-timing-function&rsquo;</h1>
+    </header> 
+    <section class="content"> 
+    <pre contenteditable>.plane { <select  onChange="changeTimingFunction(event)"><option value="ease">ease</option><option value="ease-in">ease-in</option><option value="ease-out">ease-out</option><option value="ease-in-out" selected>ease-in-out</option><option value="step-start">step-start</option><option value="step-end">step-end</option><option value="steps(8, start)">steps(8, start)</option></select>
+  ...
+  <u></u>animation-name: flyingTowardsUser; 
+  <u></u>animation-duration: 8s;
+  <b><u></u>animation-timing-function: <span class="changer">ease-in-out</span>;</b>
+}</pre>
+
+<pre contenteditable><strong>ease</strong>
+linear
+ease-in 
+ease-out 
+ease-in-out  
+step-start <span class="notes">/* same as steps(1, start) */</span>
+step-end <span class="notes">/* same as steps(1, end) */</span>
+steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + when change of value occurs */</span>
+cubic-bezier(x1, y1, x2, y2)</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animtf')">-webkit-</span><span onClick="vendorPrefix('r', 'animtf')"> | </span> <span onClick="vendorPrefix('m', 'animtf')">-moz-</span> <span onClick="vendorPrefix('r', 'animtf')"> | </span> <span onClick="vendorPrefix('ms', 'animtf')">-ms-</span> </p>
+</section>
+
+<script defer>
+ function changeTimingFunction(event){
+	 var speed = event.target.value;
+	 console.log(speed)
+	 var seconds = document.querySelectorAll("#animtf span.changer");
+	 for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+	 document.getElementById('animationtimingfunc').style.webkitAnimationDuration = '8s';
+	 document.getElementById('animationtimingfunc').style.webkitAnimationName = 'flyingTowardsUser';
+	 document.getElementById('animationtimingfunc').style.webkitAnimationTimingFunction = speed;
+ }
+</script>
+    </div>   
+    
+     
+    
+
+    
+ <div class="slide" id="animic"> 
+  	
+    <header>
+    	<h1>&lsquo;animation-iteration-count&rsquo;</h1>
+    </header> 
+    <section class="content"> 
+    
+  	<b class="plane planeanim planeanim_01">✈</b> 
+    <pre contenteditable>
+.plane {
+  ...
+  <u></u>animation-name: flying; 
+  <u></u>animation-duration: 3s;
+  <u></u>animation-timing-function: ease-in-out;
+  <b><u></u>animation-iteration-count: 3;</b>
+}</pre>
+<p>&lsquo;infinte&rsquo; or number. Default is &lsquo;1&rsquo;.</p>
+<pre contenteditable><b>-webkit-animation-iteration-count: 3;</b>
+<b>-moz-animation-iteration-count: 3;</b>
+<b>-ms-animation-iteration-count: 3;</b></pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animic')">-webkit-</span><span onClick="vendorPrefix('r', 'animic')"> | </span> <span onClick="vendorPrefix('m', 'animic')">-moz-</span><span onClick="vendorPrefix('r', 'animic')"> | </span> <span onClick="vendorPrefix('ms', 'animic')">-ms-</span> </p>
+
+</section>
+</div>   
+    
+     
+    
+
+ <div class="slide" id="animdelay"> <b id="animationdelayi" class="plane planeanim">✈</b>
+    <header>
+    	<h1>&lsquo;animation-delay&rsquo;</h1>
+    </header> 
+    <section class="content"> 
+    <pre contenteditable>.plane { <input type="range" value="2" min="-5" max="10" step="0.5" id="delayrange" onchange="changeTime()" /><button onClick="changeDelay();">Start</button>
+  ...
+  <u></u>animation-name: flyingTowardsUser; 
+  <u></u>animation-duration: 8s;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: 2;
+  <b><u></u>animation-delay: <span class="changer">2</span>s;</b>
+}</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animdelay')">-webkit-</span><span onClick="vendorPrefix('r', 'animdelay')"> | </span> <span onClick="vendorPrefix('m', 'animdelay')">-moz-</span> <span onClick="vendorPrefix('r', 'animdelay')"> | </span> <span onClick="vendorPrefix('ms', 'animdelay')">-ms-</span></p>
+
+</section><script defer>
+ function changeTime(){
+	 var speed = (document.getElementById('delayrange').value * 1).toFixed(1);
+	 var seconds = document.querySelectorAll("#animdelay span.changer");
+	  for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+ }
+ function changeDelay(){
+	 var speed = (document.getElementById('delayrange').value * 1).toFixed(1);
+	 document.getElementById('animationdelayi').style.webkitAnimation = "flyingTowardsUser 8s ease-in-out " + speed + 's 2';
+	/* document.getElementById('animationdelayi').style.webkitAnimationDuration = '8s';
+	 document.getElementById('animationdelayi').style.webkitAnimationName = 'flyingTowardsUser';
+	 document.getElementById('animationdelayi').style.webkitAnimationTimingFunction = 'ease-in-out';
+	 document.getElementById('animationdelayi').style.webkitAnimationDelay = speed + 's';*/
+	 console.log(speed);
+	 var seconds = document.querySelectorAll("#animdelay span.changer");
+	 for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+ }
+</script>
+</div>    
+        
+     
+    
+
+    
+     
+<div class="slide" id="animdir"> <i></i>
+  
+    <header>
+    	<h1>&lsquo;animation-direction&rsquo;</h1>
+    </header> 
+    <b id="animationdir" class="plane planeanim">✈</b>
+    <section class="content"> 
+    <pre contenteditable>.plane {
+  ...
+  <u></u>animation-name: flyingTowardsUser; 
+  <u></u>animation-duration: 5s;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: 5;
+  <b><u></u>animation-direction: <span onclick="changeDirection('normal');" class="linky">normal</span></b>
+}</pre>
+<p>Two possible values: normal | alternate;</p>
+<pre contenteditable><b><u></u>animation-direction: <span onclick="changeDirection('alternate');" class="linky">alternate</span>;</b></pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animdir')">-webkit-</span><span onClick="vendorPrefix('r', 'animdir')"> | </span> <span onClick="vendorPrefix('m', 'animdir')">-moz-</span><span onClick="vendorPrefix('r', 'animdir')"> | </span> <span onClick="vendorPrefix('ms', 'animdir')">-ms-</span> </p>
+
+</section>
+<script>
+function changeDirection(direction){
+	 document.getElementById('animationdir').style.webkitAnimation = "flyingTowardsUser 5s ease-in-out 0.1s 5 "+ direction;	
+}
+
+</script>
+</div>   
+     
+     
+    
+
+    
+    
+<div class="slide" id="animsh"> 
+    <header>
+    	<h1>&lsquo;animation&rsquo; (shorthand)</h1>
+    </header> 
+    <section class="content"> 
+   <pre contenteditable>.plane {
+  ...
+  <u></u>animation-name: flyingTowardsUser; 
+  <u></u>animation-duration: 5s;
+  <u></u>animation-delay: 100ms;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: 5;
+  <del><u></u>animation-direction: normal;</del>
+}</pre>
+<p>. . . can also be written as . . .
+<pre contenteditable>
+.plane {
+  ...
+  <b><u></u>animation: flyingTowardsUser 5s ease-in-out 100ms 5</b>;
+}</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animsh')">-webkit-</span><span onClick="vendorPrefix('r', 'animsh')"> | </span> <span onClick="vendorPrefix('m', 'animsh')">-moz-</span><span onClick="vendorPrefix('r', 'animsh')"> | </span> <span onClick="vendorPrefix('ms', 'animsh')">-ms-</span> </p>
+
+</section>
+</div>
+     
+     
+ 
+     
+     
+    
+
+    
+    
+<div class="slide" id="animfm"> 
+<header><h1>&lsquo;animation-fill-mode&rsquo;</h1></header>
+<b id="animationfm" class="plane planeanim">✈</b> 
+<section class="content"> 
+<pre contenteditable onMouseDown="document.getElementById('animationfm').style.webkitAnimation = 'none';">values: <span onClick="changeFillMode(this.innerHTML)">none</span> | <span onClick="changeFillMode(this.innerHTML)">forwards</span> | <span onClick="changeFillMode(this.innerHTML)">backwards</span> | <span onClick="changeFillMode(this.innerHTML)">both</span></pre>
+<pre>.plane {
+  <u></u>animation-name: flyingTowardsUser; 
+  <u></u>animation-duration: 3s;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: <span contenteditable id="fmitcount" onchange="document.getElementById('fmitcountres').innerHTML = this.innerHTML">1</span>
+  <u></u>animation-delay: 1s;
+ <b><u></u>animation-fill-mode: none;</b>
+}</pre>
+<p>. . . or . . .<span style="float: right; font-size: 80%"><span onClick="vendorPrefix('w', 'animfm')">-webkit-</span><span onClick="vendorPrefix('r', 'animfm')"> | </span> <span onClick="vendorPrefix('m', 'animfm')">-moz-</span><span onClick="vendorPrefix('r', 'animfm')"> | </span> <span onClick="vendorPrefix('ms', 'animfm')">-ms-</span> </p>
+</p>
+<pre contenteditable>
+.plane {
+<u></u>animation: flyingTowardsUser 3s ease-in-out 1s <b id="fmitcountres"></b>  <b id="fmsh">forwards</b>;
+}</pre>
+
+</section>
+<script>
+	function changeFillMode(fillMode){
+		var iteration = document.getElementById('fmitcount').innerHTML;
+		console.log(iteration);
+		document.getElementById('fmsh').innerHTML = fillMode;
+		
+		document.getElementById('animationfm').style.webkitAnimation = "flyingTowardsUser 5s ease-in-out 1s " + iteration + "  "+ fillMode;		
+	}
+	
+</script>
+</div>
+
+
+    
+ 
+<div class="slide" id="animps">
+<header><h1>&lsquo;animation-play-state&rsquo;</h1></header> 
+<section class="content"> 
+<b class="plane plane_pausing">✈</b>
+
+<pre contenteditable><u></u>animation-play-state: paused | running</pre>
+<pre>.plane {
+	<u></u>transform-origin: center 300px;
+	<u></u>animation: flyingInCircles 3s linear infinite;	 
+ }
+.plane:hover {
+	<u></u>animation-play-state:paused; 
+ }</pre>
+
+<pre>@<u></u>keyframes flyingInCircles {
+  100% {
+    <u></u>transform:
+      rotate(360deg);
+  }
+}</pre>
+
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animps')">-webkit-</span><span onClick="vendorPrefix('r', 'animps')"> | </span> <span onClick="vendorPrefix('m', 'animps')">-moz-</span><span onClick="vendorPrefix('r', 'animps')"> | </span> <span onClick="vendorPrefix('ms', 'animps')">-ms-</span> </p>
+</section>
+</div>
+    
+     
+    
+
+    
+ 
+     
+       
+
+<!-- NEXT -->
+<div class="slide intro"> 
+     <header><h1>Part 12: Other Features</h1></header>
+    <h1><a href="part_12_features.html">Next ➹</a></h1>
+</div> 
+   
+  </div>
+  <script src="css/prefixfree.js"></script>
+  <script src="css/slide.js"></script>
+  </body> 
+</html>

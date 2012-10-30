@@ -130,6 +130,23 @@ display: -moz-box;
 
             .textwrap{width: 94%; height: 1.1em; 
  height: 1.1em; overflow: hidden; line-height: 1.1em; margin:0.2em 0}
+
+ #origin {
+    -webkit-flow-into: name_of_my_flow;
+    /* style of content */
+    font-size: 0.8rem;
+
+}
+.destination {
+    -webkit-flow-from: name_of_my_flow;
+    /* style of the boxes */
+    width: 50%;
+    border: 1px solid red;
+    box-sizing: border-box;
+    padding: 5px;
+    height: 120px;
+    float: left;
+}
  </style>   
   </head> 
   <body> 
@@ -189,6 +206,24 @@ display: -moz-box;
      <header><h1>Part 11: Other Features</h1></header> 
 </div>
  
+<div class="slide">
+    <header><h1>Topics</h1></header>
+<section>
+  <dl>
+    <dt>CSS Exclusions</dt>
+    <dd>Wrap text so that it completely surrounds elements, instead of limiting elements to floating to the left or right of text.</dd>
+    <dt>CSS Regions</dt>
+    <dd>Take a single stream of HTML content that includes both text and images, and stream that content into multiple empty containers defined in a standard HTML document.</dd>
+    <dt>CSS3 Multi-column Layout</dt>
+    <dd>Flow content into multiple columns that allow for a gap and optional rule between them.</dd>
+    <dt>CSS3 Flexible Box ("Flexbox") Layout</dt>
+    <dd>Take the available space into account when defining box dimensions, thereby enabling relative sizes and positioning.</dd>
+    <dt>CSS3 Grid Layout</dt>
+    <dd>Divide space for major regions of a webpage or web app, and define the relationship between parts of an HTML control in terms of size, position, and layer.</dd>
+    <dt>CSS Device Adaptation</dt>
+  </dl>
+</section>
+</div> 
  <div class="slide" id="columnpage">
           <header> <h1>Columns</h1></header>
           <section class="content" style="margin-top:0">
@@ -269,7 +304,44 @@ border-width: 5px;
     </section>
 </div>  
 
+<div class="slide">
+  <header><h1>CSS Regions</h1></header>
+    <section class="content">
+<pre>&lt;div id="origin">[content here]&lt;/div>
+&lt;div class="destination">&lt;/div>
+&lt;div class="destination">&lt;/div>
+&lt;div class="destination">&lt;/div>
+&lt;div class="destination">&lt;/div>​</pre>
+<pre>#origin {
+    -webkit-flow-into: name_of_my_flow;
+    /* style of content */
+}
+.destination {
+    -webkit-flow-from: name_of_my_flow;
+    /* style of boxes */ <input type="range" min="0" max="50" onchange="regions(this.value)">
+}</pre>
+</section>
+<div id="origin"><p>The content here is originally in the #origin div, inside a p. However, it shows up divided amongst the .destination blocks. Try changing the width of the .destination divs with the slider and watch the text move. The styles are inherited from #origin and #origin's ancestors, and not from any .destination specific properties.</p></div>
+<div class="destination"></div>
+<div class="destination"></div>
+<div class="destination"></div>
+<div class="destination"></div>​
+<script defer>
+  function regions(val){
+    var destinations = document.querySelectorAll('.destination');
+    for(var i=0; i < 4; i++){
+        destinations[i].style.width = val + '%';
+    }
+  }
+</script>
+</div>
 
+<div class="slide">
+  <header><h1>CSS Exclusions</h1></header>
+    <section class="content">
+      <h1>Only supported, prefixed, in IE 10</h1>
+    </section>
+</div>
 
  <div class="slide">
 	<header><h1>Flexible Box Model</h1></header>

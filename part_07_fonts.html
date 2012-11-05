@@ -45,8 +45,8 @@ border-image: initial;
 border-color: black;
 box-shadow: 
 	inset 3px 3px 0 3px #C7573A, 
-	inset -3px -3px 0 3px #BDD9D5, 
-	3px 3px 0 3px #BDD9D5, 
+	inset -3px -3px 0 5px #BDD9D5, 
+	3px 3px 0 5px #BDD9D5, 
 	-3px -3px 0 3px #C7573A;
 margin: 20px;
 }
@@ -74,9 +74,14 @@ pre.borders {
   </head> 
   <body> 
   
-  <div id="topinfo">
-
-  </div>
+  <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
   
   <div id="info">
     <p>
@@ -137,7 +142,7 @@ pre.borders {
   
 
 <div class="slide intro"> 
-     <header><h1>Part 7: Fonts</h1></header> 
+     <header><h1>Part 7: Fonts, Shadows &amp; Text Effects</h1></header> 
     </div>
     
    
@@ -342,8 +347,8 @@ text-shadow: [horiz] [vert] [blur] [color];</pre> <pre contenteditable>.textshad
 <b style="float:right; position:relative; top: 20px; right: 20px;"></b><pre contenteditable> 
 box-shadow: 
 	inset 3px 3px 0 3px #C7573A, 
-	inset -3px -3px 0 3px #BDD9D5, 
-	3px 3px 0 3px #BDD9D5, 
+	inset -3px -3px 0 5px #BDD9D5, 
+	3px 3px 0 5px #BDD9D5, 
 	-3px -3px 0 3px #C7573A;
 box-shadow: 
     inset? [horiz] [vert] [blur] [spread] [color];
@@ -362,24 +367,13 @@ box-shadow:
 </section>
 </div>   
 
-<!-- box shadow as borders-->
-<div class="slide normal"> 
-     <header><h1>Multiple Borders with Box Shadow</h1></header> 
-     <section class="content">
-     
-     <pre class="borders">.rainbowBorders {
-  box-shadow: 
-    0 0 0 10px red,
-    0 0 0 20px orange,
-    0 0 0 30px yellow,
-    0 0 0 40px green,
-    0 0 0 50px blue,
-    0 0 0 60px purple;
-  }
-     </pre>
-     <a class="objectlink" href="files/72_boxshadow.html">Check it out!</a> 
-     </section>
- </div>
+
+<div class="slide object">
+<header><h1>Multiple Borders with Box Shadow</h1>
+<object data="files/72a_boxshadow.html"></object>
+<a href="files/72a_boxshadow.html" target="play" class="objectlink">Try it out</a>
+</div>
+
  
 <!-- Text Stroke -->
 <div class="slide object"> 
@@ -484,6 +478,6 @@ box-shadow:
   
    
   </div>
-  <script src="css/slide.js"></script>
+  <script src="slides.js"></script>
   </div></body> 
 </html>

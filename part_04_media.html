@@ -72,8 +72,15 @@ body, #presentation, #slides {
     
   </head> 
   <body> 
-  
-  <div id="topinfo">CSS3: Generated Content</div>
+    <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+  <div id="topinfo"></div>
   
   <div id="info">
     <p>
@@ -222,6 +229,9 @@ body, #presentation, #slides {
 
 
 
+
+
+
 <!-- media queries: v 3 -->
 <div class="slide normal">
 <section class="content"><ul>
@@ -303,6 +313,58 @@ overflow:hidden; ">
 </div> 
  
 
+
+<!-- media queries: browser support -->
+ <div class="slide normal">
+  <header><h1>Viewport</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;meta name="<strong>viewport</strong>" content="<strong>width</strong>=device-width, 
+            <strong>initial-scale</strong>=1, <strong>maximum-scale</strong>=1"/&gt;</pre>
+    <dl class="deprecated">
+      <dt>width</dt>
+      <dd>Size of the viewport in number of pixels or <code>device-width</code> (width of screen)<dd>
+      <dt>height</dt>
+      <dd>Height of the viewport in number of pixels or <code>device-height</code> (height of screen)<dd>
+      <dt>initial-scale
+      <dd>zoom level when  page is first loaded</dd> 
+      <dt>maximum-scale</dt>
+      <dt>minimum-scale</dt>
+      <dt>user-scalable</dt> 
+      <dd>Are users  allowed to zoom the page</dd>
+    </dl>
+  <pre contenteditable>@viewport {
+  width: device-width; zoom: 0.5; 
+}</pre>
+ <dl class="deprecated">
+  <dt>min-width</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>max-width</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>width</dt>
+  <dt>min-height</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>max-height</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>height</dt>
+  <dt>zoom</dt>
+  <dd>auto, positive number or percentage</dd>
+  <dt>min-zoom</dt>
+  <dd>Minimum zoom factor allowed. auto, positive number or percentage</dd>
+  <dt>max-zoom</dt>
+  <dd>Maximum zoom factor allowed. auto, positive number or percentage</dd>
+  <dt>user-zoom</dt>
+  <dd>zoom or fixed. User can or can't zoom in/out.</dd>
+  <dt>orientation</dt>
+  <dd>auto, portrait or landscape.</dd>
+  </dl>
+  <pre>@media screen and (max-width:400px) {
+  @-ms-viewport { width:320px; // or device-width;}
+}</pre>
+</section>
+</div>
+
+
+
 <div class="slide intro"> 
 	<header><h1>Part 5: Debugging</h1></header> 
 </div>
@@ -317,9 +379,41 @@ overflow:hidden; ">
     <li>Internet Explorer ➫ F-12</li>
     <li>Safari ➫ Web Inspector</li>
     <li>Chrome ➫ Developer Tools</li>
+    <li>Mobile ➫ Weinre</li>
+    <li>Blackberry ➫ Remote debugging by IP</li>
+    <li>Mobile Chrome ➫ Tethered debugging</li>
 </ul>
  </section>
 </div>
+
+
+<div class="slide normal">
+  <header>
+         <h1>Weinre</h1>
+    </header>
+
+      <section class="content">
+<ol>
+<li>Download &amp; Install <a href="http://nodejs.org">Node.js</a> (includes NPM)</li>
+<li>Install Weinre
+      <pre contenteditable>npm -g install weinre</pre>
+</li>
+<li>Start Weinre
+<pre contenteditable>weinre</pre>
+</li>
+<li>Add Weinre to web page
+    <pre contenteditable>&lt;script src="http://localhost:8080/target/target-script-min.js#anonymous"&gt;&lt;/script&gt;</pre>
+</li>
+<li>Open the inspector
+    <pre contenteditable>http://localhost:8080/client/</pre>
+</li>
+</ol>
+  </section>
+</div>
+
+
+
+
 <div class="slide normal"> 
      <header><h1>Learn from Debuggers</h1></header> 
      <section class="content"> 
@@ -640,6 +734,6 @@ pre {
   
    
   </div>
-  <script src="css/slide.js"></script>
+  <script src="slides.js"></script>
   </body> 
 </html>

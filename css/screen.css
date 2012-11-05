@@ -101,7 +101,9 @@ body {
   text-align: center;
   font-size: 2rem;
 }
-
+.intro header h1 {
+  font-size: 4.5rem;
+}
 .slide.intro hgroup {
   margin-top: 200px;
 }
@@ -341,6 +343,7 @@ pre, .ex, .pre, .codelike {
   border-radius: 8px;
   border: 1px solid #fff;
   font-size: 1.8rem;
+  line-height: 1.8rem;
 }
 	.ex.right {
 		float: right;

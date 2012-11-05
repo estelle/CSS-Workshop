@@ -36,7 +36,14 @@ header h1.sectiontitle:before{
   <div id="topinfo">
 
   </div>
-  
+  <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
   <div id="info">
     <p>
     <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
@@ -139,10 +146,12 @@ selector ~ relation {
   
 <!-- Intro to exercises -->
 <div class="slide normal"> 
-     <header><h1>Exercise Files</h1></header> 
+     <header><h1>Slide Notes/Exercise Files</h1></header> 
      <section class="content"> 
-  		<p>Exercise files all open in the same seperate window</p>
-        <p> 
+  		<p>Many exercise files open in a separate window. When they do, they will all open in the same seperate window</p>
+      <p>Other exercise files are incorporated in the deck. If the slide is grey or reads "try this", you can edit the CSS in the head to impact the rest of the slide.<p>
+      <p>If you are unable to move between slides, click anywhere OUTSIDE the slide, and try again</p>
+      <p>To take notes, click on #4.</p> 
      </section>
     </div>
 
@@ -373,6 +382,7 @@ selector ~ relation {
      <ul>
      	<li>Columns</li>
         <li>Box Sizing</li>
+        <li>CSS Regions</li>
         <li>FlexBox &amp; Grids</li>
         <li>Cursors</li>
         <li>Text Overflow</li>
@@ -385,156 +395,15 @@ selector ~ relation {
      </ul> 
      </section>
  </div> 
-  <!--
-      
-<div class="slide normal"> 
-     <header><h1>CSS3 gradients</h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
-    
-   
-    
-    
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1> linear gradients</h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
-    
-   
-    
-    
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1> radial gradients</h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
 
-   
-    
-    
-    
-  
-  
+<div class="slide intro">
+  <header><h1><a href="../selectors/">Get Started</a></h1></header>
+    <section class="content">
+        <h1><a href="../selectors/">Next ➹</a></h1>
+    </section>
+</div>
 
-    
-    
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1> CSS3 Box Model</h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
-    
-   
-    
-    
-    
-  
-  
-  
-
-   
-    
-    
-    
-  
-  
-  
-
-    
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1>Clipping  </h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
-   
-    
-    
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1>Transforms</h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
-    
-   
-    
-    
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1> transform origins</h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
-    
-   
-    
-    
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1>CSS3 transitions</h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
-    
-   
-    
-    
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1>Animating </h1></header> 
-     <section class="content"> 
-  
-     </section>
-    </div>
-    
-   
-    -->
-    
-   
-    
-    
-    
-  
-   
   </div>
-  <script src="css/slide.js"></script>
+  <script src="slides.js"></script>
   </body> 
 </html>

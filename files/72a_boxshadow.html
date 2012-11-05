@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace; position:relative; top: -60px;}
+ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+li {color: black;}
+:root {background-color:#ccc; 
+  background-image:url(../css/page-bg.jpg);}
+p {font-family:Verdana, Geneva, sans-serif; font-size:1.2em;
+	margin: 60px 60px 140px 60px; padding:20px; text-align:center;}
+
+</style>
+
+<style contenteditable>.rainbow {
+  box-shadow: 
+    0 0 0 10px red,
+    0 0 0 20px orange,
+    0 0 0 30px yellow,
+    0 0 0 40px green,
+    0 0 0 50px blue,
+    0 0 0 60px purple;
+}
+</style>
+<title>box-shadow as borders</title>
+</head>
+
+<body>
+	<p class="rainbow">This has no borders</p>
+</body>
+</html>
+

@@ -49,7 +49,7 @@
 	float:left;
 	text-align:center;
 }
-#bcksizeexample {
+#bcksizeexample, #bcksizeexample2 {
 	background-repeat:repeat;
 	float: right;
 	box-shadow: inset 5px 5px 5px rgba(0,0,0,0.4),inset -5px -5px 5px rgba(0,0,0,0.4) ;
@@ -57,6 +57,14 @@
 	height:400px;
 	text-align:center;
 	margin-left: 20px;	
+}
+#bcksizeexample2 {
+  background-repeat: no-repeat;
+  width: 100px;
+  height:200px;
+  background-image:url(img/shark.gif); 
+  background-position: 50%;
+  background-color: white;
 }
 .borderstyle dt {
 	border: 9px solid #C7573A;	
@@ -120,9 +128,14 @@ th {text-align: right; padding-right: 10px;}
   </head> 
   <body> 
   
-  <div id="topinfo">
-
-  </div>
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
   
   <div id="info">
     <p>
@@ -539,23 +552,30 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
  </div>
  
  <!--background-position -->
-<div class="slide normal bgimage" style="background-position: right 50px bottom 50p;"> 
+<div class="slide normal bgimage" style="background-position: right 50px bottom 50px;"> 
      <header><h1>background-position</h1></header> 
      <section class="content"> 
      <p>New in CSS3: Positioning relative to any corner</p>
-     <pre contenteditable>background-position: right 50px bottom 50p;</pre>
+     <pre contenteditable>background-position: right 50px bottom 50px;</pre>
       </ul> 
         <ul class="icons" style="clear: both;">
          <li class="chrome bad">Chrome</li>
          <li class="safari bad">Safari</li>
-         <li class="firefox bad">Firefox</li>
+         <li class="firefox">Firefox 13</li>
          <li class="opera">Opera</li>
          <li class="ie bad">IE 9</li>
      </ul>
      </section>
  </div>
  
-  
+ 
+<div class="slide object">
+<header><h1>4-value background-position</h1></header>
+<object data="files/81_bgposition.html"></object>
+<a href="files/81_bgposition.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
 <!--background-clip -->
 <div class="slide" id="bgclip">
 	<header><h1>background-clip</h1></header>
@@ -629,9 +649,28 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
 	</script>
 </div> 
  
+
+<!--background-size -->
+<div class="slide" id="bgsize">
+  <header><h1>background-size</h1></header>
+    <section class="content">
+    <pre contenteditable><b><u></u>background-size</b>: <span onClick="changeBackSide2('auto')">auto</span> | <span onClick="changeBackSide2('contain')">contain</span> | <span onClick="changeBackSide2('cover')">cover</span> | <span onClick="changeBackSide2('100px 200px')">100px 200px</span></pre>
+    <div id="bcksizeexample2" class="bgimage2">
+    </div>
+    </section>
+    <script defer>
+    function changeBackSide2(backsize) {
+       console.log('hit');
+        var image = document.getElementById('bcksizeexample2');
+              image.style.backgroundSize = backsize;
+        
+            }
+  </script>
+</div> 
+ 
  <!-- background shorthand-->
 <div class="slide">
-	<header><h1>background shorthand</h1></header>
+  <header><h1>background shorthand</h1></header>
     <section class="content">
     
     <pre contenteditable>background: 
@@ -648,6 +687,10 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
    </ul>
     </section>
     </div> 
+
+
+
+
     
     
 <!--Border properties -->
@@ -791,7 +834,11 @@ border-bottom-left-radius</pre>
 </div>
 
 
-    
+<div class="slide object">
+<header><h1>Play with border-radius</h1></header>
+<object data="files/82_borderradius.html"></object>
+<a href="files/82_borderradius.html" target="play" class="objectlink">Try it out</a>
+</div>    
     
     
 <!-- Border Images-->
@@ -816,15 +863,16 @@ border-bottom-left-radius</pre>
     <section class="content">
 <pre contenteditable><b>border-image</b>: source || slice / width / outset  || repeat;</pre>
     <ul class="icons" style="clear: both;">
-         <li class="chrome">Chrome</li>
-         <li class="safari">Safari 3.1</li>
-         <li class="firefox">Firefox 3.5</li>
+         <li class="chrome">Chrome 1/16</li>
+         <li class="safari">Safari 3.1/6</li>
+         <li class="firefox">Firefox 3.5/15</li>
          <li class="opera">Opera 10.5</li>
-         <li class="ie bad">IE 10?</li>
+         <li class="ie bad">IE 10</li>
      </ul> 
     <h1 style="text-align:left">Underlying Properties</h1>
-    <ul style="float:right">
-    <li>All vendor prefixed</li>    
+    <ul style="float:right"> 
+    <li>Syntax for non-prefixed differs</li>
+    <li>Must also declare <code>border-style</code></li>  
     <li><a href="http://border-image.com/">Border image tool</a></li>
     <li><a href="http://www.sitepoint.com/css3-border-image/">border-image tutorial</a></li>
     <li><a href="http://www.standardista.com/css3/css3-border-properties">border-image browser support</a></li> 
@@ -881,7 +929,14 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
 	}
 </script>
 </div>  
-   
+  
+ <div class="slide object">
+<header><h1>Play with border-image</h1></header>
+<object data="files/83_longcat.html"></object>
+<a href="files/83_longcat.html" target="play" class="objectlink">Try it out</a>
+</div> 
+
+  
 <div class="slide intro"> 
      <header><h1>Part 9: Gradients</h1></header>
     <h1><a href="../gradients/">Next ➹</a></h1>
@@ -892,6 +947,6 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
   
    
   </div>
-  <script src="css/slide.js"></script>
+  <script src="slides.js"></script>
   </body> 
 </html>

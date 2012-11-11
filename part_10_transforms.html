@@ -93,7 +93,133 @@ section {padding-top: 20px;}
 .y {float: left; line-height:1.62em;}
 #ABTrasform li {float: left; clear:both; list-style-type:none; width:100%;}
  </style>
-  <style id="tempstyle"></style>  
+  <style id="tempstyle"></style> 
+
+  <style id="forBackfaceVisibility">
+  .backfacedemo{
+    -webkit-perspective: 1000;
+       -moz-perspective: 1000;
+        -ms-perspective: 1000;
+         -o-perspective: 1000;
+            perspective: 1000;
+}
+
+#backfacecube {
+  margin: 2rem 0 0 30%;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+       -o-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+
+
+#backfacecube figure{
+  display: block;
+  position: absolute;
+  width: 196px;
+  height: 196px;
+  border: 1px solid #333;
+  line-height: 196px;
+  font-size: 120px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+
+}
+
+.cube figure{
+
+ -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+     -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+         backface-visibility: hidden;
+
+}
+
+#backfacecube .front{background: hsla(248, 100%, 50%, .5);}
+#backfacecube .back{background: hsla(315, 100%, 40%, .5);}
+#backfacecube .right{background: hsla( 48, 100%, 50%, .5);}
+#backfacecube .left{background: hsla(125, 100%, 40%, .5);}
+#backfacecube .top{background: hsla( 24, 100%, 50%, .5);}
+#backfacecube .bottom{background: hsla(187,  87%, 50%, .5);}
+
+#backfacecube .front {
+  -webkit-transform: rotateY(   0deg ) translateZ( 100px );
+     -moz-transform: rotateY(   0deg ) translateZ( 100px );
+      -ms-transform: rotateY(   0deg ) translateZ( 100px );
+       -o-transform: rotateY(   0deg ) translateZ( 100px );
+          transform: rotateY(   0deg ) translateZ( 100px );
+}
+
+#backfacecube .back {
+  -webkit-transform: rotateX( 180deg ) translateZ( 100px );
+     -moz-transform: rotateX( 180deg ) translateZ( 100px );
+      -ms-transform: rotateX( 180deg ) translateZ( 100px );
+       -o-transform: rotateX( 180deg ) translateZ( 100px );
+          transform: rotateX( 180deg ) translateZ( 100px );
+}
+
+#backfacecube .right {
+  -webkit-transform: rotateY(  90deg ) translateZ( 100px );
+     -moz-transform: rotateY(  90deg ) translateZ( 100px );
+      -ms-transform: rotateY(  90deg ) translateZ( 100px );
+       -o-transform: rotateY(  90deg ) translateZ( 100px );
+          transform: rotateY(  90deg ) translateZ( 100px );
+}
+
+#backfacecube .left {
+  -webkit-transform: rotateY( -90deg ) translateZ( 100px );
+     -moz-transform: rotateY( -90deg ) translateZ( 100px );
+      -ms-transform: rotateY( -90deg ) translateZ( 100px );
+       -o-transform: rotateY( -90deg ) translateZ( 100px );
+          transform: rotateY( -90deg ) translateZ( 100px );
+}
+
+#backfacecube .top {
+  -webkit-transform: rotateX(  90deg ) translateZ( 100px );
+     -moz-transform: rotateX(  90deg ) translateZ( 100px );
+      -ms-transform: rotateX(  90deg ) translateZ( 100px );
+       -o-transform: rotateX(  90deg ) translateZ( 100px );
+          transform: rotateX(  90deg ) translateZ( 100px );
+}
+
+#backfacecube .bottom {
+  -webkit-transform: rotateX( -90deg ) translateZ( 100px );
+     -moz-transform: rotateX( -90deg ) translateZ( 100px );
+      -ms-transform: rotateX( -90deg ) translateZ( 100px );
+       -o-transform: rotateX( -90deg ) translateZ( 100px );
+          transform: rotateX( -90deg ) translateZ( 100px );
+}
+
+
+
+
+.backfacedemo {
+-webkit-perspective-origin: 50% -100px;
+-moz-perspective-origin: 50% -100px;
+-ms-perspective-origin: 50% -100px;
+-o-perspective-origin: 50% -100px;
+perspective-origin: 50% -100px;
+-webkit-perspective: 500px;
+-moz-perspective: 500px;
+-ms-perspective: 500px;
+-o-perspective: 500px;
+perspective: 500px;
+}
+.backfacedemo {
+-webkit-perspective: 1000;
+-moz-perspective: 1000;
+-ms-perspective: 1000;
+-o-perspective: 1000;
+perspective: 1000;
+}
+
+  </style> 
   </head> 
   <body> 
   
@@ -287,6 +413,7 @@ transform:
          <li class="txt">  &nbsp; all with vendor prefix</li>
      </ul>
 <li>Vendor prefix all of 'em</li>
+<li>Transforms create a new stacking context</li>
 <li>Take advantage of transform-origin</li>
 <li>Multiple values are SPACE separated (no commas)</li>
 <li><a href="http://westciv.com/tools/3Dtransforms/index.html">3D transforms</a> are hardware accelerated</li>
@@ -295,6 +422,35 @@ transform:
 <li>More about <a href="http://www.standardista.com/css3/css3-transform-property-and-the-various-transform-functions">transforms</a></li>
 </section>
 </div>
+
+<!-- Play Time -->
+<div class="slide object">
+<header><h1>Play Time</h1>
+<object data="files/100_simpletransforms.html"></object>
+<a href="files/100_simpletransforms" target="play" class="objectlink">Try it out</a>
+</div> 
+
+<div class="slide">
+  <header><h1>transform-origin property</h1></header>
+    <section class="content">
+
+<p>Specifies the x and y position of the origin, relative to the transform object.</p>
+
+<ul>
+    <li>Keyword positions: left, right, bottom, top, center</li>
+    <li>Length values</li>
+    <li>Percentage values </li>
+    <li>default is 50% 50% (or center center)</li>
+    <li>Supported in all browsers that support transform. Prefixed if transform is prefixed</li>
+    </section>
+</div>
+
+<!-- Play Time -->
+<div class="slide object">
+<header><h1>Play Time</h1>
+<object data="files/101_transformorigin.html"></object>
+<a href="files/101_transformorigin.html" target="play" class="objectlink">Try it out</a>
+</div>  
 
 <!-- 3d Transforms -->
 <div class="slide normal"> 
@@ -345,10 +501,27 @@ transform:
 
 
 <div class="slide normal"> 
-     <header><h1>Transform Function: Perspective</h1></header>
+     <header><h1>Transform Function: perspective</h1></header>
      <b class="plane plane_07">✈</b> 
      <section class="content">
      <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_07', this.innerHTML)">translate3d(0px, 0px, 0px) perspective(0)</span>;</pre> 
+     <p>Only relevant to 3D transformations</p>
+     </section>
+ </div>
+
+
+
+<div class="slide normal"> 
+     <header><h1>perspective-origin property</h1></header>
+     <b class="plane plane_07">✈</b> 
+     <section class="content">
+     <pre>perspective-origin: <span contenteditable onKeyUp="setTempStyle('plane_07b', this.innerHTML)">left</span>;</pre> 
+     <p>Sets a horizon point at the given coordinates on the parent element. Changes the perceived vantage point at which the user appears to be looking at child elements.</p>
+     <ul>
+        <li>Keyword positions: left, right, bottom, top, center</li>
+        <li>Length values</li>
+        <li>Percentage values (default = 50% 50%)</li>
+     </ul>
      </section>
  </div>
  
@@ -371,6 +544,50 @@ transform:
      </section>
  </div>
 
+<!-- Play Time -->
+<div class="slide object">
+<header><h1>Play Time</h1>
+<object data="files/101_transform3dhtml.html"></object>
+<a href="files/101_transform3dhtml.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<div class="slide normal" id="BackfaceVisibility"><div>
+    
+      <header>
+        <h1><code>backface-visibility</code></h1>
+      </header>
+      <section style="height: 600px;">
+            <p><code>hidden</code> or <code>visible</code></p>
+            <div class="backfacedemo">
+                  <div class="uncube" id="backfacecube">
+                    <figure class="front">1</figure>
+                    <figure class="back">2</figure>
+                    <figure class="right">3</figure>
+                    <figure class="left">4</figure>
+                    <figure class="top">5</figure>
+                    <figure class="bottom">6</figure>
+                  </div>
+            </div>
+
+           <button type="button" id="backfacetrigger" 
+           onclick="toggleSides();">Toggle backfaces</button>
+<footer>borrowed from <a href="http://www.twitter.com/webinista">@webinista</a></footer>
+      </section>
+  </div></div>
+  <script>
+  function toggleSides() {
+          var cube = document.getElementById('backfacecube');
+           cube.classList.toggle('uncube');
+           cube.classList.toggle('cube');
+         //  var sides = cube.getElementsByTagName('figure');
+         //  console.log('boo' + sides.length);
+         //  for (var i = 0; i < sides.length; i++) {
+         //     sides[i].classList.toggle('.bf');
+         //   }
+}
+           
+  </script>
 
 <!-- NEXT -->
 <div class="slide intro"> 
@@ -378,7 +595,9 @@ transform:
     <h1><a href="part_11_animations.html">Next ➹</a></h1>
 </div>
 
-    
+ 
+
+
   </div>  
   
    

@@ -258,7 +258,7 @@ body, #presentation, #slides {
 
 <!-- media queries: tidbits -->
 <div class="slide">
-	<header><h1>More Media Query Tidbits</h1></header>
+	<header><h1>Media Query Syntax/Punctuation</h1></header>
     <section class="content">
     <pre contenteditable>media="<b>only</b> print and (color)"
 
@@ -267,16 +267,37 @@ media="only screen <b>and</b> (orientation: portrait)"
 media="<b>not</b> screen and (color)"
 
 media="print<b>,</b> screen and (min-width: 480px)"</pre> 
-    
+ </section>
+</div>  
+
+<!-- media queries: tidbits -->  
+<div class="slide">
+  <header><h1>Device and Capability Detection</h1></header>
+    <section class="content">
+   
+
     <pre contenteditable>@media screen and (<b>-webkit-min-device-pixel-ratio</b>: 2) {
  .iphone4 { /* high DPI */}
-}
-@screen and (<b>transform-3d</b>) {
+}</pre>
+<pre contenteditable>
+@media screen and (<b>transform-3d</b>) {
   .transforms {}
 }</pre>
+<pre contenteditable>
+@media screen and (min-width: 320px) and (max-width: 500px){
+  @-ms-viewport { width: device-width;}
+}
+</pre>
 <p>Also works with <code>(animation)</code> and <code>(transition)</code></p>
     </section>
 </div> 
+
+
+<div class="slide object"> 
+  <object data="http://jsfiddle.net/estelle/m5Qeh/"></object>
+  <a href="http://jsfiddle.net/estelle/m5Qeh/" class="objectlink" target="_new">Visit Site</a>
+ </div> 
+
 
 <!-- media queries: Slide deck example -->
 <div class="slide" id="mediaqueryeffect">

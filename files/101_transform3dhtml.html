@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; background-color: rgba(255,255,255,0.5);}
+html {min-height:100%;}
+.box, .box:after {margin: auto; height: 100px; width: 100px; background-color: indianred; }
+.box:after {
+  background-color: goldenrod; content: ''; display: block;
+}
+p {font-family: helvetica, arial, sans-serif; text-align: center;}
+</style>
+
+<style contenteditable>
+.box {-webkit-perspective: 1000px;} 
+.box:after {
+  -webkit-transform: 
+    rotate3d(130,110,80,25deg)
+    perspective(200); 
+  -webkit-transform-origin: bottom right;
+}
+
+</style>
+<title>Transform origin</title>
+</head>
+
+<body>
+	<div class="box"></div>
+	<p>Apply perspective to parent element. smaller # = closer; larger # = farther</p>
+</body>
+</html>
+

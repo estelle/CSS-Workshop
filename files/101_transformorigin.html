@@ -1,0 +1,33 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; background-color: rgba(255,255,255,0.5);}
+html {min-height:100%;}
+.box, .box:after {margin: auto; height: 100px; width: 100px; background-color: indianred; content: ''; display: block}
+</style>
+
+<style contenteditable> 
+.box:after {
+  -webkit-transform: 
+    rotate(230deg)
+    translate(0,0)
+    skew(0,0)
+    scale(1);
+  -webkit-transform-origin: bottom right;
+  background-color: goldenrod;
+}
+
+</style>
+<title>Transform origin</title>
+</head>
+
+<body>
+	<div class="box"></div>
+</body>
+</html>
+

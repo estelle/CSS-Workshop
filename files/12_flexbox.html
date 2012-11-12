@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; background-color: rgba(255,255,255,0.5);}
+html {min-height:100%;}
+div {border: 3px solid indianred; padding: 3px;}
+div div {border-color: goldenrod;}
+
+div:nth-of-type(2){border-style: dashed;}
+</style>
+
+<style contenteditable> 
+#container {
+	display: -webkit-flex;
+    -webkit-flex-direction: row;
+}
+#container div{
+	-webkit-flex: 20%;
+}
+#container div:nth-of-type(2){
+	-webkit-order: -1; 
+	-webkit-flex: 40%;
+}
+</style>
+<title>Flexbox</title>
+</head>
+
+<body>
+	<div id="container">
+		<div class="box">one</div>
+		<div class="box">two</div>
+		<div class="box">three</div>
+	</div>
+</body>
+</html>
+

@@ -344,7 +344,7 @@ border-width: 5px;
 </div>
 
  <div class="slide">
-	<header><h1>Flexible Box Model</h1></header>
+	<header><h1>OLD Flexible Box Model</h1></header>
     <section class="content">
     <p>Used to position horizontal and vertical stacks.</p>
 <pre contenteditable style="float: left; margin: 0 10px 0 0;">.box {
@@ -391,7 +391,7 @@ border-width: 5px;
 
 
 <div class="slide">
-	<header><h1>Flexible Box Model</h1></header>
+	<header><h1>OLD Flexible Box Model</h1></header>
     <section class="content">
 <pre contenteditable>.box {
   display: <b>box</b>;
@@ -447,7 +447,7 @@ border-width: 5px;
 </div>  
 
 <div class="slide">
-	<header><h1>New FlexBox Properties</h1></header>
+	<header><h1>Medium FlexBox Properties</h1></header>
     <section class="content"> 
 <pre contenteditable class="new">display: flexbox | inline-flexbox;</pre>
 
@@ -471,6 +471,45 @@ border-width: 5px;
      <p style="clear: both;" class="notes">The spec syntax changed drastically. Browsers are curently changing..</p>
     </section>
 </div>  
+
+<div class="slide">
+  <header><h1>NEWER Flexible Box Model</h1></header>
+    <section class="content">
+       <p>Related properties:</p>
+        <dl class="deprecated listed">
+          <dt> display</dt>
+          <dd>New values include <code>flex</code> and <code>inline-flex</code> to create a flex container (on parent).</dd>
+          <dt> align-content</dt>
+          <dt> align-items</dt>
+          <dt> align-self</dt>
+          <dt> flex</dt>
+          <dd> Shorthand for flex-basis, flex-grow, and flex-shrink<dd>
+          <dt> flex-basis</dt>
+          <dd> default = auto</dd>
+          <dt> flex-direction</dt>
+          <dd> Set the containers axis for its children with <code>row</code>, <code>row-reverse</code>, <code>column</code> or <code>columns-reverse</code> on the parent</dd>
+          <dt> flex-flow</dt>
+          <dd>Shorthand for <code>flex-direction</code> and <code>flex-wrap</code> properties.</dd>
+          <dt> flex-grow</dt>
+          <dd> determines how much flex item will grow relative to  other flex items in flex container when positive free space is distributed. default is 1 for container 0 for children. Positive only</dd>
+          <dt> flex-shrink</dt>
+          <dd>determines how much  flex item will shrink relative to  other flex items in flex container when negative free space is distributed. default = 1</dd>
+          <dt> flex-wrap</dt>
+          <dd> To determine whether the boxes are single line or wrap, and the direction, use <code>nowrap</code>, <code>wrap</code> or <code>wrap-reverse</code></dd>
+          <dt> justify-content</dt>
+          <dt> min-height</dt>
+          <dt> min-width</dt>
+          <dt> order</dt>
+          <dd>Controls order of flex items within flex container</dd>
+        </dl> 
+    </section>
+</div>
+
+<div class="slide object">
+<header><h1>Newest Flexible Box Model</h1></header>
+<object data="files/12_flexbox.html"></object>
+<a href="files/12_flexbox.html" target="play" class="objectlink">Open in separate window</a>
+</div>
 
 <div class="slide" id="gridlayout">
 	<header><h1>grid layout</h1></header>

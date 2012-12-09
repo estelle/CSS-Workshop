@@ -395,6 +395,34 @@ header h1.sectiontitle:before{
      </section>
  </div>
 
+<div class="slide">
+  <header><h1>attr() - FUTURE</h1></header>
+    <section class="content">
+      <p>CSS 2.1</pre>
+      <pre contenteditable>attr( attrName )</pre>
+      <p>CSS3</p>
+      <pre contenteditable>attr( attrName unit? [ , fallback ]? )</pre>
+      <dl class="deprecated">
+        <dt>string</dt>
+<dd>contents of a CSS string. Default is the empty string.</dd>
+<dt>color</dt>
+<dd>Must parse as a readable color. Default is ‘currentColor’.</dd>
+<dt>url</dt>
+<dd>Default is ‘about:invalid’. Relative URLs will be made absolute, not relative to the style sheet.</dd>
+<dt>integer</dt>
+<dd>Default is ‘0’</dd>
+<dt>number</dt>
+<dd>Default is ‘0’</dd>
+<dt>length, angle, time or frequency</dt>
+<dd>Default is ‘0’ in the relevant units. If the unit is a relative length, it will be computed to an absolute length.</dd>
+<dt>length or unit token </dt>
+<dd>'em’ ‘ex’ ‘px’ ‘rem’ ‘vw’ ‘vh’ ‘vmin’ ‘vmax’ ‘mm’ ‘cm’ ‘in’ ‘pt’ ‘pc’ ‘deg’ ‘grad’ ‘rad’ ‘ms’ ‘s’ ‘Hz’ ‘kHz’ or ‘%'. If the unit is a relative length, it will be computed to an absolute length.</dd>
+      </dl>
+<pre contenteditable>&lt;p data-count="5">Hi&lt;/p>
+
+width: attr(data-count em, auto);</pre>
+    </section>
+</div>
 
 <div class="slide object">
 <header><h1>Try it out</h1>
@@ -441,7 +469,7 @@ a[href$="vcs"]:before {
      <header><h1>Attribute Values as content</h1></header> 
      <section class="content attribute">
      <p>There are <a href="files/32_generatetext.html">exercises</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes">Google</a>.</p>
-     <pre>a[href^=http]:hover {
+     <pre contenteditable>a[href^=http]:hover {
    position: relative;
 }
 a[href^=http]:hover:after {

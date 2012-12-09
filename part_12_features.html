@@ -307,12 +307,12 @@ border-width: 5px;
 <div class="slide">
   <header><h1>CSS Regions</h1></header>
     <section class="content">
-<pre>&lt;div id="origin">[content here]&lt;/div>
+<pre contenteditable>&lt;div id="origin">[content here]&lt;/div>
 &lt;div class="destination">&lt;/div>
 &lt;div class="destination">&lt;/div>
 &lt;div class="destination">&lt;/div>
 &lt;div class="destination">&lt;/div>​</pre>
-<pre>#origin {
+<pre contenteditable>#origin {
     -webkit-flow-into: name_of_my_flow;
     /* style of content */
 }
@@ -748,7 +748,7 @@ small {
      <section class="content">
 <p>Related to <em>contentEditable</em>: Determines whether content of an element is editable.
 
-<pre>
+<pre contenteditable>
 -webkit-user-modify: read-only | read-write | read-write-plaintext-only;
 -moz-user-modify: read-only | read-write | write-only;</pre>
 <dl>

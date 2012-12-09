@@ -270,7 +270,7 @@ th {text-align: right; padding-right: 10px;}
  <div class="slide normal"> 
      <header><h1>Old School: background-image</h1></header> 
      <section class="content">
- <pre><em>none | &lt;url&gt; | inherit</em> </pre>
+ <pre contenteditable><em>none | &lt;url&gt; | inherit</em> </pre>
  </pre><pre style="line-height:2;">background-image: url(path/aSingleLonelyCat);</pre>
  <ul>
  <li>background-color</li>
@@ -312,7 +312,7 @@ th {text-align: right; padding-right: 10px;}
  <div class="slide normal"> 
      <header><h1>CSS3 background-image value types</h1></header> 
      <section class="content">
- <pre><em>none | &lt;url&gt;</em> | <em>&lt;image-list&gt;</em> | <em>&lt;element-reference&gt;</em>  | <em>&lt;gradient&gt;</em></pre><pre style="line-height:2;">url(singleImage.png) 
+ <pre contenteditable><em>none | &lt;url&gt;</em> | <em>&lt;image-list&gt;</em> | <em>&lt;element-reference&gt;</em>  | <em>&lt;gradient&gt;</em></pre><pre style="line-height:2;">url(singleImage.png) 
 url(multipleImages.gif), url(otherGif.gif)
 none
 linear-gradient(top, red, blue)
@@ -353,12 +353,12 @@ url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='2
 <p>Allows the use of any element, including &lt;canvas&gt; where images can be used.</p>
          
 <ul class="icons" style="float:right;"><li class="firefox">Firefox 4</li>
-</ul><pre>background-image: -moz-element('#someID');
+</ul><pre contenteditable>background-image: -moz-element('#someID');
 background-image: element('#someID')</pre>
 <p>Define which portion of the image to show:</p>
 <ul class="icons" style="float:right;">
          <li class="firefox">Firefox 4</li>
-</ul><pre>background-image: 
+</ul><pre contenteditable>background-image: 
     -moz-image-rect(url(ico_sprite.jpg), 32, 64, 16, 16);
 background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
 </section></div>
@@ -370,10 +370,10 @@ background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
      <section class="content"> 
 <p>Fallback in case your images doesn't load:</p>
 
-<pre>background-image: 
+<pre contenteditable>background-image: 
      image("try1.svg", "try2.png", "try3.gif", blue)</pre>
 <p>Flip the image if the direction is rtl.</p>
-<pre>background-image: image("arrow.png" rtl)</pre>
+<pre contenteditable>background-image: image("arrow.png" rtl)</pre>
      </section>
  </div>
  
@@ -549,6 +549,14 @@ Short ribs shoulder turkey tenderloin. Ball tip ham capicola, turkey jowl ribeye
 			  
             }
 	</script>
+ </div>
+
+
+ <!--background-position -->
+ <div class="slide object">
+   <header><h1>% based background-position (old )</h1></header>
+<object data="files/80_bgposition.html"></object>
+<a href="files/80_bgposition.html" target="play" class="objectlink">Try it out</a>
  </div>
  
  <!--background-position -->

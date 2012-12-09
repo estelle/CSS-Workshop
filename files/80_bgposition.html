@@ -1,0 +1,69 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {display:none;}
+* {pointer-events: none;}
+style:last-of-type {position: relative; top: 100px;padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace; pointer-events: auto;}
+div {
+    background-image: 
+    -webkit-linear-gradient(top,
+        #C7573A 2%,
+        transparent  2%,
+        transparent  49%,
+        #C7573A 49%,
+        #C7573A 51%, 
+        transparent 51%,
+        transparent  98%,
+        #C7573A 98%),
+    -webkit-linear-gradient(left,
+        #C7573A 2%,
+        transparent  2%,
+        transparent  49%,
+        #C7573A 49%,
+        #C7573A 51%, 
+        transparent 51%,
+        transparent  98%,
+        #C7573A 98%);    
+    background-image: 
+    linear-gradient(to top,
+        #C7573A 2%,
+        transparent  2%,
+        transparent  49%,
+        #C7573A 49%,
+        #C7573A 51%, 
+        transparent 51%,
+        transparent  98%,
+        #C7573A 98%),
+    linear-gradient(to left,
+        #C7573A 2%,
+        transparent  2%,
+        transparent  49%,
+        #C7573A 49%,
+        #C7573A 51%, 
+        transparent 51%,
+        transparent  98%,
+        #C7573A 98%);
+    background-size: 95px 95px;
+    background-repeat: no-repeat;
+    height: 100%; width: 100%;
+    min-height: 610px;
+        
+ }
+ div {border: 1px solid #C7573A; position: absolute; bottom: 0; width:90%; margin: 10px 40px; height: 300px;}
+ div:after {content: ''; position: absolute; height: 8px; width: 8px; background-color: #C7573A; margin-top: -4px; margin-left: -4px;}
+</style>
+
+<style contenteditable>div {background-position: 75% 75%;}
+div:after {top: 75%; left:75%;}</style>
+<title>Background-Position</title>
+</head>
+
+<body>
+	<div></div>
+</body>
+</html>
+

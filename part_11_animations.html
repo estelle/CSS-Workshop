@@ -393,7 +393,7 @@ code:hover {
      <header><h1>Transitioning Transforms</h1></header> 
      <em class="spinbox"><i class="dot"></i><b class="plane2 spin">✈</b></em>
      <section class="content">
-<pre>
+<pre contenteditable>
 .plane {
     transition: all 1s ease-in 50ms;
     transform-origin: 100px 150px;
@@ -401,7 +401,6 @@ code:hover {
 .plane:hover {
     transform: rotate(360deg) scale(2);
 }</pre>
-     </pre>
  
  
      </section>
@@ -463,7 +462,7 @@ code:hover {
        </ul></li>
    </ul>
 </nav>
- <pre>nav ul li {
+ <pre contenteditable>nav ul li {
   list-style-type: none;
 }
 nav > ul > li {
@@ -962,7 +961,7 @@ function changeDirection(direction){
 <b id="animationfm" class="plane planeanim">✈</b> 
 <section class="content"> 
 <pre contenteditable onMouseDown="document.getElementById('animationfm').style.webkitAnimation = 'none';">values: <span onClick="changeFillMode(this.innerHTML)">none</span> | <span onClick="changeFillMode(this.innerHTML)">forwards</span> | <span onClick="changeFillMode(this.innerHTML)">backwards</span> | <span onClick="changeFillMode(this.innerHTML)">both</span></pre>
-<pre>.plane {
+<pre contenteditable>.plane {
   <u></u>animation-name: flyingTowardsUser; 
   <u></u>animation-duration: 3s;
   <u></u>animation-timing-function: ease-in-out;
@@ -999,7 +998,7 @@ function changeDirection(direction){
 <b class="plane plane_pausing">✈</b>
 
 <pre contenteditable><u></u>animation-play-state: paused | running</pre>
-<pre>.plane {
+<pre contenteditable>.plane {
 	<u></u>transform-origin: center 300px;
 	<u></u>animation: flyingInCircles 3s linear infinite;	 
  }
@@ -1007,7 +1006,7 @@ function changeDirection(direction){
 	<u></u>animation-play-state:paused; 
  }</pre>
 
-<pre>@<u></u>keyframes flyingInCircles {
+<pre contenteditable>@<u></u>keyframes flyingInCircles {
   100% {
     <u></u>transform:
       rotate(360deg);

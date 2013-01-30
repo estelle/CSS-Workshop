@@ -1,16 +1,16 @@
 <!doctype html>
-<html> 
-  <head> 
+<html>
+  <head>
     <!--[if gte IE 9]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <![endif]--> 
+    <![endif]-->
     <!--[if lt IE 9]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
-    <![endif]--> 
+    <![endif]-->
     <meta charset="utf-8" />
     <title>CSS3: From Knowledgable to Ninja</title>
-     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
-   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>
    <link rel="stylesheet" href="css/print.css" media="print"/>
    <style>
 
@@ -19,20 +19,20 @@ body, #presentation, #slides {
 	-moz-transition: all 1.5s linear;
 	-ms-transition: all 1.5s linear;
 	-o-transition: all 1.5s linear;
-	transition: all 1.5s linear;	
+	transition: all 1.5s linear;
 }
 body {counter-reset: sections;}
 header h1.sectiontitle:before{
 	content: "Part " counter(sections) ": ";
-	counter-increment: sections;	
+	counter-increment: sections;
 }
 
 /* brown: C7573A;*/
-   </style>  
-    
-  </head> 
-  <body> 
-  
+   </style>
+
+  </head>
+  <body>
+
   <div id="topinfo">
 
   </div>
@@ -46,37 +46,38 @@ header h1.sectiontitle:before{
 </header>
   <div id="info">
     <p>
-    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
     <span class="key">2</span> for comments. <a href="http://estelle.github.com/CSS-Workshop">estelle.github.com/CSS-Workshop</a>
     </p>
   </div>
-  
+
   <div id="presentation">
-  
+
    <div id="presentation-counter"></div>
-      
+
    <div id="slides">
-   
-    
+
+
 <div class="slide intro">
-    <header> 
-    	<h1>CSS: from Knowledgable to Ninja</h1> 
+    <header>
+    	<h1>CSS: from Knowledgable to Ninja</h1>
     </header>
-     <section class="intro"> 
-     
+     <section class="intro">
+
 <p>Estelle Weyl<br>
 <a href="http://www.twitter.com/estellevw">@estellevw</a>
 <br>
 <a href="http://www.standardista.com">www.standardista.com</a></p>
+<p><a href="http://estelle.github.com/CSS-Workshop">estelle.github.com/CSS-Workshop</a></p>
      </section>
     </div>
- 
- 
- <div class="slide object"> 
+
+
+ <div class="slide object">
   <object data="http://meiert.com/en/indices/css-properties/"></object>
   <a href="http://meiert.com/en/indices/css-properties/" class="objectlink" target="_new">Visit Site</a>
- </div>  
- 
+ </div>
+
  <div class="slide preintro">
  <pre contenteditable>selectorA {
    property1: value1;
@@ -88,9 +89,9 @@ selectorB {
    property2: value4;
 }</pre>
  </div>
- 
- 
- 
+
+
+
   <div class="slide preintro">
  <pre contenteditable>selector:pseudo-class::pseudo-element {
     -vendor-property: value;
@@ -103,13 +104,13 @@ selector ~ relation {
     -vendor-property: weirdsyntax;
 }</pre>
  </div>
- 
- 
+
+
  <div class="slide preintro">
  <pre contenteditable>@at-rule {
     property: value;
  }
- 
+
 @at-rule {
     selector {
     	property: value;
@@ -119,13 +120,13 @@ selector ~ relation {
     }
  }</pre>
  </div>
- 
 
-  
+
+
 <!-- OUTLINE -->
-<div class="slide normal"> 
- <header><h1>Course Outline</h1></header> 
- <section class="content"> 
+<div class="slide normal">
+ <header><h1>Course Outline</h1></header>
+ <section class="content">
   <ol>
   	<li><a href="../selectors/">Selectors</a></li>
     <li><a href="part_02_specificity.html">Specificity</a></li>
@@ -144,22 +145,22 @@ selector ~ relation {
  </section>
 </div>
 
-  
+
 <!-- Intro to exercises -->
-<div class="slide normal"> 
-     <header><h1>Slide Notes/Exercise Files</h1></header> 
-     <section class="content"> 
+<div class="slide normal">
+     <header><h1>Slide Notes/Exercise Files</h1></header>
+     <section class="content">
   		<p>Many exercise files open in a separate window. When they do, they will all open in the same seperate window</p>
       <p>Other exercise files are incorporated in the deck. If the slide is grey or reads "try this", you can edit the CSS in the head to impact the rest of the slide.<p>
       <p>If you are unable to move between slides, click anywhere OUTSIDE the slide, and try again</p>
-      <p>To take notes, click on #4.</p> 
+      <p>To take notes, click on #4.</p>
      </section>
     </div>
 
-  
-  
-<div class="slide"> 
- <header><h1 class="sectiontitle"><a href="../selectors/" target="deck">Selectors</a></h1></header> 
+
+
+<div class="slide">
+ <header><h1 class="sectiontitle"><a href="../selectors/" target="deck">Selectors</a></h1></header>
 <section class="content">
         <ul style="-webkit-column-count:2;">
             <li>Basic Selectors</li>
@@ -187,19 +188,19 @@ selector ~ relation {
          </ul>
      </section>
  </div>
-    
-<div class="slide"> 
-    <header><h1 class="sectiontitle"><a href="part_02_specificity.html" target="deck">Specificity</a></h1></header> 
+
+<div class="slide">
+    <header><h1 class="sectiontitle"><a href="part_02_specificity.html" target="deck">Specificity</a></h1></header>
     <section class="content">
         <ul>
             <li>Understanding Specificity</li>
             <li>Specificity PDF </li>
-            <li>Specificity Notes</li> 
+            <li>Specificity Notes</li>
         </ul>
     </section>
 </div>
-   
-<div class="slide"> 
+
+<div class="slide">
      <header><h1 class="sectiontitle"><a href="part_03_generated.html" target="deck">Generated Content</a></h1></header>
     <section class="content">
         <ul>
@@ -218,9 +219,9 @@ selector ~ relation {
     </section>
 </div>
 
-<div class="slide"> 
+<div class="slide">
     <header><h1 class="sectiontitle"><a href="part_04_media.html" target="deck">Media Queries</a></h1>
-    </header> 
+    </header>
     <section class="content">
         <ul>
             <li>Syntax</li>
@@ -231,11 +232,11 @@ selector ~ relation {
             <li> mediaqueri.es</li>
         </ul>
     </section>
-</div> 
- 
+</div>
 
-<div class="slide"> 
-    <header><h1 class="sectiontitle"><a href="part_04_media.html#slide10" target="deck">Debugging</a></h1></header> 
+
+<div class="slide">
+    <header><h1 class="sectiontitle"><a href="part_04_media.html#slide10" target="deck">Debugging</a></h1></header>
     <section class="content">
         <ul>
             <li>Debuggers</li>
@@ -245,8 +246,8 @@ selector ~ relation {
 </div>
 
 
-<div class="slide"> 
-    <header><h1 class="sectiontitle"><a href="part_06_colors.html" target="deck">Colors</a></h1></header> 
+<div class="slide">
+    <header><h1 class="sectiontitle"><a href="part_06_colors.html" target="deck">Colors</a></h1></header>
     <section class="content">
         <ul>
             <li>Color formats</li>
@@ -263,14 +264,14 @@ selector ~ relation {
         </ul>
     </section>
 </div>
-  
-  
 
-<div class="slide normal"> 
-    <header><h1 class="sectiontitle"><a href="part_07_fonts.html" target="deck">Fonts</a></h1></header> 
-    <section class="content"> 
+
+
+<div class="slide normal">
+    <header><h1 class="sectiontitle"><a href="part_07_fonts.html" target="deck">Fonts</a></h1></header>
+    <section class="content">
         <ul>
-            <li>@font-face 
+            <li>@font-face
             	<ul>
                 	<li>Syntax</li>
                 	<li>Support</li>
@@ -285,13 +286,13 @@ selector ~ relation {
         </ul>
     </section>
 </div>
-  
 
-<div class="slide normal"> 
-    <header><h1 class="sectiontitle"><a href="part_08_backgrounds.html" target="deck">Backgrounds and Borders</a></h1></header> 
-    <section class="content"> 
+
+<div class="slide normal">
+    <header><h1 class="sectiontitle"><a href="part_08_backgrounds.html" target="deck">Backgrounds and Borders</a></h1></header>
+    <section class="content">
          <ul style="float: left; width:50%;">
-    <li>Background properties 
+    <li>Background properties
       <ul>
         <li>background-color</li>
         <li>background-image'</li>
@@ -305,9 +306,9 @@ selector ~ relation {
       </ul>
     </li>
     </ul>
-    
+
          <ul style="float: left">
-    <li>Border properties 
+    <li>Border properties
       <ul>
         <li>border-color</li>
         <li>border-style</li>
@@ -316,7 +317,7 @@ selector ~ relation {
         <li>border-radius </li>
       </ul>
     </li>
-    <li>Border Images 
+    <li>Border Images
       <ul>
         <li>border-image-source</li>
         <li>border-image-slice</li>
@@ -329,16 +330,16 @@ selector ~ relation {
   </ul>
     </section>
 </div>
-   
-    
-  
-    
-  
-  
-  
-<div class="slide normal"> 
-     <header><h1 class="sectiontitle"><a href="../gradients/index.html">Gradients</a></h1></header> 
-     <section class="content"> 
+
+
+
+
+
+
+
+<div class="slide normal">
+     <header><h1 class="sectiontitle"><a href="../gradients/index.html">Gradients</a></h1></header>
+     <section class="content">
   <ul>
   	<li>Types of Gradients</li>
     <li>Angles &amp; Keyterm directions</li>
@@ -350,11 +351,11 @@ selector ~ relation {
     </ul>
      </section>
     </div>
-    
 
- <div class="slide normal"> 
-     <header><h1 class="sectiontitle"><a href="part_10_transforms.html">Tranforms</a></h1></header> 
-     <section class="content"> 
+
+ <div class="slide normal">
+     <header><h1 class="sectiontitle"><a href="part_10_transforms.html">Tranforms</a></h1></header>
+     <section class="content">
      <ul>
      	<li>2D Transform Functions</li>
         <li>3D Transform Functions</li>
@@ -362,12 +363,12 @@ selector ~ relation {
         <li>Multiple Transforms</li>
         </ul>
      </section>
- </div> 
- 
- 
-  <div class="slide normal"> 
-     <header><h1 class="sectiontitle"><a href="part_11_animations.html">Transitions &amp; Animations</a></h1></header> 
-     <section class="content"> 
+ </div>
+
+
+  <div class="slide normal">
+     <header><h1 class="sectiontitle"><a href="part_11_animations.html">Transitions &amp; Animations</a></h1></header>
+     <section class="content">
      <ul>
      	<li>Transtion Propertes</li>
         <li>What can be transitioned?</li>
@@ -375,10 +376,10 @@ selector ~ relation {
         <li>Animation Properties</li>
      </ul>
      </section>
- </div> 
- 
-  <div class="slide normal"> 
-     <header><h1 class="sectiontitle"><a href="part_12_features.html">Other Features</a></h1></header> 
+ </div>
+
+  <div class="slide normal">
+     <header><h1 class="sectiontitle"><a href="part_12_features.html">Other Features</a></h1></header>
      <section class="content">
      <ul>
      	<li>Columns</li>
@@ -392,10 +393,10 @@ selector ~ relation {
         <li>rem</li>
         <li>Pointer Events</li>
         <li>-webkit-user-modify</li>
-     
-     </ul> 
+
+     </ul>
      </section>
- </div> 
+ </div>
 
 <div class="slide intro">
   <header><h1><a href="../selectors/">Get Started</a></h1></header>
@@ -406,5 +407,5 @@ selector ~ relation {
 
   </div>
   <script src="slides.js"></script>
-  </body> 
+  </body>
 </html>

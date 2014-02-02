@@ -1,16 +1,16 @@
 <!doctype html>
-<html> 
-  <head> 
+<html>
+  <head>
     <!--[if gte IE 9]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <![endif]--> 
+    <![endif]-->
     <!--[if lt IE 9]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
-    <![endif]--> 
+    <![endif]-->
     <meta charset="utf-8" />
     <title>CSS3: Generated Content</title>
-     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
-   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>
    <link rel="stylesheet" href="css/print.css" media="print"/>
    <style>
 
@@ -19,13 +19,13 @@ body, #presentation, #slides {
 	-moz-transition: all 1.5s linear;
 	-ms-transition: all 1.5s linear;
 	-o-transition: all 1.5s linear;
-	transition: all 1.5s linear;	
+	transition: all 1.5s linear;
 }
-	
+
 /* INTRO TO GENERATED CONTENT */
 .beforeafter::before {
   	content: "before content - ";
-  }	
+  }
 .beforeafter::after{
 	content: " - after content";
   }
@@ -38,7 +38,7 @@ body, #presentation, #slides {
 .beforeafterdiv:before,
 .beforeafterdiv:after,
 .beforeafterdiv i {
-	height: 100px;
+	height: 200px;
 	content: "";
 	border: 1px solid blue;
 	position:relative;
@@ -47,10 +47,11 @@ body, #presentation, #slides {
 	display:inline-block;
 	box-shadow:3px 3px rgba(0,0,0,0.2),-3px -3px rgba(0,0,0,0.2), ;
 	margin: 5px;
+  font-size: 3rem;
 }
 
 .beforeafterdiv:before {
-	content: "before";	
+	content: "before";
 	background-color: green;
 	margin-right: -50px;
 	color: #fff;
@@ -59,12 +60,12 @@ body, #presentation, #slides {
 .beforeafterdiv:after {
 	content: "after";
 	background-color: blue;
-	margin-left: -50px; 
+	margin-left: -50px;
 	color: #fff;
 	-webkit-transform: translatez(5px);
 	}
 .beforeafterdiv i {
-	background-color: yellow;	
+	background-color: yellow;
 }
 /* GENERATED CONTENT : LINKS */
 .ba li {list-style-type: none; margin-bottom: 20px;}
@@ -93,10 +94,10 @@ blockquote.gc p:before, blockquote.gc p:after {
   font-size: 2em;
   color: #C7573A;
   line-height: 0;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 blockquote.gc p:first-child:before {
-  content: "\275D"; 
+  content: "\275D";
   margin: 0 5px 0 -48px;
 }
 blockquote.gc p:last-child:after {
@@ -120,7 +121,7 @@ blockquote.gc p:last-child:after {
 	border: 20px solid blue;
 	border-color: red transparent transparent transparent;
 	bottom: -39px;
-	left: 20px;	
+	left: 20px;
 }
 
 .thought {
@@ -150,7 +151,7 @@ blockquote.gc p:last-child:after {
 	height: 20px;
 	width: 20px;
 	bottom: -50px;
-	left: 12%;	
+	left: 12%;
 }
 
 /* TOOL TIP */
@@ -161,12 +162,12 @@ p [data-tooltip="true"] {
 	display:inline;
 	z-index: 0;
 }
-p [data-tooltip="true"]:hover {	
+p [data-tooltip="true"]:hover {
 	position: relative;
 	}
 p [data-tooltip="true"]:hover:before {
 	content: attr(title);
-	position: absolute; 
+	position: absolute;
 	top: 45px;
 	left: 0;
 	background-color: #C7573A;
@@ -185,13 +186,13 @@ p [data-tooltip="true"]:hover:after {
 	top: 1.1rem;
 	border: 15px solid;
 	position: absolute; left: 20px;
-	border-color:  transparent transparent #C7573A ; 	
+	border-color:  transparent transparent #C7573A ;
 }
 
 .d3 {
 	-webkit-transform: perspective(500px) rotateY(40deg);
 	margin: 20px auto;
-		
+
 }
 .attribute a[href^=http]:hover {
    position: relative;
@@ -204,13 +205,13 @@ p [data-tooltip="true"]:hover:after {
    background-color: black;
    color: white;
    padding: 3px 5px;
-   line-height:1;     
-} 
+   line-height:1;
+}
 /* brown: C7573A;*/
-   </style>  
-    
-  </head> 
-  <body> 
+   </style>
+
+  </head>
+  <body>
   <header>
     <nav>
         <ul>
@@ -222,34 +223,34 @@ p [data-tooltip="true"]:hover:after {
   <div id="topinfo">
 
   </div>
-  
+
   <div id="info">
     <p>
-    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
     <span class="key">2</span> for comments. <a href="http://estelle.github.com/CSS-Workshop">estelle.github.com/CSS-Workshop</a>
     </p>
   </div>
-  
+
   <div id="presentation">
-  
+
    <div id="presentation-counter"></div>
-      
+
    <div id="slides">
-<!-- slidedeck title -->  
+<!-- slidedeck title -->
 <div class="slide normal">
-    <header> 
-    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
+    <header>
+    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1>
     </header>
-     <section class="content"> 
+     <section class="content">
      <p> ◈ Estelle Weyl</p>
   <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
      </section>
     </div>
-  
+
 <!-- OUTLINE -->
-<div class="slide normal"> 
- <header><h1>Course Outline</h1></header> 
- <section class="content"> 
+<div class="slide normal">
+ <header><h1>Course Outline</h1></header>
+ <section class="content">
   <ol><li><a href="../selectors/">Selectors</a></li>
     <li><a href="part_02_specificity.html">Specificity</a></li>
     <li><a href="part_03_generated.html">Generated Content</a></li>
@@ -267,21 +268,21 @@ p [data-tooltip="true"]:hover:after {
 </div>
 
 <!-- title -->
-<div class="slide intro"> 
+<div class="slide intro">
      <header><h1>Part 3: Generated Content</h1></header>
 </div>
-     
-     
+
+
 <!-- :before and :after  -->
-<div class="slide normal"> 
+<div class="slide normal">
      <header><h1>::before and ::after</h1></header>
-     
-      
-     <section class="content"> 
+
+
+     <section class="content">
   <pre contenteditable>p:before {
   content: "before content - ";
   font-weight: bold;
-}	
+}
 p:after{
   content: " - after content";
   font-weight: bold;
@@ -294,39 +295,39 @@ p:after{
     &lt;before&gt;before content - &lt;/before>
         the content
     &lt;after&gt; - after content&lt;/after>
-&lt;/p></pre> 
+&lt;/p></pre>
 <a href="files/31_generatetext.html" target="play" class="objectlink">Try it out</a> </section>
 
-    </div>   
- 
+    </div>
+
 
 <div class="slide object">
-<header><h1>Try it out</h1>
+<header><h1>Try it out</h1></header>
 <object data="files/31_generatetext.html"></object>
 <a href="files/31_generatetext.html" target="play" class="objectlink">Try it out</a>
 </div>
 
 
 
-<!-- 2 free elements  --> 
-<div class="slide intro"> 
-     <header><h1>Pseudo Elements</h1></header> 
-     <section class="content"> 
-     You get 2 free stylable faux elements for every non-empty element 
+<!-- 2 free elements  -->
+<div class="slide intro">
+     <header><h1>Pseudo Elements</h1></header>
+     <section class="content">
+     You get 2 free stylable faux elements for every non-empty element
      <div class="beforeafterdivcont  d3">
      	<div class="beforeafterdiv"><i>Content</i></div>
       </div>
      </section>
- </div> 
- 
+ </div>
+
 <!-- Pseudoelement Syntax & Support-->
-<div class="slide normal"> 
-     <header><h1>Syntax</h1></header> 
+<div class="slide normal">
+     <header><h1>Syntax</h1></header>
      <section class="content">
      <pre contenteditable>
  element:before {
  	content: "REQUIRED";
- } 
+ }
  </pre>
  <ul class="icons">
          <li class="chrome">Chrome</li>
@@ -341,21 +342,21 @@ p:after{
     content: " (.pdf) ";          /* any text */
     content: "\2603";             /* unicode */
     content: " (" attr(href) ")"; /* attributes */
-    content: counter(name); 
+    content: counter(name);
         counter-increment: name;  /* counters */
- } 
+ }
  </pre>
      </section>
  </div>
- 
+
 <!--  Special Characters -->
-<div class="slide normal"> 
-     <header><h1>Special Character</h1></header> 
+<div class="slide normal">
+     <header><h1>Special Character</h1></header>
      <section class="content">
      <pre contenteditable>
  element:before {
  	content: "\2603";
- } 
+ }
  </pre>
 <object data="http://evotech.net/articles/testjsentities.html" style="height:300px; width:100%;"></object>
 <p><a href="files/32_generatetext.html" target="play">Try it out</a><br>
@@ -365,8 +366,8 @@ p:after{
  </div>
 
 <!-- counters and content -->
-<div class="slide normal"> 
-     <header><h1>Values for content:</h1></header> 
+<div class="slide normal">
+     <header><h1>Values for content:</h1></header>
      <section class="content">
      <dl class="deprecated listed">
   <dt><span title="none"><strong>none</strong></span></a></dt>
@@ -385,11 +386,11 @@ p:after{
   <dd>Does not include quotes,  but increments  the level of nesting for quotes.</dd>
   <dt><span title="attr()"><strong>attr(X)</strong></span></a></dt>
   <dd>Displays the value of the attribute 'X'</dd>
-</dl> 
+</dl>
 <pre contenteditable>body {counter-reset: sections;}
 header h1.sectiontitle:before{
 	content: "Part " counter(sections) ": ";
-	counter-increment: sections;	
+	counter-increment: sections;
 }</pre>
 <a href="http://www.standardista.com/css3/creating-counters-with-generated-content/" target="resource" class="objectlink">Tutorial</a>
      </section>
@@ -432,10 +433,10 @@ width: attr(data-count em, auto);</pre>
 
 
 <!-- Generated Content: links icons -->
-<div class="slide normal"> 
-     <header><h1>Simple Use Cases</h1></header> 
-     <section class="content ba"> 
- 
+<div class="slide normal">
+     <header><h1>Simple Use Cases</h1></header>
+     <section class="content ba">
+
      <pre contenteditable style="float: left; margin-right: 30px;">a:before {
   color: #ffffff;
   background: #000000;
@@ -462,11 +463,11 @@ a[href$="vcs"]:before {
 	<li><a href="ical.vcs">Add to Calendar</a></li>
 </ul>
      </section>
- </div> 
- 
+ </div>
+
  <!-- attribute example -->
- <div class="slide normal"> 
-     <header><h1>Attribute Values as content</h1></header> 
+ <div class="slide normal">
+     <header><h1>Attribute Values as content</h1></header>
      <section class="content attribute">
      <p>There are <a href="files/32_generatetext.html">exercises</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes">Google</a>.</p>
      <pre contenteditable>a[href^=http]:hover {
@@ -480,30 +481,30 @@ a[href^=http]:hover:after {
    background-color: black;
    color: white;
    padding: 3px 5px;
-   line-height:1;     
+   line-height:1;
 } </pre>
      </section>
  </div>
- 
- 
+
+
 <!-- quotes example -->
-<div class="slide normal"> 
-     <header><h1>More uses</h1></header> 
+<div class="slide normal">
+     <header><h1>More uses</h1></header>
      <section class="content">
 <pre contenteditable>&lt;blockquote&gt;
   &lt;p&gt;With generated content you can create text effects.&lt;/p&gt;
   &lt;p&gt;We'll cover other uses next.&lt;/p&gt;
-&lt;/blockquote&gt;</pre> 
+&lt;/blockquote&gt;</pre>
 <pre contenteditable style="float: left; position:relative; margin-right: 50px;">
-blockquote p:before, 
+blockquote p:before,
 blockquote p:after {
   font-size: 2em;
   color: #C7573A;
   line-height: 0;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 blockquote p:first-child:before {
-  content: "\275D"; 
+  content: "\275D";
   margin: 0 5px 0 -40px;
 }
 blockquote p:last-child:after {
@@ -512,15 +513,15 @@ blockquote p:last-child:after {
 }</pre>
 <blockquote class="gc"><p>With generated content you can created text effects.</p><p>We'll cover other uses next.</p></blockquote>
      </section>
- </div> 
- 
-<!-- quote bubble --> 
- <div class="slide normal"> 
-     <header><h1>Quotes</h1></header> 
-     <section class="content"> 
-     
+ </div>
+
+<!-- quote bubble -->
+ <div class="slide normal">
+     <header><h1>Quotes</h1></header>
+     <section class="content">
+
      <p class="quote">This is a quote<a href="files/33_bubbles.html" target="play" style="color: inherit">✍</a> </p>
-      
+
 <pre contenteditable>.quote {
     border-radius: 10px;
     position:relative;
@@ -538,15 +539,15 @@ blockquote p:last-child:after {
 }</pre>
      </section>
  </div>
- 
- 
- 
- 
- <!-- quote bubble --> 
- <div class="slide normal"> 
-     <header><h1>Thought bubbles</h1></header> 
-     <section class="content"> 
-     
+
+
+
+
+ <!-- quote bubble -->
+ <div class="slide normal">
+     <header><h1>Thought bubbles</h1></header>
+     <section class="content">
+
      <p class="thought">This is a thought bubble <a href="files/34_bubbles.html" target="play" style="color: inherit">✍</a></p>
 
 <pre contenteditable style="font-size: 75%; padding:0">.thought,.thought:before,
@@ -556,37 +557,37 @@ blockquote p:last-child:after {
   background-color: white;
   position:relative;
 }
-.thought:before, 
+.thought:before,
 .thought:after {
   content: '';
   position:absolute;
   left: 20%; bottom: -30px;
-  height: 40px; width: 40px; 
+  height: 40px; width: 40px;
 }
 .thought:after {
-  left: 12%; bottom: -50px; 
+  left: 12%; bottom: -50px;
   height: 20px; width: 20px;
 }</pre>
      </section>
  </div>
- 
-<!-- CSS-Tricks shapes --> 
-<div class="slide object"> 
+
+<!-- CSS-Tricks shapes -->
+<div class="slide object">
      <object data="http://css-tricks.com/examples/ShapesOfCSS/" style="width:100%; height: 100%;"></object>
      <header style="position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9);"><h1><a href="http://css-tricks.com/examples/ShapesOfCSS/" target="play">Shapes</a></h1></header>
      <a class="objectlink" href="http://css-tricks.com/examples/ShapesOfCSS/" target="resource">Visit Site</a>
  </div>
- 
-<!-- CSS-Tricks --> 
-<div class="slide object"> 
+
+<!-- CSS-Tricks -->
+<div class="slide object">
      <object data="http://css-tricks.com/pseudo-element-roundup/" style="width:100%; height: 100%;"></object>
       <header style="position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9);"><h1><a href="http://css-tricks.com/pseudo-element-roundup/" target="play">Other ideas</a></h1></header>
       <a class="objectlink" href="http://css-tricks.com/pseudo-element-roundup/" target="resource">Visit Site</a>
  </div>
- 
+
 <!-- Tool Tip Example -->
-<div class="slide normal"> 
-     <header><h1>Try it: Tool Tip</h1></header> 
+<div class="slide normal">
+     <header><h1>Try it: Tool Tip</h1></header>
      <section class="content">
      <p>In this section you have learned the general idea of using generated content to create effects and / or to provide additional information.  Try hovering over me to find out how awesome <i title="Generated Content Rocks my world" data-tooltip="true">generated content</i> can be.</p>
      <p>Open up a text editor and try creating a <i title="'Cause tool tips are awesome" data-tooltip="true">tooltip</i> without looking at the code. But, if you must, the code is attached, or you can check out your web inspector.</p>
@@ -595,13 +596,13 @@ blockquote p:last-child:after {
 </div>
 
 <!--NEXT-->
-<div class="slide intro"> 
-     <header><h1>Part 4:<br>Media Queries</h1></header> 
+<div class="slide intro">
+     <header><h1>Part 4:<br>Media Queries</h1></header>
      <section class="content">(briefly)</section>
     <h1><a href="part_04_media.html#slide3">Next ➹</a></h1>
 </div>
- 
+
   </div>
   <script src="slides.js"></script>
-  </body> 
+  </body>
 </html>

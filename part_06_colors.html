@@ -1,16 +1,16 @@
 <!doctype html>
-<html> 
-  <head> 
+<html>
+  <head>
     <!--[if gte IE 9]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <![endif]--> 
+    <![endif]-->
     <!--[if lt IE 9]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
-    <![endif]--> 
+    <![endif]-->
     <meta charset="utf-8" />
     <title>Colors &amp; Transparency: CSS: From Knowledgable to Ninja</title>
-     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
-   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>
    <link rel="stylesheet" href="css/print.css" media="print"/>
    <style>
 
@@ -39,59 +39,59 @@ height: 20px;
 .opacity, .rgba {
 			background-image: /* Safari 5 and earlier */
 				-webkit-gradient(linear, 100% 100%, 0 0,
-					color-stop(.25, rgba(255, 255, 255, 0.2)), 
+					color-stop(.25, rgba(255, 255, 255, 0.2)),
 					color-stop(.25, rgba(255, 255, 255, 0)),
-					color-stop(.5, rgba(255, 255, 255, 0)), 
+					color-stop(.5, rgba(255, 255, 255, 0)),
 					color-stop(.5, rgba(255, 255, 255, 0.2)),
-					color-stop(.75, rgba(255, 255, 255, 0.2)), 
-					color-stop(.75, rgba(255, 255, 255, 0)), 
+					color-stop(.75, rgba(255, 255, 255, 0.2)),
+					color-stop(.75, rgba(255, 255, 255, 0)),
 					color-stop(1, rgba(255, 255, 255, 0)));
 		background-image:	/* Chrome and Webkit Nightly build */
 			-webkit-linear-gradient(135deg,
-					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0.2) 25%,
 					rgba(255, 255, 255, 0) 25%,
-					rgba(255, 255, 255, 0) 50%, 
-					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0) 50%,
+					rgba(255, 255, 255, 0.2) 50%,
 					rgba(255, 255, 255, 0.2) 75%,
 					rgba(255, 255, 255, 0) 75%,
 					rgba(255, 255, 255, 0) 100%
 	  				);
 		background-image:	/* Firefox */
 			-moz-linear-gradient(135deg,
-					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0.2) 25%,
 					rgba(255, 255, 255, 0) 25%,
-					rgba(255, 255, 255, 0) 50%, 
-					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0) 50%,
+					rgba(255, 255, 255, 0.2) 50%,
 					rgba(255, 255, 255, 0.2) 75%,
 					rgba(255, 255, 255, 0) 75%,
 					rgba(255, 255, 255, 0) 100%
 	  				);
 			background-image:	/* IE10 */
 			-ms-linear-gradient(135deg,
-					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0.2) 25%,
 					rgba(255, 255, 255, 0) 25%,
-					rgba(255, 255, 255, 0) 50%, 
-					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0) 50%,
+					rgba(255, 255, 255, 0.2) 50%,
 					rgba(255, 255, 255, 0.2) 75%,
 					rgba(255, 255, 255, 0) 75%,
 					rgba(255, 255, 255, 0) 100%
 	  				);
 			background-image:	/* opera 11+ */
 			-o-linear-gradient(135deg,
-					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0.2) 25%,
 					rgba(255, 255, 255, 0) 25%,
-					rgba(255, 255, 255, 0) 50%, 
-					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0) 50%,
+					rgba(255, 255, 255, 0.2) 50%,
 					rgba(255, 255, 255, 0.2) 75%,
 					rgba(255, 255, 255, 0) 75%,
 					rgba(255, 255, 255, 0) 100%
 	  				);
-			background-image:	
+			background-image:
 			linear-gradient(135deg,
-					rgba(255, 255, 255, 0.2) 25%, 
+					rgba(255, 255, 255, 0.2) 25%,
 					rgba(255, 255, 255, 0) 25%,
-					rgba(255, 255, 255, 0) 50%, 
-					rgba(255, 255, 255, 0.2) 50%, 
+					rgba(255, 255, 255, 0) 50%,
+					rgba(255, 255, 255, 0.2) 50%,
 					rgba(255, 255, 255, 0.2) 75%,
 					rgba(255, 255, 255, 0) 75%,
 					rgba(255, 255, 255, 0) 100%
@@ -105,7 +105,7 @@ height: 20px;
 }
 .opacity pre {
 	background-color: #fff;
-		
+
 }
 
 /* shadow dom */
@@ -130,18 +130,18 @@ height: 20px;
     background: #bbb;
     box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
 }
-.scrollbar ::-webkit-scrollbar-thumb:hover { background: #b7472A }	
+.scrollbar ::-webkit-scrollbar-thumb:hover { background: #b7472A }
 .scrollbar pre {
 	width: 700px;
 	height: 200px;
 	overflow:auto;
-}	
+}
 /* brown: C7573A;*/
-   </style>  
-    
-  </head> 
-  <body> 
-  
+   </style>
+
+  </head>
+  <body>
+
    <header>
     <nav>
         <ul>
@@ -150,35 +150,35 @@ height: 20px;
         </ul>
     </nav>
 </header>
-  
+
   <div id="info">
     <p>
-    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
     <span class="key">2</span> for comments.
     </p>
   </div>
-  
+
   <div id="presentation">
-  
+
    <div id="presentation-counter"></div>
-      
+
    <div id="slides">
-   
-       
+
+
 <div class="slide normal">
-    <header> 
-    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
+    <header>
+    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1>
     </header>
-     <section class="content"> 
+     <section class="content">
      <p> ◈ Estelle Weyl</p>
   <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
      </section>
     </div>
-  
+
 <!-- OUTLINE -->
-<div class="slide normal"> 
- <header><h1>Course Outline</h1></header> 
- <section class="content"> 
+<div class="slide normal">
+ <header><h1>Course Outline</h1></header>
+ <section class="content">
   <ol><li><a href="../selectors/">Selectors</a></li>
     <li><a href="part_02_specificity.html">Specificity</a></li>
     <li><a href="part_03_generated.html">Generated Content</a></li>
@@ -194,18 +194,18 @@ height: 20px;
 </ol>
  </section>
 </div>
-    
 
 
-<div class="slide intro"> 
-     <header><h1>Part 6: Colors &amp; Appearance</h1></header> 
+
+<div class="slide intro">
+     <header><h1>Part 6: Colors &amp; Appearance</h1></header>
 </div>
-    
-  
+
+
 <!-- Color Formats-->
-<div class="slide normal"> 
-     <header><h1>Color formats</h1></header> 
-     <section class="content"> 
+<div class="slide normal">
+     <header><h1>Color formats</h1></header>
+     <section class="content">
   <pre contenteditable style="font-size: 1.2em; line-height:1.4">  color: white;
   color: #fff;
   color: #FFFFFF;
@@ -219,13 +219,13 @@ height: 20px;
   background-color: currentColor;</pre>
      </section>
     </div>
-    
-   
+
+
 <!-- Named Colors -->
-<div class="slide normal"> 
-     <header style="margin-bottom: -20px"><h1>Color Keywords</h1></header> 
+<div class="slide normal">
+     <header style="margin-bottom: -20px"><h1>Color Keywords</h1></header>
      <section class="content">
-     
+
 <ul class="namedcolors givemespace">
 <li>aliceblue	<span style="background-color: #F0F8FF">#F0F8FF</span></li>
 <li>antiquewhite <span style="background-color: #FAEBD7">#FAEBD7</span></li>
@@ -369,19 +369,19 @@ height: 20px;
 </ul>
      </section>
 </div>
- 
+
 <!-- RGB /RGBA -->
-<div class="slide normal"> 
-     <header><h1>RGB / RGBA</h1></header> 
-     <section class="content"> 
-     
+<div class="slide normal">
+     <header><h1>RGB / RGBA</h1></header>
+     <section class="content">
+
      <ul class="namedcolors"  style="background-color: #40BFAC">
      	<li>&nbsp; <span>#</span></li>
         <li>Red <span>40</span></li>
         <li>Green <span>BF</span></li>
         <li>Blue <span>AC</span></li>
      </ul>
-     
+
      <ul class="namedcolors"  style="background-color: rgb(64, 191, 172)">
      	<li>&nbsp; <span>rgb(</span></li>
         <li>Red <span>64,</span></li>
@@ -389,8 +389,8 @@ height: 20px;
         <li>Blue <span>172</span></li>
      	<li>&nbsp; <span>)</span></li>
      </ul>
-     
-     
+
+
      <ul class="namedcolors" style="background-color: rgba(25%,75%,67%,1)">
      	<li>&nbsp; <span>rgb(</span></li>
         <li>Red <span>25%,</span></li>
@@ -398,7 +398,7 @@ height: 20px;
         <li>Blue <span>67%</span></li>
      	<li>&nbsp; <span>)</span></li>
      </ul>
-     
+
      <ul class="namedcolors" style="background-color: rgba(64, 191, 172,0.2)">
      	<li>&nbsp; <span>rgba(</span></li>
         <li>Red <span>64,</span></li>
@@ -407,8 +407,8 @@ height: 20px;
         <li>alpha <span>0.2</span></li>
      	<li>&nbsp; <span>)</span></li>
      </ul>
-     
-     
+
+
      <ul class="namedcolors" style="background-color: rgba(25%,75%,67%,0.2)">
      	<li>&nbsp; <span>rgba(</span></li>
         <li>Red <span>25%,</span></li>
@@ -418,13 +418,13 @@ height: 20px;
      	<li>&nbsp; <span>)</span></li>
      </ul>
      </section>
- </div>   
-    
+ </div>
+
 <!-- HSL / HSLA -->
-<div class="slide normal"> 
-     <header><h1>HSL / HSLA</h1></header> 
+<div class="slide normal">
+     <header><h1>HSL / HSLA</h1></header>
      <section class="content">
-     
+
      <pre contenteditable>color:<b>hsla</b>(
    <span class="hsl-value" id="hsl-h-value">328,</span> 	<input id="hsl-h" type="range" min="0" max="360" value="328" onChange="changeHSL()"> H <div id="hslah">blah</div>
    <span class="hsl-value" id="hsl-s-value">100%,</span> 	<input id="hsl-s" type="range" min="0" max="100" value="100" onChange="changeHSL()"> S <div id="hslas"></div>
@@ -448,15 +448,15 @@ height: 20px;
 			    }
 			//	hslapicker+= '<i style="background: hsla(' + h + ', ' + s + '%, ' + l + '%, ' + a +')" class="big"></i>'
 				document.getElementById('hslah').innerHTML = hslapicker;
-				
-				document.getElementById('hslas').style.background = 
+
+				document.getElementById('hslas').style.background =
                     '-webkit-linear-gradient(0deg, hsl('+h+', 0%, '+ l +'%) 0%, hsl('+h+', 100%, '+ l +'%) 100%)';
-				document.getElementById('hslal').style.background = 
+				document.getElementById('hslal').style.background =
                     '-webkit-linear-gradient(0deg, hsla('+h+', '+ s +'%, 0%, 1) 0%, hsla('+h+', '+ s +'%, 50%, 1) 50%,  hsla('+h+', '+ s +'%, 100%, 1) 100%)';
-				document.getElementById('hslaa').style.background = 
+				document.getElementById('hslaa').style.background =
                     '-webkit-linear-gradient(0deg, hsla('+h+', '+ s +'%, '+l+'%, 0) 0%, hsla('+h+', '+ s +'%, '+l+'%, 1) 100%)';
 			  }
-			  
+
               function changeHSL() {
                 var h = document.getElementById('hsl-h').value * 1.0;
                 var s = document.getElementById('hsl-s').value * 1.0;
@@ -475,97 +475,97 @@ height: 20px;
 
               changeHSL();
 			  createHSLA();
-            </script> 
+            </script>
      </section>
  </div>
-  
+
 <!-- Color Converter -->
-<div class="slide normal"> 
-     <header><h1>HSLA / RGBA  / HEX conversion</h1></header> 
-     <section class="content"> 
+<div class="slide normal">
+     <header><h1>HSLA / RGBA  / HEX conversion</h1></header>
+     <section class="content">
      <object data="http://standardista.com/webkit/ch7/hsla.html" style="width: 100%; height: 450px;"></object>
      <p><a href="https://github.com/estelle/HSLA-Color-Converter">Github Repo</a><br><a href="http://www.standardista.com/hsla-color-picker/">Color Picker home page</a></p>
      </section>
  </div>
-  
-  
+
+
 <!-- Opacity-->
-<div class="slide normal"> 
-     <header><h1>Opacity</h1></header> 
-     <section class="content"> 
+<div class="slide normal">
+     <header><h1>Opacity</h1></header>
+     <section class="content">
   <ul class="icons" style="clear: both; float:right; width: 120px;">
          <li class="chrome">Chrome 1</li>
          <li class="safari">Safari 1.2</li>
          <li class="firefox">Firefox 0.9</li>
          <li class="opera">Opera 9</li>
-         <li class="ie new">IE 4* / IE 9</li>
+         <li class="ie">IE 4* / IE 9</li>
      </ul>
      <div class="opacity" style="width: 400px;">
-     
+
          <div style="opacity:1;">
          <i></i><pre contenteditable>opacity: 1;</pre>
-         
+
          </div>
-         
+
           <div style="opacity:0.75;">
          <i></i><pre contenteditable>opacity: 0.75;</pre>
-         
+
          </div>
-         
+
           <div style="opacity:0.5;">
          <i></i><pre contenteditable>opacity: 0.5;</pre>
-         
+
          </div>
-         
+
           <div style="opacity:0.25;">
          <i></i><pre contenteditable>opacity: 0.25;</pre>
-         
+
          </div>
-         
+
           <div style="opacity:0;">
          <i></i><pre contenteditable>opacity: 0;</pre>
-         
+
          </div>
      </div>
-     
-     
+
+
      </section>
     </div>
-    
-   
+
+
 <!-- AlphaTransparency -->
-<div class="slide normal"> 
-     <header><h1>AlphaTransparency</h1></header> 
-     <section class="content"> 
+<div class="slide normal">
+     <header><h1>AlphaTransparency</h1></header>
+     <section class="content">
       <div class="alphatransparency">
      		<div style="background-color: rgba(58, 103, 171, 1);"></div>
      		<div style="background-color: rgba(58, 103, 171, 0.75);"></div>
      		<div style="background-color: rgba(58, 103, 171, 0.5);"></div>
      		<div style="background-color: rgba(58, 103, 171, 0.25);"></div>
      		<div style="background-color: rgba(58, 103, 171, 0);"></div>
-    </div>     
-         
+    </div>
+
      <div class="rgba opacity">
          <div style="color: rgba(0, 0, 0, 1); height:100px;background-color: rgba(58, 103, 171, 1);">
          <pre contenteditable>color: rgba(0, 0, 0, 1);<br>background-color: rgba(58, 103, 171, 1);</pre>
          <i></i>
          </div>
-         
+
           <div style="color: rgba(0, 0, 0, 0.75); height:100px;background-color: rgba(58, 103, 171, 0.75);">
          <pre contenteditable>color: rgba(0, 0, 0, 0.75);<br>background-color: rgba(58, 103, 171, 0.75);</pre>
          <i></i>
          </div>
-         
+
           <div style="color: rgba(0, 0, 0, 0.5); height:100px;background-color: rgba(58, 103, 171, 0.5);">
          <pre contenteditable>color: rgba(0, 0, 0, 0.5;<br>background-color: rgba(58, 103, 171, 0.5);</pre>
          <i></i>
          </div>
-         
+
          <div style="color: rgba(0, 0, 0, 0.25); height:100px;background-color: rgba(58, 103, 171, 0.25);">
          <pre contenteditable>color: rgba(0, 0, 0, 0.25);<br>background-color: rgba(58, 103, 171, 0.25);</pre>
          <i></i>
          </div>
-         
+
           <div style="color: rgba(0, 0, 0, 0); height:100px;background-color: rgba(58, 103, 171, 0);">
          <pre contenteditable>color: rgba(0, 0, 0, 0)<br>background-color: rgba(58, 103, 171, 0);</pre>
          <i></i>
@@ -576,20 +576,20 @@ height: 20px;
          <li class="safari">Safari 1.2</li>
          <li class="firefox">Firefox 0.9</li>
          <li class="opera">Opera 9</li>
-         <li class="ie new">IE 9</li>
+         <li class="ie ">IE 9</li>
      </ul>
      </section>
  </div>
-    
-  
-  
- 
+
+
+
+
 <!--AlphaTransparency Tips -->
-<div class="slide normal"> 
-<header><h1>AlphaTransparency Tips</h1></header> 
+<div class="slide normal">
+<header><h1>AlphaTransparency Tips</h1></header>
 <section class="content">
 <ul class="opacity" style="padding-bottom: 40px;">
-<li>Used in RGBA &amp; HSLA colors 
+<li>Used in RGBA &amp; HSLA colors
 <pre contenteditable>
 rgba(58, 103, 171, 0.5);
 hsla(216, 49%, 45%, 0.5);
@@ -607,9 +607,9 @@ hsla(216, 49%, 45%, 0.5);
 </ul>
 </section>
 </div>
-       
-  
-<!-- Color Tips -->  
+
+
+<!-- Color Tips -->
 <div class="slide normal">
   <header>
      <h1>Color Tips</h1>
@@ -622,7 +622,7 @@ hsla(216, 49%, 45%, 0.5);
   <li><b class="imp">appearance:</b> Changes the appearance of buttons and other controls to resemble native controls.
   </ul>
   </section>
-</div> 
+</div>
 
 <div class="slide normal">
 	<header><h1>Deprecated Color Names</h1></header>
@@ -687,11 +687,11 @@ hsla(216, 49%, 45%, 0.5);
 </dl>
     </section>
 </div>
-  
-<div class="slide normal"> 
-     <header><h1>-moz-appearance:</h1></header> 
+
+<div class="slide normal">
+     <header><h1>-moz-appearance:</h1></header>
      <section class="content">
-  <dl class="appearance deprecated"> 
+  <dl class="appearance deprecated">
      <dt>none</dt>
   <dd>No special styling is applied. (Default)</dd>
   <dt>button</dt>
@@ -748,7 +748,7 @@ hsla(216, 49%, 45%, 0.5);
   <dt>treetwistyopen</dt>
   <dt>treeview</dt>
   <dt>window</dt>
-  
+
   <dt>mac-unified-toolbar </dt><dd>New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3.5_for_developers">Firefox 3.5</a>
   Mac OS X only. This causes the toolbar and title bar to render using the unified toolbar style common to Mac OS X 10.4 and later applications.</dd>
   <dt>win-borderless-glass</dt>
@@ -764,10 +764,10 @@ hsla(216, 49%, 45%, 0.5);
   <dd> New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3_for_developers">Firefox 3</a>Windows Vista and later. This toolbox style is meant to be used in applications that manage media objects. Corresponding foreground color is -moz-win-mediatext.</dd>
 </dl>
      </section>
- </div> 
-<div class="slide normal"> 
-     <header><h1>-webkit-appearance: <input type="checkbox"/></h1></header> 
-     <section class="content"> 
+ </div>
+<div class="slide normal">
+     <header><h1>-webkit-appearance: <input type="checkbox"/></h1></header>
+     <section class="content">
      <ul style="-webkit-columns:3 0.3em; margin-left: -40px; font-size: 80%">
      	<li>button</li>
         <li>button-bevel</li>
@@ -793,7 +793,7 @@ hsla(216, 49%, 45%, 0.5);
         <li>searchfield</li>
         <li>searchfield-cancel-button</li>
         <li>searchfield-decoration</li>
-        <li>searchfield-results-button</li> 
+        <li>searchfield-results-button</li>
         <li>searchfield-results-decoration</li>
         <li>slider-horizontal</li>
         <li>slider-vertical</li>
@@ -814,15 +814,15 @@ hsla(216, 49%, 45%, 0.5);
 <li>scrollbartrack-vertical</li></ul>
      </section>
  </div>
-<div class="slide intro"> 
+<div class="slide intro">
      <header><h1>Part 7: Fonts, Shadows &amp; Text Effects</h1></header>
-    <h1><a href="part_07_fonts.html#slide3">Next ➹</a></h1>  
-    </div>    
-    
-    
-  
-   
+    <h1><a href="part_07_fonts.html#slide3">Next ➹</a></h1>
+    </div>
+
+
+
+
   </div>
   <script src="slides.js"></script>
-  </div></body> 
+  </div></body>
 </html>

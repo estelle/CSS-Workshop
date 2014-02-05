@@ -1,28 +1,28 @@
 <!doctype html>
-<html> 
-  <head> 
+<html>
+  <head>
     <!--[if gte IE 9]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <![endif]--> 
+    <![endif]-->
     <!--[if lt IE 9]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
-    <![endif]--> 
+    <![endif]-->
     <meta charset="utf-8" />
     <title>Transforms || CSS: From Knowledgable to Ninja</title>
-     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
-   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>  
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>
    <link rel="stylesheet" href="css/print.css" media="print"/>
  <style>
  .bug,.plane, .plane:after {
 	position:relative;
-	font-size: 100px; 
+	font-size: 100px;
  	color:#C7573A;
-  	display:block; 
-	height: 140px; 
-	width: 140px; 
-	border-radius: 7px; 
-	line-height: 140px; 
-	box-shadow: 5px 5px 0 5px rgba(0,0,0,0.2); 
+  	display:block;
+	height: 140px;
+	width: 140px;
+	border-radius: 7px;
+	line-height: 140px;
+	box-shadow: 5px 5px 0 5px rgba(0,0,0,0.2);
 	background-color: #fff;
 	margin:10px auto;
 	text-align:center;
@@ -30,70 +30,70 @@
 }
 .plane:after {
 	content:'✈';
-	position:absolute; top: 0; left:0; 
+	position:absolute; top: 0; left:0;
 	box-shadow: 5px 5px 0 5px #BDD9D5;
 	opacity: 0.9;
 	margin: 0;
 	pointer-events: none;
 }
 .plane_01:after {
-   transform: 
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
 
 .plane_02:after {
-   transform: 
-     translate(100px, 100px);     
+   transform:
+     translate(100px, 100px);
 }
 
 .plane_03:after {
-   transform: 
-     rotate(90deg);     
+   transform:
+     rotate(90deg);
 }
 
 .plane_04:after {
-   transform: 
-     scale(0.25, 0.75);     
+   transform:
+     scale(0.25, 0.75);
 }
-.plane_05, 
+.plane_05,
 .plane_05:after {
    border-radius: 0;
    border: 1px solid #666;
 }
 .plane_05:after {
-   transform: 
-     skewX(15deg);     
+   transform:
+     skewX(15deg);
 }
 
 .plane_06:after {
-   transform: 
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
 
 .plane_07:after {
-   transform: none;     
+   transform: none;
 }
 
 .plane_08:after {
-   transform: 
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
 
 .plane_09:after {
-   transform: 
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
 
 .plane_10:after {
-   transform: 
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
 section {padding-top: 20px;}
 .x {width: 75%; float:right; margin:0; position:relative;}
 .y {float: left; line-height:1.62em;}
 #ABTrasform li {float: left; clear:both; list-style-type:none; width:100%;}
  </style>
-  <style id="tempstyle"></style> 
+  <style id="tempstyle"></style>
 
   <style id="forBackfaceVisibility">
   .backfacedemo{
@@ -219,42 +219,42 @@ perspective: 500px;
 perspective: 1000;
 }
 
-  </style> 
-  </head> 
-  <body> 
-  
+  </style>
+  </head>
+  <body>
+
   <div id="topinfo">
 
   </div>
-  
+
   <div id="info">
     <p>
-    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides. 
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
     <span class="key">2</span> for comments. <a href="http://estelle.github.com/CSS-Workshop">estelle.github.com/CSS-Workshop</a>
     </p>
   </div>
-  
+
   <div id="presentation">
-  
+
    <div id="presentation-counter"></div>
-      
+
    <div id="slides">
-   
-    
+
+
 <div class="slide normal">
-    <header> 
-    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1> 
+    <header>
+    	<h1 style="font-size:200%;">CSS: from Knowledgable to Ninja</h1>
     </header>
-     <section class="content"> 
+     <section class="content">
      <p> ◈ Estelle Weyl</p>
   <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
      </section>
     </div>
-  
+
 <!-- OUTLINE -->
-<div class="slide normal"> 
- <header><h1>Course Outline</h1></header> 
- <section class="content"> 
+<div class="slide normal">
+ <header><h1>Course Outline</h1></header>
+ <section class="content">
   <ol><li><a href="../selectors/">Selectors</a></li>
     <li><a href="part_02_specificity.html">Specificity</a></li>
     <li><a href="part_03_generated.html">Generated Content</a></li>
@@ -270,28 +270,28 @@ perspective: 1000;
  </section>
 </div>
 
-    
+
 <!-- Title Slide -->
-<div class="slide intro"> 
-     <header><h1>Part 10: Transforms</h1></header> 
+<div class="slide intro">
+     <header><h1>Part 10: Transforms</h1></header>
      <b class="bug">✈</b>
 </div>
-  
+
 <!-- Title Slide -->
-<div class="slide normal"> 
+<div class="slide normal">
      <header><h1>Tranforming Elements</h1></header>
-     <section class="content"><b class="plane plane_01">✈</b> 
+     <section class="content"><b class="plane plane_01">✈</b>
      <pre contenteditable>.plane {
--webkit-transform: 
- translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg); 
--moz-transform: 
- translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg); 
--ms-transform: 
- translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg); 
--o-transform: 
- translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg); 
-transform: 
- translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);     
+-webkit-transform:
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+-moz-transform:
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+-ms-transform:
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+-o-transform:
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+transform:
+ translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }</pre>
 <pre contenteditable>selector {
 	transform: none | &lt;transFunc()&gt; [&lt;transFunc()&gt;];
@@ -299,8 +299,8 @@ transform:
      </section>
 </div>
 
-<div class="slide normal"> 
-     <header><h1>2D Transform Functions</h1></header> 
+<div class="slide normal">
+     <header><h1>2D Transform Functions</h1></header>
      <section class="content">
    <dl class="deprecated listed wide">
 
@@ -329,66 +329,66 @@ transform:
  </div>
 
 
-<div class="slide normal"> 
+<div class="slide normal">
      <header><h1>Transform Function: Translate</h1></header>
-     <b class="plane plane_02">✈</b> 
+     <b class="plane plane_02">✈</b>
      <section class="content">
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translate(100px, 100px)</span>;</pre> 
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translateX(100px)</span>;</pre>  
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translateY(100px)</span>;</pre> 
-     
+     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translate(100px, 100px)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translateX(100px)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translateY(100px)</span>;</pre>
+
      </section>
  </div>
 
- <div class="slide normal"> 
-     <header><h1>Transform Function: Rotate</h1></header> 
-     <section class="content"> <b class="plane plane_03">✈</b> 
-    
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_03', this.innerHTML)">rotate(90deg)</span>;</pre> 
-     
+ <div class="slide normal">
+     <header><h1>Transform Function: Rotate</h1></header>
+     <section class="content"> <b class="plane plane_03">✈</b>
+
+     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_03', this.innerHTML)">rotate(90deg)</span>;</pre>
+
      </section>
  </div>
 
-<div class="slide normal"> 
-     <header><h1>Transform Function: Scale</h1></header> 
-     <section class="content"><b class="plane plane_04">✈</b> 
-    
+<div class="slide normal">
+     <header><h1>Transform Function: Scale</h1></header>
+     <section class="content"><b class="plane plane_04">✈</b>
+
      <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scale(0.25, 0.75)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scale(0.75)</span>;</pre> 
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scaleX(0.25)</span>;</pre> 
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scaleY(0.75)</span>;</pre>  
+     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scale(0.75)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scaleX(0.25)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scaleY(0.75)</span>;</pre>
      </section>
  </div>
- 
 
-<div class="slide normal"> 
-     <header><h1>Transform Function: Skew</h1></header> 
+
+<div class="slide normal">
+     <header><h1>Transform Function: Skew</h1></header>
      <section class="content">
-     <b class="plane plane_05">✈</b> 
-    
+     <b class="plane plane_05">✈</b>
+
      <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewX(5deg)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewX(5deg) skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skew(5deg,5deg)</span>;</pre> 
-   
+     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewX(5deg) skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skew(5deg,5deg)</span>;</pre>
+
      </section>
  </div>
- 
-  
-<div class="slide" id="gencontentlink"> 
-<header><h1>Multiple Tranforms</h1></header> 
-<section class="content transform"><b class="plane plane_06">✈</b> 
+
+
+<div class="slide" id="gencontentlink">
+<header><h1>Multiple Tranforms</h1></header>
+<section class="content transform"><b class="plane plane_06">✈</b>
 
 <ul id="ABTrasform">
 <li><b class="y">translate</b> <pre class="x">transform: <span contenteditable id="Atranslate">translate(-80px, 200px);</span></pre></li>
 <li><b class="y">rotate</b> <pre class="x">transform: <span contenteditable id="Arotate">rotate(15deg);</span></pre></li>
 <li><b class="y">scale</b> <pre class="x">transform: <span contenteditable id="Ascale">scale(1.5, 2);</span></pre></li>
 <li><b class="y">skew</b> <pre class="x">transform: <span contenteditable id="Askew">skewX(-8deg);</span></pre></li>
-<li>multiple transforms <pre>transform: <span contenteditable id="Btranslate">translate(-80px, 200px)</span> 
+<li>multiple transforms <pre>transform: <span contenteditable id="Btranslate">translate(-80px, 200px)</span>
   <span contenteditable id="Brotate">rotate(-15deg)</span> <span contenteditable id="Bscale">scale(2, 1.5)</span> <span contenteditable id="Bskew">skewX(8deg)</span>;</pre></li>
 </ul>
 </section>
 </div>
   <script>
- 
+
  var temporaryStyleSheet = document.getElementById('tempstyle');
  function setTempStyle(thisclass, change){
 	 var browserprefix = document.getElementsByTagName('html')[0].getAttribute('class');
@@ -396,21 +396,21 @@ transform:
  }
  var transformSpans = document.getElementById('ABTrasform').getElementsByTagName('span');
  console.log(transformSpans.length);
- </script>    
+ </script>
 
-     
-        
- 
-<div class="slide"> 
-<header><h1>transforms</h1></header> 
+
+
+
+<div class="slide">
+<header><h1>transforms</h1></header>
 <section class="content">
-  
+
          <ul class="icons" style="clear: both;">
          <li class="chrome">Chrome</li>
          <li class="safari">Safari</li>
          <li class="firefox">Firefox 3.5</li>
          <li class="opera">Opera 10.5</li>
-         <li class="ie new">IE 9</li>
+         <li class="ie ">IE 9</li>
          <li class="txt">  &nbsp; all with vendor prefix</li>
      </ul>
 <li>Vendor prefix all of 'em</li>
@@ -418,7 +418,7 @@ transform:
 <li>Take advantage of transform-origin</li>
 <li>Multiple values are SPACE separated (no commas)</li>
 <li><a href="http://westciv.com/tools/3Dtransforms/index.html">3D transforms</a> are hardware accelerated</li>
-<li>Play with <a href="http://westciv.com/tools/transforms/index.html">Westciv's Transform Tool</a></li> 
+<li>Play with <a href="http://westciv.com/tools/transforms/index.html">Westciv's Transform Tool</a></li>
 <li><a href="http://meyerweb.com/eric/tools/matrix/">Matrix</a> is another syntax</li>
 <li>More about <a href="http://www.standardista.com/css3/css3-transform-property-and-the-various-transform-functions">transforms</a></li>
 </section>
@@ -429,7 +429,7 @@ transform:
 <header><h1>Play Time</h1>
 <object data="files/100_simpletransforms.html"></object>
 <a href="files/100_simpletransforms" target="play" class="objectlink">Try it out</a>
-</div> 
+</div>
 
 <div class="slide">
   <header><h1>transform-origin property</h1></header>
@@ -451,12 +451,12 @@ transform:
 <header><h1>Play Time</h1>
 <object data="files/101_transformorigin.html"></object>
 <a href="files/101_transformorigin.html" target="play" class="objectlink">Try it out</a>
-</div>  
+</div>
 
 <!-- 3d Transforms -->
-<div class="slide normal"> 
-     <header style="position:absolute;left: 0; transform: rotate(-90deg) translate(-240px, -100px);"><h1>3d Transforms</h1></header> 
-     <section class="content" style="padding-top:0; margin-top:-20px"> 
+<div class="slide normal">
+     <header style="position:absolute;left: 0; transform: rotate(-90deg) translate(-240px, -100px);"><h1>3d Transforms</h1></header>
+     <section class="content" style="padding-top:0; margin-top:-20px">
      <dl  class="deprecated listed wide">
 
   <dt><strong>translate</strong>(&lt;x-length&gt;[, &lt;y-length&gt;])</dt>
@@ -501,22 +501,22 @@ transform:
  </div>
 
 
-<div class="slide normal"> 
+<div class="slide normal">
      <header><h1>Transform Function: perspective</h1></header>
-     <b class="plane plane_07">✈</b> 
+     <b class="plane plane_07">✈</b>
      <section class="content">
-     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_07', this.innerHTML)">translate3d(0px, 0px, 0px) perspective(0)</span>;</pre> 
+     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_07', this.innerHTML)">translate3d(0px, 0px, 0px) perspective(0)</span>;</pre>
      <p>Only relevant to 3D transformations</p>
      </section>
  </div>
 
 
 
-<div class="slide normal"> 
+<div class="slide normal">
      <header><h1>perspective-origin property</h1></header>
-     <b class="plane plane_07">✈</b> 
+     <b class="plane plane_07">✈</b>
      <section class="content">
-     <pre contenteditable>perspective-origin: <span contenteditable onKeyUp="setTempStyle('plane_07b', this.innerHTML)">left</span>;</pre> 
+     <pre contenteditable>perspective-origin: <span contenteditable onKeyUp="setTempStyle('plane_07b', this.innerHTML)">left</span>;</pre>
      <p>Sets a horizon point at the given coordinates on the parent element. Changes the perceived vantage point at which the user appears to be looking at child elements.</p>
      <ul>
         <li>Keyword positions: left, right, bottom, top, center</li>
@@ -525,12 +525,12 @@ transform:
      </ul>
      </section>
  </div>
- 
- 
- <div class="slide normal"> 
-     <header><h1>Other Transform related Properties</h1></header> 
-     <section class="content"> 
-<dl>	
+
+
+ <div class="slide normal">
+     <header><h1>Other Transform related Properties</h1></header>
+     <section class="content">
+<dl>
 	<dt>transform-origin: length | keyterm {1,3}</dt>
     <dd>The centerpoint of the transform
 	<dt>transform-style: flat | preserve-3s</dt>
@@ -554,7 +554,7 @@ transform:
 
 
 <div class="slide normal" id="BackfaceVisibility"><div>
-    
+
       <header>
         <h1><code>backface-visibility</code></h1>
       </header>
@@ -571,7 +571,7 @@ transform:
                   </div>
             </div>
 
-           <button type="button" id="backfacetrigger" 
+           <button type="button" id="backfacetrigger"
            onclick="toggleSides();">Toggle backfaces</button>
 <footer>borrowed from <a href="http://www.twitter.com/webinista">@webinista</a></footer>
       </section>
@@ -587,24 +587,24 @@ transform:
          //     sides[i].classList.toggle('.bf');
          //   }
 }
-           
+
   </script>
 
 <!-- NEXT -->
-<div class="slide intro"> 
+<div class="slide intro">
      <header><h1>Part 11: Transitions &amp; Animation</h1></header>
     <h1><a href="part_11_animations.html">Next ➹</a></h1>
 </div>
 
- 
 
 
-  </div>  
-  
-   
+
+  </div>
+
+
   </div>
   <script src="css/slide.js"></script>
 
 <script src="css/prefixfree.js"></script>
-  </body> 
+  </body>
 </html>

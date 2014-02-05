@@ -27,6 +27,19 @@ header h1.sectiontitle:before{
 	counter-increment: sections;
 }
 
+
+.completed:after{
+  content: '✔';
+  position: absolute; top: 40px; right: 40px;
+  color: green;
+  font-size: 96px;
+  border: 10px solid green;
+  border-radius: 50%;
+  width: 1em; height: 1em;
+  line-height: 1em;
+  text-align: center;
+}
+
 /* brown: C7573A;*/
    </style>
 
@@ -162,7 +175,7 @@ selector ~ relation {
 <div class="slide">
  <header><h1 class="sectiontitle"><a href="../selectors/" target="deck">Selectors</a></h1></header>
 <section class="content">
-        <ul style="-webkit-column-count:2;">
+        <ul style="-webkit-column-count:2;" class="completed">
             <li>Basic Selectors</li>
             <li>Relational selectors </li>
             <li>Selector list </li>

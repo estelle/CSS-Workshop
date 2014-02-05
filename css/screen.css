@@ -203,15 +203,15 @@ body.three-d div.slides {
 
 /* ############################
 
-    BROWSER SUPPORT & ICONS   
+    BROWSER SUPPORT & ICONS
 
    ############################ */
 
-	
-	
+
+
 .icons li, .icons .browser {
 			width: 68px; height: 14px; display: inline-block;
-			background-image:url(../icons/browser_logos-64.png);	
+			background-image:url(../icons/browser_logos-64.png);
 			border-radius: 32px;
 			font-size: 0.8rem;
 			padding-top: 60px;
@@ -247,8 +247,8 @@ body.three-d div.slides {
 			left:-15px;
 			content: "";
 			-webkit-box-sizing: padding-box;
-			background: 
-				-webkit-linear-gradient(135deg, 
+			background:
+				-webkit-linear-gradient(135deg,
 					transparent 45%,
 					red 45%,
 					red 55%,
@@ -257,9 +257,9 @@ body.three-d div.slides {
 			height: 68px;
 			border-radius: 50%;
 			border: 10px solid red;
-			display:block;	
+			display:block;
 		}
-		
+
 		.icons .half:after {
 			position:absolute;
 			top: 0;
@@ -269,7 +269,7 @@ body.three-d div.slides {
 			width: 33px;
 			border-radius: 0 0 50% 0;
 			height: 65px;
-			display:block;	
+			display:block;
 		}
 		.icons .half.new:after {
 			background-repeat: no-repeat;
@@ -285,7 +285,7 @@ body.three-d div.slides {
 			background-image:url(../icons/new.gif),
 			linear-gradient(0deg, transparent 30%, #DCe7f3 30%) ;
 			width: 40px;
-			
+
 		}
 		.icons .txt {background-image: none; width: auto; font-size: 1.5rem;}
 
@@ -347,7 +347,7 @@ pre, .ex, .pre, .codelike {
 }
 	.ex.right {
 		float: right;
-		width: 200px;	
+		width: 200px;
 	}
 	.pre li{
 		font-family: monospace;
@@ -356,7 +356,7 @@ pre, .ex, .pre, .codelike {
 	}
 	.preintro pre {
 		font-size: 1.7rem;
-		margin: 30px 20px 0 0;	
+		margin: 30px 20px 0 0;
 		line-height: 1.5;
 	}
 
@@ -415,7 +415,7 @@ div:not(.current).reduced {
 dt {
 	font-weight: bold;
 	margin-top: 0.5rem;
-    
+
 	background-color: #BDD9D5;;
 	display:inline-block;
 	margin-bottom: 2px;
@@ -423,7 +423,7 @@ dt {
 }
 dd {
 	font-weight: normal;
-	margin: 0 0 2px 0;	
+	margin: 0 0 2px 0;
 }
 
 dl.inline dt {
@@ -438,7 +438,7 @@ dl.inline dd{
 	font-style: italic;
 }
 .light section {
-	font-size: 1.8rem;	
+	font-size: 1.8rem;
 }
 
 .new {color: #C7573A; background-color: #fff; padding: 3px 8px;}
@@ -451,16 +451,16 @@ ul {
   box-sizing: border-box;
 }
 .play h1 {
-	 text-align:center; 
+	 text-align:center;
 	 margin-top:100px;
 	 font-size: 2rem;
-    
+
 }
 .play {text-align: center;}
 .columns2 {
 	-webkit-columns: 2 1rem;
-    
-	-webkit-column-rule: 1px solid #BDD9D5;	
+
+	-webkit-column-rule: 1px solid #BDD9D5;
 }
 
 .hilite {font-size: 1.2rem; padding:5px 2px;}
@@ -472,9 +472,9 @@ ul {
 	background-position: 50% bottom;
 	text-align:center;
 	font-size: 1.5rem;
-    
+
 	border-radius: 15px;
-	background-color: #fff;	
+	background-color: #fff;
 	margin: 0 30px;
 }
 .nonspec li {padding-bottom: 0;}
@@ -482,10 +482,10 @@ ul {
 	background-image:url(../img/shark.gif);
 }
 .specificity .class {
-	background-image:url(../img/fish.png);	
+	background-image:url(../img/fish.png);
 }
 .specificity .element {
-	background-image:url(../img/plankton.png);	
+	background-image:url(../img/plankton.png);
 }
 .object header {position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9); left:0;}
 .objectlink {position:absolute;top:0; right:0;color: white; background-color: #C7573A; padding: 3px 5px; border: none;}
@@ -503,7 +503,7 @@ ul {
 }
 .deprecated.listed.wide dt{width:100%;}
 
-button, .button { 
+button, .button {
 	-webkit-appearance: none;
 	color: #333;
 	font-size: 1.6rem;
@@ -512,7 +512,7 @@ button, .button {
 	border-radius: 15px;
 	border: none;
 	padding: 5px 10px;
-	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);		
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 button:hover {
 	background: -webkit-linear-gradient(#ddd, #fff);
@@ -524,7 +524,7 @@ section > ol {-webkit-margin-start: 2rem;
     }
 
 
-/* ======================= 
+/* =======================
 
 SLIDE ORIGINAL
 
@@ -612,7 +612,7 @@ body {
   padding-top: 10px;
   border-radius: 15px;
   border: 5px solid #fff;
-  
+
   box-shadow: 0 0 20px rgba(0,0,0,0.6), inset 0 0 6px rgba(0,0,0,0.4);
 }
 .slide.intro {
@@ -763,7 +763,7 @@ div.example {
   width: 100%;
   text-align: center;
 }
-#next, 
+#next,
 #back {
   z-index: 1000;
   position: absolute;
@@ -789,26 +789,26 @@ div.example {
   border: 3px solid #eee;
 }
 #next {left: auto; right: 5px;}
-    
+
 /* OBJECT PAGES */
 .object header {
-  position:absolute; 
-  top: 10px; 
-  width: 100%; 
-  text-align:center; 
-  background-color: rgba(255,255,255,0.9); 
+  position:absolute;
+  top: 10px;
+  width: 100%;
+  text-align:center;
+  background-color: rgba(255,255,255,0.9);
   left:0;
 }
 .objectlink {
   position:absolute;
   top:0; right:0;
-  color: white; 
-  background-color: #000; 
-  padding: 3px 5px; 
+  color: white;
+  background-color: #000;
+  padding: 3px 5px;
   border: none;
 }
 .slide.object {padding:0;}
-.object object {width: 100%; height: 100%;}
+.object object {min-height: 100%;}
 .notes, .temphidden {display: none;}
 
 /* ===============================

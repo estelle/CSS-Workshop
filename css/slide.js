@@ -12,7 +12,7 @@ function vendorPrefix(prefix, id){
 			break;
 			case 'ms':
 				prefixTxt = '-ms-';
-			break;	
+			break;
 			case 'o':
 				prefixTxt = '-o-';
 			break;
@@ -24,11 +24,11 @@ function vendorPrefix(prefix, id){
 	  for(var i = 0, j = spans.length; i < j; i++ ){
 	  	spans[i].innerHTML = prefixTxt;
 	  }
-			
+
 	}
-	
-	
-	
+
+
+
   (function() {
   var doc = document;
   var disableBuilds = true;
@@ -134,7 +134,7 @@ function vendorPrefix(prefix, id){
   var canTransition = (function() {
   var ver = parseFloat(ua.split('Version/')[1]) || undefined;
   // test to determine if this browser can handle CSS transitions.
-  var cachedCanTransition = 
+  var cachedCanTransition =
     (isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
     return function() { return cachedCanTransition; }
   })();
@@ -254,15 +254,15 @@ function vendorPrefix(prefix, id){
     }catch (e) { /* squeltch */ }
     this.current = isNaN(this.current) ? 1 : this.current;
     var _t = this;
-    doc.addEventListener('keydown', 
+    doc.addEventListener('keydown',
         function(e) { _t.handleKeys(e); }, false);
-    doc.addEventListener('mousewheel', 
+    doc.addEventListener('mousewheel',
         function(e) { _t.handleWheel(e); }, false);
-    doc.addEventListener('DOMMouseScroll', 
+    doc.addEventListener('DOMMouseScroll',
         function(e) { _t.handleWheel(e); }, false);
-    doc.addEventListener('touchstart', 
+    doc.addEventListener('touchstart',
         function(e) { _t.handleTouchStart(e); }, false);
-    doc.addEventListener('touchend', 
+    doc.addEventListener('touchend',
         function(e) { _t.handleTouchEnd(e); }, false);
     window.addEventListener('popstate',
         function(e) { _t.go(e.state); }, false);
@@ -339,9 +339,9 @@ function vendorPrefix(prefix, id){
       }
     },
     handleKeys: function(e) {
-      
+
       if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
-	  console.dir(e.target);
+	  //console.dir(e.target);
       if(e.target.contentEditable == "true") return;
       switch (e.keyCode) {
         case 37: // left arrow

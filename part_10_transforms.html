@@ -9,7 +9,7 @@
     <![endif]-->
     <meta charset="utf-8" />
     <title>Transforms || CSS: From Knowledgable to Ninja</title>
-     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+     <!--link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'-->>
    <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>
    <link rel="stylesheet" href="css/print.css" media="print"/>
  <style>
@@ -220,6 +220,8 @@ perspective: 1000;
 }
 
   </style>
+  <style id="tempstyle">
+  </style>
   </head>
   <body>
 
@@ -331,32 +333,32 @@ transform:
 
 <div class="slide normal">
      <header><h1>Transform Function: Translate</h1></header>
-     <b class="plane plane_02">✈</b>
+     <b class="plane plane_02" data-style="transform">✈</b>
      <section class="content">
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translate(100px, 100px)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translateX(100px)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_02', this.innerHTML)">translateY(100px)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText);">translate(100px, 100px)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText)">translateX(100px)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText)">translateY(100px)</span>;</pre>
 
      </section>
  </div>
 
  <div class="slide normal">
      <header><h1>Transform Function: Rotate</h1></header>
-     <section class="content"> <b class="plane plane_03">✈</b>
+     <section class="content"> <b class="plane plane_03" data-style="transform">✈</b>
 
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_03', this.innerHTML)">rotate(90deg)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_03', this.innerText)">rotate(90deg)</span>;</pre>
 
      </section>
  </div>
 
 <div class="slide normal">
      <header><h1>Transform Function: Scale</h1></header>
-     <section class="content"><b class="plane plane_04">✈</b>
+     <section class="content"><b class="plane plane_04" data-style="transform">✈</b>
 
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scale(0.25, 0.75)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scale(0.75)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scaleX(0.25)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_04', this.innerHTML)">scaleY(0.75)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scale(0.25, 0.75)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scale(0.75)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scaleX(0.25)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scaleY(0.75)</span>;</pre>
      </section>
  </div>
 
@@ -364,10 +366,10 @@ transform:
 <div class="slide normal">
      <header><h1>Transform Function: Skew</h1></header>
      <section class="content">
-     <b class="plane plane_05">✈</b>
+     <b class="plane plane_05" data-style="transform">✈</b>
 
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewX(5deg)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skewX(5deg) skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onKeyUp="setTempStyle('plane_05', this.innerHTML)">skew(5deg,5deg)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewX(5deg)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewX(5deg) skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skew(5deg,5deg)</span>;</pre>
 
      </section>
  </div>
@@ -375,7 +377,7 @@ transform:
 
 <div class="slide" id="gencontentlink">
 <header><h1>Multiple Tranforms</h1></header>
-<section class="content transform"><b class="plane plane_06">✈</b>
+<section class="content transform"><b class="plane plane_06" data-style="transform">✈</b>
 
 <ul id="ABTrasform">
 <li><b class="y">translate</b> <pre class="x">transform: <span contenteditable id="Atranslate">translate(-80px, 200px);</span></pre></li>
@@ -389,13 +391,13 @@ transform:
 </div>
   <script>
 
- var temporaryStyleSheet = document.getElementById('tempstyle');
+
  function setTempStyle(thisclass, change){
-	 var browserprefix = document.getElementsByTagName('html')[0].getAttribute('class');
-	 temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {'+ browserprefix + 'transform: '+ change +';}';
+   var temporaryStyleSheet = document.getElementById('tempstyle');
+	 temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {-webkit-transform: '+ change +';transform: '+ change +';}';
+   console.dir(temporaryStyleSheet);
  }
- var transformSpans = document.getElementById('ABTrasform').getElementsByTagName('span');
- console.log(transformSpans.length);
+
  </script>
 
 
@@ -411,9 +413,9 @@ transform:
          <li class="firefox">Firefox 3.5</li>
          <li class="opera">Opera 10.5</li>
          <li class="ie ">IE 9</li>
-         <li class="txt">  &nbsp; all with vendor prefix</li>
+         <li class="txt">  &nbsp; some with vendor prefix</li>
      </ul>
-<li>Vendor prefix all of 'em</li>
+<li>Vendor prefix -webkit and -ms</li>
 <li>Transforms create a new stacking context</li>
 <li>Take advantage of transform-origin</li>
 <li>Multiple values are SPACE separated (no commas)</li>
@@ -503,9 +505,9 @@ transform:
 
 <div class="slide normal">
      <header><h1>Transform Function: perspective</h1></header>
-     <b class="plane plane_07">✈</b>
+     <b class="plane plane_07" data-style="transform">✈</b>
      <section class="content">
-     <pre>transform: <span contenteditable onKeyUp="setTempStyle('plane_07', this.innerHTML)">translate3d(0px, 0px, 0px) perspective(0)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('plane_07', this.innerText)">translate3d(0px, 0px, 0px) perspective(0)</span>;</pre>
      <p>Only relevant to 3D transformations</p>
      </section>
  </div>
@@ -514,9 +516,9 @@ transform:
 
 <div class="slide normal">
      <header><h1>perspective-origin property</h1></header>
-     <b class="plane plane_07">✈</b>
+     <b class="plane plane_07" data-style="perspective-origin">✈</b>
      <section class="content">
-     <pre contenteditable>perspective-origin: <span contenteditable onKeyUp="setTempStyle('plane_07b', this.innerHTML)">left</span>;</pre>
+     <pre contenteditable>perspective-origin: <span contenteditable onmouseout="setTempStyle('plane_07b', this.innerText)">left</span>;</pre>
      <p>Sets a horizon point at the given coordinates on the parent element. Changes the perceived vantage point at which the user appears to be looking at child elements.</p>
      <ul>
         <li>Keyword positions: left, right, bottom, top, center</li>
@@ -604,7 +606,14 @@ transform:
 
   </div>
   <script src="css/slide.js"></script>
-
-<script src="css/prefixfree.js"></script>
+  <script>
+document.addEventListener('keydown',
+        function(e) { if(e.keyCode == 39){
+          var nextSlide = document.getElementsByClassName('future')[0];
+          var temporaryStyleSheet = document.getElementById('tempstyle');
+          var styles = nextSlide.getElementsByClassName('plane')[0].classList.split('');
+          console.dir(styles);
+        } }, false);
+  </script>
   </body>
 </html>

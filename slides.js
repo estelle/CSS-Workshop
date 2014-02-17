@@ -14,7 +14,7 @@
 		if (typeof id == 'string') { return doc.getElementById(id); }
 		return id;
 	},
-	
+
 	query = function(query, root) {
 	  if (!query) { return []; }
 		if (typeof query != 'string') { return toArray(query); }
@@ -31,18 +31,18 @@
 			root.id = root.id || ('qUnique' + (ctr++));
 			query = '#' + root.id + ' ' + query;
 		}
-	
+
 		// don't choke on something like ".yada.yada >"
 		if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
 		return toArray(doc.querySelectorAll(query));
 	},
-	
+
 	strToArray = function(s) {
 		if (typeof s == 'string' || s instanceof String) {
 			if (s.indexOf(' ') < 0) {
 				a1[0] = s;
 				return a1;
-			} 
+			}
 			else {
 					return s.split(spaces);
 			}
@@ -60,8 +60,8 @@
 		}
 	  }
 	  node.className = cls.trim();
-	}, 
-	
+	},
+
 	removeClass = function(node, classStr) {
 		  var cls;
 		  if (classStr !== undefined) {
@@ -74,13 +74,13 @@
 		  } else {
 			cls = '';
 		  }
-		
+
 		  if (node.className != cls) {
 			node.className = cls;
 		  }
-		
+
 	  },
-	
+
 	  toggleClass = function(node, classStr) {
 		  var cls = ' ' + node.className + ' ';
 		  if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
@@ -102,8 +102,8 @@
   	 	canTransition = (function() {
 		  var ver = parseFloat(ua.split('Version/')[1]) || undefined;
 		  // test to determine if this browser can handle CSS transitions.
-		  var cachedCanTransition = 
-		
+		  var cachedCanTransition =
+
 			(isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
 		  return function() { return cachedCanTransition; }
 
@@ -304,7 +304,7 @@ SlideShow.prototype = {
 
 
   _notesOn: false,
-	
+
  showNotes: function() {
     var isOn = this._notesOn = !this._notesOn;
     query('.notes').forEach(function(el) {
@@ -320,7 +320,7 @@ SlideShow.prototype = {
       if (isOpera) {
 			delta = -delta;
 		  }
-      } 
+      }
 	  else if (e.detail) {
         delta = -e.detail/3;
       }
@@ -334,7 +334,7 @@ SlideShow.prototype = {
 		  return;
 		}
     },
-	
+
 	addNotes: function(){
 		if(document.querySelector('.current textarea.mynotes')) {
 			document.querySelector('.current textarea.mynotes').classList.toggle('temphidden');
@@ -343,37 +343,37 @@ SlideShow.prototype = {
 		var ta = document.createElement('textarea'),
 		     currentSlide = document.querySelector('.current section'),
 			 path = window.location.pathname,
-			 A = path.lastIndexOf('/') + 1, 
+			 A = path.lastIndexOf('/') + 1,
 			 B = path.lastIndexOf('.'),
 			 firstPartOfKey, key;
-		if(B && B > A){	 
+		if(B && B > A){
 		    firstPartOfKey = path.substring(A, B);
 		} else {
-		    firstPartOfKey = path.substring(1, path.length-1) || 'home';	
+		    firstPartOfKey = path.substring(1, path.length-1) || 'home';
 		}
 		//console.log(firstPartOfKey);
 		key = firstPartOfKey +  window.location.hash;
 		ta.value = window.localStorage.getItem(key) || '';
 		ta.className = 'mynotes';
-		
+
 		ta.addEventListener('keyup', function(){
 			//console.log(key + ' ' + ta.value)
 		    window.localStorage.setItem(key,ta.value);
 		});
 		currentSlide.appendChild(ta);
 	},
-	
-	
+
+
 	removeHidingClass: function(){
 		var paragraphToShow = document.querySelector('.current .temphidden');
 		if(paragraphToShow) {paragraphToShow.classList.remove('temphidden');}
-	
+
 	},
-	
+
     handleKeys: function(e) {
       // disable keys for these elements
       if (/^(input|textarea|pre|object)$/i.test(e.target.nodeName)) return;
-	 
+
 
       switch (e.keyCode) {
 		  case 37: // left arrow
@@ -385,15 +385,15 @@ SlideShow.prototype = {
 			 this.next(); break;
 		  case 50: // 2
 		  case 190: // 2
-			 this.showNotes(); 
-			 this.removeHidingClass(); 
+			 this.showNotes();
+			 this.removeHidingClass();
 			 break;
 	      case 52: // 4 (for taking notes with local storage (students)
 		     this.addNotes(); break;
 		     break;
     	}
     },
-	
+
     _touchStartX: 0,
     handleTouchStart: function(e) {
     this._touchStartX = e.touches[0].pageX;
